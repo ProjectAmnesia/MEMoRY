@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{275AB6E0-C97C-461C-A668-15C95BF4BC11}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MemoryCodeSamples</RootNamespace>
+    <AssemblyName>MemoryCodeSamples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Card.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Board.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameSettings.Designer.cs">
+      <DependentUpon>GameSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human.cs" />
+    <Compile Include="Pictures.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameSettings.resx">
+      <DependentUpon>GameSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\African Union.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\American Samoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Antigua &amp; Barbuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arab League.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aruba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ASEAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Australia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Afghanistan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\African-Union.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Albania.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alderney.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Algeria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\American-Samoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Andorra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angola.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anguilla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Antarctica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Antigua-&amp;-Barbuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arab-League.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Argentina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armenia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clouds2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crazy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gurkor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rosagrapefrukt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arter51.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aubergine1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avokado1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banana1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beans6551.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chili1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nectarine1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clouds1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arter5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aubergine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avokado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beans655.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bjornbar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blueberries_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Broccoli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chili.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chilis.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\citron.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clouds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clouds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crazy-fruit-5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empeher3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\galia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ginger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\granat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grönkål.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guanabana.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guavas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gurkor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hallon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hjortron.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\honey.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kiwano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kiwi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kokos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\korsbar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kronartskocka.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\krusbar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lime.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lingon_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Litchi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mandarin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mango.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\melon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\morot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nectarine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oliver.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\papaya.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pear.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pfi_549_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Physalis_fruit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pineapple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pitahaya.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pumpa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rodavindruvor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rosa-grapefrukt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skalet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sparris.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\squash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strawberry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tamarillo_7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tamarind.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tomat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tomatillo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tranbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watermelon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\äpple.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
