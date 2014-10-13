@@ -114,7 +114,7 @@ namespace MemoryCodeSamples
 
         private void card_Click(object sender, EventArgs e)
         {
-            if (players.Count() < 1)
+            if (players.Count < 1)
                 return;
             if (flippedCards == 0)
             {
