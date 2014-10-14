@@ -8,6 +8,7 @@ namespace MemoryCodeSamples
 {
     class Player
     {
+        // Added test comment
         public string name;
         public int points;
     }
