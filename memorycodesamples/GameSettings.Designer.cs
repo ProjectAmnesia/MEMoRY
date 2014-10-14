@@ -37,7 +37,11 @@
             this.tbNumberOfCards = new System.Windows.Forms.TextBox();
             this.lblCards = new System.Windows.Forms.Label();
             this.lblMax = new System.Windows.Forms.Label();
+            this.grbxTheme = new System.Windows.Forms.GroupBox();
+            this.rbT1 = new System.Windows.Forms.RadioButton();
+            this.rbT2 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
+            this.grbxTheme.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -107,7 +111,7 @@
             // 
             this.btnPlay.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnPlay.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlay.Location = new System.Drawing.Point(216, 93);
+            this.btnPlay.Location = new System.Drawing.Point(223, 126);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(4);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(117, 50);
@@ -117,7 +121,7 @@
             // 
             // tbNumberOfCards
             // 
-            this.tbNumberOfCards.Location = new System.Drawing.Point(216, 34);
+            this.tbNumberOfCards.Location = new System.Drawing.Point(28, 164);
             this.tbNumberOfCards.Margin = new System.Windows.Forms.Padding(4);
             this.tbNumberOfCards.Name = "tbNumberOfCards";
             this.tbNumberOfCards.Size = new System.Drawing.Size(116, 22);
@@ -128,7 +132,7 @@
             // 
             this.lblCards.AutoSize = true;
             this.lblCards.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCards.Location = new System.Drawing.Point(236, 14);
+            this.lblCards.Location = new System.Drawing.Point(48, 144);
             this.lblCards.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCards.Name = "lblCards";
             this.lblCards.Size = new System.Drawing.Size(77, 14);
@@ -140,7 +144,7 @@
             // 
             this.lblMax.AutoSize = true;
             this.lblMax.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMax.Location = new System.Drawing.Point(234, 64);
+            this.lblMax.Location = new System.Drawing.Point(46, 194);
             this.lblMax.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMax.Name = "lblMax";
             this.lblMax.Size = new System.Drawing.Size(81, 13);
@@ -148,11 +152,46 @@
             this.lblMax.Text = "(max 120 st)";
             this.lblMax.Visible = false;
             // 
+            // grbxTheme
+            // 
+            this.grbxTheme.Controls.Add(this.rbT2);
+            this.grbxTheme.Controls.Add(this.rbT1);
+            this.grbxTheme.Location = new System.Drawing.Point(216, 24);
+            this.grbxTheme.Name = "grbxTheme";
+            this.grbxTheme.Size = new System.Drawing.Size(136, 64);
+            this.grbxTheme.TabIndex = 4;
+            this.grbxTheme.TabStop = false;
+            this.grbxTheme.Text = "Välj tema";
+            // 
+            // rbT1
+            // 
+            this.rbT1.AutoSize = true;
+            this.rbT1.Checked = true;
+            this.rbT1.Location = new System.Drawing.Point(7, 22);
+            this.rbT1.Name = "rbT1";
+            this.rbT1.Size = new System.Drawing.Size(70, 18);
+            this.rbT1.TabIndex = 0;
+            this.rbT1.TabStop = true;
+            this.rbT1.Text = "Tema 1";
+            this.rbT1.UseVisualStyleBackColor = true;
+            // 
+            // rbT2
+            // 
+            this.rbT2.AutoSize = true;
+            this.rbT2.Location = new System.Drawing.Point(6, 44);
+            this.rbT2.Name = "rbT2";
+            this.rbT2.Size = new System.Drawing.Size(70, 18);
+            this.rbT2.TabIndex = 0;
+            this.rbT2.TabStop = true;
+            this.rbT2.Text = "Tema 2";
+            this.rbT2.UseVisualStyleBackColor = true;
+            // 
             // GameSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 155);
+            this.ClientSize = new System.Drawing.Size(393, 215);
+            this.Controls.Add(this.grbxTheme);
             this.Controls.Add(this.lblMax);
             this.Controls.Add(this.lblCards);
             this.Controls.Add(this.tbNumberOfCards);
@@ -167,6 +206,8 @@
             this.Text = "Inställningar";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.grbxTheme.ResumeLayout(false);
+            this.grbxTheme.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +224,8 @@
         private System.Windows.Forms.TextBox tbNumberOfCards;
         private System.Windows.Forms.Label lblCards;
         private System.Windows.Forms.Label lblMax;
+        private System.Windows.Forms.GroupBox grbxTheme;
+        private System.Windows.Forms.RadioButton rbT2;
+        private System.Windows.Forms.RadioButton rbT1;
     }
 }

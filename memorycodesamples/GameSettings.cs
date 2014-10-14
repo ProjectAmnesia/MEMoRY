@@ -12,6 +12,7 @@ namespace MemoryCodeSamples
 {
     public partial class GameSettings : Form
     {
+        Pictures pic = new Pictures();  
         public GameSettings()
         {
             InitializeComponent();            
@@ -52,7 +53,17 @@ namespace MemoryCodeSamples
                 return numberOfCards;
             }
         }
-
+        public int ChooseTheme()
+        {
+            if(rbT1.Checked)
+            {
+                return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
         private void rbUsersChoice_CheckedChanged(object sender, EventArgs e)
         {
             lblCards.Visible = true;

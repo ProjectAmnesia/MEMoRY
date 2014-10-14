@@ -19,6 +19,7 @@ namespace MemoryCodeSamples
         Card lastFlipped;
         int flippedCards;
         int usedCards = 0;
+        int themeNum = 0;
         List<Player> players = new List<Player>();
 
         public Form1()
@@ -31,26 +32,27 @@ namespace MemoryCodeSamples
         private void UpdateGUI()
         {
             btnAddPlayer.Enabled = (usedCards != 0) ? false : true;
-            tbxPlayerName.Clear();
             string info = "";
             foreach (Player p in players)
             {
-                info += p.name + ", " + p.points + " poäng\n";
+                info += p.name + ",\n" + p.points + " poäng\n";
             }
             lblPlayers.Text = info;
-            if (gameStarted && players.Count() > 1)
-                lblTurn.Text = "Nu är det din tur: " + players[playersTurn].name;
+            if (gameStarted && players.Count > 1)
+                lblTurn.Text = "Nu är det din tur:\n" + players[playersTurn].name;
         }
 
         private void StartGame()
         {
-            //GameSettings game = new GameSettings();
-            //DialogResult dialog = game.ShowDialog();
-            //if (dialog == DialogResult.OK)
-            //{
-            //    numberOfCards = game.EnteredNumberOfCards();
-            //}
-            board.CreateNewGame(numberOfCards);
+            
+            GameSettings game = new GameSettings();
+            DialogResult dialog = game.ShowDialog();
+            if (dialog == DialogResult.OK)
+            {
+                numberOfCards = game.EnteredNumberOfCards();
+                themeNum = game.ChooseTheme();
+            }
+            board.CreateNewGame(numberOfCards, themeNum);
             gameStarted = true;
 
         }
@@ -83,11 +85,11 @@ namespace MemoryCodeSamples
             }
         }
  
-        private void incrementPlayer()
+        private void IncrementPlayer()
         {
             playersTurn++;
             flippedCards = 0;
-            if (playersTurn >= players.Count())
+            if (playersTurn >= players.Count)
             {
                 playersTurn = 0;
             }
@@ -104,7 +106,7 @@ namespace MemoryCodeSamples
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
             FlipAllCards();
-            board.CreateNewGame(numberOfCards);
+            board.CreateNewGame(numberOfCards, themeNum);
             foreach (var player in players)
             {
                 player.points = 0;
@@ -140,9 +142,9 @@ namespace MemoryCodeSamples
                     players[playersTurn].points++;
                     playersTurn--;
                 }
-                incrementPlayer();
+                IncrementPlayer();
                 var notsmart = board.cardList.FindAll(x => !x.Playable);
-                if(notsmart.Count() == board.cardList.Count())
+                if(notsmart.Count == board.cardList.Count)
                 {
                     Player maxItem = players.OrderByDescending(obj => obj.points).First();
                     MessageBox.Show("Grattis " + maxItem.name + "!");
@@ -154,7 +156,7 @@ namespace MemoryCodeSamples
 
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
-            Human human = new Human(tbxPlayerName.Text);
+            Human human = new Human(players.Count + 1);
             players.Add(human);
             UpdateGUI();
 
@@ -171,7 +173,7 @@ namespace MemoryCodeSamples
         {
             FlipAllPlayableCards();
             lastFlipped = null;
-            incrementPlayer();
+            IncrementPlayer();
             timerDrawTime.Enabled = false;      
             UpdateGUI();            
         }

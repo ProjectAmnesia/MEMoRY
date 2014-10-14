@@ -73,6 +73,7 @@
     <Compile Include="Board.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Computer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,6 +430,186 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\äpple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ara.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baby.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bird.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\birds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bjorn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bush.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bushdog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\catinbox.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\catscrat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cute.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cute2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cutest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cutie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dogs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ekorrar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ekorre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ekorre2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elefant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fox.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frog.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giraff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giraff2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giraff3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gorilla.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hund.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kanin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kaninis.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\katt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kitten.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ladybird.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lion2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monkey.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noshorn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orm.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\owl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pandared.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pingvin7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\racoons.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redPanda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\räv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\squirrel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\surikat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\surikatter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\säl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\söt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\söööt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\söööta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tiger.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MemoryCodeSamples
 {
-    class Human : Player
+    class Computer : Player
     {
-        public Human(int numberOfPlayers)
+        public Computer(int numberOfAIs)
         {
-            name = "Spelare nr " + numberOfPlayers;
+            name = "AI nr " + numberOfAIs;
         }
     }
 }

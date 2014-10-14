@@ -13,15 +13,15 @@ namespace MemoryCodeSamples
         Pictures pic = new Pictures();       
         public delegate void deckEvent(object sender, EventArgs e);
         public List<Card> cardList = new List<Card>();       
-        private int margin = 5;
+        private int margin = 1;
         private deckEvent cardEvent;
         int width, height;
 
         public Board(int numberOfCards, deckEvent eventhandler)
         {
             cardEvent = eventhandler;
-            Width = 500;
-            Height = 500;         
+            Width = 700;
+            Height = 700;         
         }
 
         private void randomizeIdInCardList(int numberOfCards)
@@ -37,10 +37,10 @@ namespace MemoryCodeSamples
             for (int i = 0; i < numberOfCards; i++)
             {
                 cardList[i].Id = shuffledIntList[i];
-                cardList[i].front = pic.bilder[cardList[i].Id];//pic.theme1[cardList[i].Id];
+                cardList[i].front = pic.bilder[cardList[i].Id];
             }
         }
-        public void CreateNewGame(int numberOfCards)
+        public void CreateNewGame(int numberOfCards, int theme)
         {            
             this.Controls.Clear();
             cardList.Clear();
@@ -55,7 +55,8 @@ namespace MemoryCodeSamples
 
             width = this.Width / columns - margin;
             height = this.Height / rows - margin;
-            pic.ResizeImage(width, height);
+
+            pic.ResizeImage(width, height, theme);
             for (int i = 0; i < rows; i++)
             {
                 if (i == rows - 1 && modulo != 0)
