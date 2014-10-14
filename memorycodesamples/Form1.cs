@@ -83,11 +83,11 @@ namespace MemoryCodeSamples
             }
         }
  
-        private void incrementPlayer()
+        private void IncrementPlayer()
         {
             playersTurn++;
             flippedCards = 0;
-            if (playersTurn >= players.Count())
+            if (playersTurn >= players.Count)
             {
                 playersTurn = 0;
             }
@@ -140,7 +140,7 @@ namespace MemoryCodeSamples
                     players[playersTurn].points++;
                     playersTurn--;
                 }
-                incrementPlayer();
+                IncrementPlayer();
                 var notsmart = board.cardList.FindAll(x => !x.Playable);
                 if(notsmart.Count() == board.cardList.Count())
                 {
@@ -171,7 +171,7 @@ namespace MemoryCodeSamples
         {
             FlipAllPlayableCards();
             lastFlipped = null;
-            incrementPlayer();
+            IncrementPlayer();
             timerDrawTime.Enabled = false;      
             UpdateGUI();            
         }
