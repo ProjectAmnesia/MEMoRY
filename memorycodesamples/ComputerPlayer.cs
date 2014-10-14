@@ -36,14 +36,38 @@ namespace MemoryCodeSamples
             else
             {
                 //if no match in memory, pick card from card list
-                Card firstCard = PickFirstCard();
+                Card firstCard = PickCard();
+                //Flip
+                firstCard.Flipped = true;
                 //Find match in memory
-
-                // if no match in memory, pick second card
-
-                //Check if match
-
-                //if no match, add to memory and push out cards last in memory
+                Card matchingCard = FindMatchForFirstCard(firstCard);
+                if (matchingCard != null)
+                {
+                    //Flip
+                    matchingCard.Flipped = true;
+                    //Remove card from memory
+                    RemoveCardFromComputerMemory(matchingCard);
+                }
+                else
+                {
+                    // if no match in memory, pick second card
+                    Card secondCard = PickCard();
+                    secondCard.Flipped = true;
+                    //Check if match
+                    if(firstCard.Match(secondCard))
+                    {
+                        //flip
+                        this.points++;
+                        firstCard.Playable = false;
+                        secondCard.Playable = false;
+                    }
+                    //if no match, add to memory and push out cards last in memory
+                    else
+                    {
+                        HandleComputerMemory(firstCard);
+                        HandleComputerMemory(secondCard);
+                    }
+                }
             }
         }
 
@@ -67,7 +91,7 @@ namespace MemoryCodeSamples
             computerMemory.Remove(card);
         }
 
-        private Card PickFirstCard()
+        private Card PickCard()
         {
             Random rand = new Random();
             while(true)
@@ -84,6 +108,25 @@ namespace MemoryCodeSamples
             }
         }
 
-        private 
+        private Card FindMatchForFirstCard(Card firstCard)
+        {
+            foreach(Card c in computerMemory)
+            {
+                if(firstCard.Match(c))
+                {
+                    return c;
+                }
+            }
+            return null;
+        }
+
+        private void HandleComputerMemory(Card card)
+        {
+            computerMemory.Add(card);
+            if(computerMemory.Count > difficulty)
+            {
+                computerMemory.RemoveAt(difficulty);
+            }
+        }
     }
 }
