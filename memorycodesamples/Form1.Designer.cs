@@ -92,7 +92,6 @@
             this.btnNewGame.TabIndex = 6;
             this.btnNewGame.Text = "Nytt spel";
             this.btnNewGame.UseVisualStyleBackColor = true;
-            this.btnNewGame.Visible = false;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // btnPlayAgain

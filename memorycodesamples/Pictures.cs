@@ -49,6 +49,7 @@ namespace MemoryCodeSamples
 
         public void ResizeImage(int width, int height, int theme)
         {
+            bilder.Clear();
             Image[]temabilder;            
             if (theme == 1)
             {

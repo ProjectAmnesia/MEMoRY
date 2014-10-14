@@ -23,7 +23,7 @@ namespace MemoryCodeSamples
         List<Player> players = new List<Player>();
 
         public Form1()
-        {
+        {            
             InitializeComponent();
             NewBoard();
             StartGame();
@@ -43,18 +43,17 @@ namespace MemoryCodeSamples
         }
 
         private void StartGame()
-        {
-            
+        {            
             GameSettings game = new GameSettings();
             DialogResult dialog = game.ShowDialog();
             if (dialog == DialogResult.OK)
             {
                 numberOfCards = game.EnteredNumberOfCards();
                 themeNum = game.ChooseTheme();
+                board.CreateNewGame(numberOfCards, themeNum);
+                gameStarted = true;
             }
-            board.CreateNewGame(numberOfCards, themeNum);
-            gameStarted = true;
-
+            else { }
         }
 
         private void NewBoard()
