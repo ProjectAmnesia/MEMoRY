@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace MemoryCodeSamples
 {
@@ -21,13 +20,9 @@ namespace MemoryCodeSamples
         int flippedCards;
         int usedCards = 0;
         List<Player> players = new List<Player>();
-        Computer computerPlayer1 = new Computer(6);
-        Computer computerPlayer2 = new Computer(6);
         public Form1()
         {
             InitializeComponent();
-            players.Add(computerPlayer1);
-            players.Add(computerPlayer2);
             NewBoard();
             StartGame();
         }
@@ -56,8 +51,6 @@ namespace MemoryCodeSamples
             //}
             board.CreateNewGame(numberOfCards);
             gameStarted = true;
-            computerPlayer1.allCardsOnBoard = board.cardList;
-            computerPlayer2.allCardsOnBoard = board.cardList;
         }
 
         private void NewBoard()
@@ -113,11 +106,6 @@ namespace MemoryCodeSamples
             foreach (var player in players)
             {
                 player.points = 0;
-                if(player is Computer)
-                {
-                    ((Computer)player).ResetMemory();
-                    ((Computer)player).allCardsOnBoard = board.cardList;
-                }
             }
             UpdateGUI();
         }
@@ -147,15 +135,8 @@ namespace MemoryCodeSamples
                 timerFlipBack.Enabled = true;
                 if (clickedCard.Match(lastFlipped))
                 {
-                    lastFlipped.Disable();
-                    clickedCard.Disable();
                     players[playersTurn].points++;
                     playersTurn--;
-                }
-                else
-                {
-                    //computerPlayer.HandleComputerMemory(clickedCard);
-                    //computerPlayer.HandleComputerMemory(lastFlipped);
                 }
                 IncrementPlayer();
                 var notsmart = board.cardList.FindAll(x => !x.Playable);
@@ -193,32 +174,6 @@ namespace MemoryCodeSamples
             UpdateGUI();            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            button1.Enabled = false;
-            var notsmart = board.cardList.FindAll(x => !x.Playable);
-            while(notsmart.Count < numberOfCards -1)
-            {
-                computerPlayer1.ComputerTurn();
-                computerPlayer2.HandleComputerMemory(computerPlayer1.firstCard);
-                computerPlayer2.HandleComputerMemory(computerPlayer1.secondCard);
-                foreach(Card c in board.cardList)
-                {
-                    c.Refresh();
-                }
-                Thread.Sleep(500);
-                computerPlayer2.ComputerTurn();
-                computerPlayer1.HandleComputerMemory(computerPlayer2.firstCard);
-                computerPlayer1.HandleComputerMemory(computerPlayer2.secondCard);
-                foreach (Card c in board.cardList)
-                {
-                    c.Refresh();
-                }
-                Thread.Sleep(500);
-            }
-            
-            
-        }
        
     }
 }
