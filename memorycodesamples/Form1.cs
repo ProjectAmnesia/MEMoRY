@@ -20,11 +20,9 @@ namespace MemoryCodeSamples
         int flippedCards;
         int usedCards = 0;
         List<Player> players = new List<Player>();
-        Computer computerPlayer = new Computer(6);
         public Form1()
         {
             InitializeComponent();
-            players.Add(computerPlayer);
             NewBoard();
             StartGame();
         }
@@ -53,11 +51,6 @@ namespace MemoryCodeSamples
             //}
             board.CreateNewGame(numberOfCards);
             gameStarted = true;
-            computerPlayer.allCardsOnBoard = board.cardList;
-            while (true)
-            {
-                computerPlayer.ComputerTurn();
-            }
         }
 
         private void NewBoard()
@@ -144,11 +137,6 @@ namespace MemoryCodeSamples
                 {
                     players[playersTurn].points++;
                     playersTurn--;
-                }
-                else
-                {
-                    computerPlayer.HandleComputerMemory(clickedCard);
-                    computerPlayer.HandleComputerMemory(lastFlipped);
                 }
                 IncrementPlayer();
                 var notsmart = board.cardList.FindAll(x => !x.Playable);
