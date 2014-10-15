@@ -12,10 +12,10 @@ namespace MemoryCodeSamples
 {
     public partial class Form1 : Form
     {
-        
+
         // SOUND Objects
-         Sounds SoundCollection = new Sounds();
-        
+        Sounds SoundCollection = new Sounds();
+
         int seconds = 30;
         int numberOfCards = 16;
         Board board;
@@ -25,7 +25,7 @@ namespace MemoryCodeSamples
         int flippedCards;
         int usedCards = 0;
         List<Player> players = new List<Player>();
-        public string[] playerNamesVec = new string[8] {"T-rex", "Häst", "Enhörning","Snigel", "Haj","Igelkott","Delfin","Giraff"};
+        public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
 
         public Form1()
         {
@@ -38,7 +38,7 @@ namespace MemoryCodeSamples
         private void UpdateGUI()
         {
             btnAddPlayer.Enabled = (usedCards != 0) ? false : true;
-           
+
             string info = "";
             foreach (Player p in players)
             {
@@ -52,7 +52,7 @@ namespace MemoryCodeSamples
         private void StartGame()
         {
             GameSettings game = new GameSettings();
-            DialogResult dialog = game.ShowDialog();            
+            DialogResult dialog = game.ShowDialog();
             if (dialog == DialogResult.OK)
             {
                 numberOfCards = game.EnteredNumberOfCards();
@@ -92,7 +92,7 @@ namespace MemoryCodeSamples
                 }
             }
         }
- 
+
         private void IncrementPlayer()
         {
             playersTurn++;
@@ -103,7 +103,7 @@ namespace MemoryCodeSamples
             }
         }
 
-        
+
 
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
@@ -134,7 +134,7 @@ namespace MemoryCodeSamples
             if (flippedCards == 1)
             {
                 //timerDrawTime.Enabled = true;
-                PlayerTimeTick.Enabled = true; 
+                PlayerTimeTick.Enabled = true;
             }
             else if (flippedCards == 2)
             {
@@ -152,17 +152,17 @@ namespace MemoryCodeSamples
                 }
                 IncrementPlayer();
                 var notsmart = board.cardList.FindAll(x => !x.Playable);
-                if(notsmart.Count() == board.cardList.Count())
+                if (notsmart.Count() == board.cardList.Count())
                 {
                     Player maxItem = players.OrderByDescending(obj => obj.points).First();
-                    
+
 
                     End frm = new End();
                     frm.winner = maxItem.name;
                     frm.Show();
 
                     this.Hide();
-                   
+
                     SoundCollection.WinnerSound();
                     MessageBox.Show("Grattis " + maxItem.name + "Du Vann!");
                 }
@@ -178,7 +178,7 @@ namespace MemoryCodeSamples
             players.Add(human);
             human.name = playerNamesVec[players.Count - 1];
             UpdateGUI();
-            }
+
 
         }
 
@@ -186,7 +186,7 @@ namespace MemoryCodeSamples
         {
             FlipAllPlayableCards();
             timerFlipBack.Enabled = false;
-            UpdateGUI();            
+            UpdateGUI();
         }
 
         private void timerDrawTime_Tick(object sender, EventArgs e)
@@ -194,8 +194,8 @@ namespace MemoryCodeSamples
             FlipAllPlayableCards();
             lastFlipped = null;
             IncrementPlayer();
-            timerDrawTime.Enabled = false;      
-            UpdateGUI();            
+            timerDrawTime.Enabled = false;
+            UpdateGUI();
         }
 
         private void btnCancelGame_Click(object sender, EventArgs e)
@@ -230,6 +230,8 @@ namespace MemoryCodeSamples
             seconds = 30; // hard coded can make int variable to make it dynamic
             playerTime_lbl.Text = "";
         }
-
     }
 }
+
+
+
