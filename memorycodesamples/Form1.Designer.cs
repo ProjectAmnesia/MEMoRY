@@ -59,7 +59,7 @@
             this.tbxPlayerName.Location = new System.Drawing.Point(555, 29);
             this.tbxPlayerName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxPlayerName.Name = "tbxPlayerName";
-            this.tbxPlayerName.Size = new System.Drawing.Size(132, 22);
+            this.tbxPlayerName.Size = new System.Drawing.Size(132, 26);
             this.tbxPlayerName.TabIndex = 0;
             // 
             // lblPlayers
@@ -69,7 +69,7 @@
             this.lblPlayers.Location = new System.Drawing.Point(514, 168);
             this.lblPlayers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayers.Name = "lblPlayers";
-            this.lblPlayers.Size = new System.Drawing.Size(0, 14);
+            this.lblPlayers.Size = new System.Drawing.Size(0, 18);
             this.lblPlayers.TabIndex = 3;
             // 
             // lblTurn
@@ -79,7 +79,7 @@
             this.lblTurn.Location = new System.Drawing.Point(514, 93);
             this.lblTurn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTurn.Name = "lblTurn";
-            this.lblTurn.Size = new System.Drawing.Size(0, 14);
+            this.lblTurn.Size = new System.Drawing.Size(0, 18);
             this.lblTurn.TabIndex = 3;
             // 
             // label1
@@ -89,7 +89,7 @@
             this.label1.Location = new System.Drawing.Point(580, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 14);
+            this.label1.Size = new System.Drawing.Size(99, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Ange namn:";
             // 
@@ -100,7 +100,7 @@
             this.label2.Location = new System.Drawing.Point(514, 142);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 14);
+            this.label2.Size = new System.Drawing.Size(153, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "Spelare och poäng:";
             // 
@@ -138,7 +138,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 511);
             this.Controls.Add(this.btnPlayAgain);
