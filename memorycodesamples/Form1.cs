@@ -172,7 +172,7 @@ namespace MemoryCodeSamples
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
 
-            Human human = new Human("");
+            Human human = new Human();
             players.Add(human);
             human.name = playerNamesVec[players.Count - 1];
             UpdateGUI();
