@@ -12,6 +12,7 @@ namespace MemoryCodeSamples
         public List<Card> allCardsOnBoard = new List<Card>();
 
         int difficulty;
+
         public Computer(int _difficulty)
         {
             difficulty = _difficulty;
@@ -27,9 +28,11 @@ namespace MemoryCodeSamples
                 foreach(Card c in tempMemoryList)
                 {
                     //Flip
-
+                    c.Flipped = true;
                     //Remove from computer memory
                     RemoveCardFromComputerMemory(c);
+
+                    c.Playable = false;
                 }
             }
             
@@ -47,6 +50,8 @@ namespace MemoryCodeSamples
                     matchingCard.Flipped = true;
                     //Remove card from memory
                     RemoveCardFromComputerMemory(matchingCard);
+                    matchingCard.Playable = false;
+                    firstCard.Playable = false;
                 }
                 else
                 {
@@ -64,6 +69,8 @@ namespace MemoryCodeSamples
                     //if no match, add to memory and push out cards last in memory
                     else
                     {
+                        firstCard.Flipped = false;
+                        secondCard.Flipped = false;
                         HandleComputerMemory(firstCard);
                         HandleComputerMemory(secondCard);
                     }
@@ -76,11 +83,14 @@ namespace MemoryCodeSamples
             List<Card> tempMatchList = new List<Card>();
             foreach(Card card in computerMemory)
             {
-                var match = computerMemory.Find(c => c.Match(card));
-                if(match != null)
+                if (card.Playable == true)
                 {
-                    tempMatchList.Add(match);
-                    tempMatchList.Add(card);
+                    var match = computerMemory.Find(c => c.Match(card));
+                    if (match != null)
+                    {
+                        tempMatchList.Add(match);
+                        tempMatchList.Add(card);
+                    }
                 }
             }
             return tempMatchList;
@@ -100,7 +110,7 @@ namespace MemoryCodeSamples
                 Card card = allCardsOnBoard[computerSelection];
                 foreach(Card c in computerMemory)
                 {
-                    if(c != card)
+                    if(c != card && c.Playable == true)
                     {
                         return card; 
                     }
@@ -120,7 +130,7 @@ namespace MemoryCodeSamples
             return null;
         }
 
-        private void HandleComputerMemory(Card card)
+        public void HandleComputerMemory(Card card)
         {
             computerMemory.Add(card);
             if(computerMemory.Count > difficulty)
