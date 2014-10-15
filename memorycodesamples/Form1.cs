@@ -21,6 +21,9 @@ namespace MemoryCodeSamples
         int usedCards = 0;
         List<Player> players = new List<Player>();
 
+        //  Tiebebe
+        string themeChosen= "";
+
         public Form1()
         {
             InitializeComponent();
@@ -44,14 +47,34 @@ namespace MemoryCodeSamples
 
         private void StartGame()
         {
-            //GameSettings game = new GameSettings();
-            //DialogResult dialog = game.ShowDialog();
-            //if (dialog == DialogResult.OK)
-            //{
-            //    numberOfCards = game.EnteredNumberOfCards();
-            //}
-            board.CreateNewGame(numberOfCards);
-            gameStarted = true;
+            /*GameSettings game = new GameSettings();
+            DialogResult dialog = game.ShowDialog();
+            if (dialog == DialogResult.OK)
+            {
+                numberOfCards = game.EnteredNumberOfCards();
+            }*/
+
+            // Added By Tiebebe to get the start new game window pop up first.
+            ///////////////////////////////////////////////
+
+            StartWithRadioButtons radioBtnStarter = new StartWithRadioButtons();// Pops up to show Start New Game form. 
+             DialogResult myDialogResult = radioBtnStarter.ShowDialog();
+
+            if (myDialogResult == DialogResult.OK)
+            {
+
+                //we get the values of name and age from properties "NameEntry" and "AgeEntry" in the SimCreator window.
+                themeChosen = radioBtnStarter.returnTheme(); 
+                board.CreateNewGame(numberOfCards, themeChosen);
+                gameStarted = true; 
+
+            }
+
+
+
+            //////////////////////////////
+           /* board.CreateNewGame(numberOfCards);
+            gameStarted = true;*/
 
         }
 

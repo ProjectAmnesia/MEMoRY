@@ -12,6 +12,14 @@ namespace MemoryCodeSamples
     public class Pictures
     {
         public List<Image> bilder = new List<Image>();
+
+       // public StartWithRadioButtons startPage = new StartWithRadioButtons();
+
+        //Added by Tiebebe
+       // public string themeName = ""; 
+        //public Image[] activeTheme = new Image[60]{};
+
+        ///////////////
         
         public Image[] theme1 = {Properties.Resources.gurkor,Properties.Resources.Nectarine,Properties.Resources.chili,
                                 Properties.Resources.apple,Properties.Resources.arter5,Properties.Resources.aubergine,Properties.Resources.avokado,
@@ -35,9 +43,17 @@ namespace MemoryCodeSamples
 
         public Pictures() { }
 
-        public void ResizeImage(int width, int height)
+        public void ResizeImage(int width, int height, string themeChoice)
         {
-            foreach (Image bild in theme1)
+            Image[] activeTheme; 
+            activeTheme = new Image[60];
+            if (themeChoice == "themeNumberOne") activeTheme = theme1;
+            if (themeChoice == "themeNumberTwo") activeTheme = theme1;
+
+           //if (startPage.returnTheme() == "themeNumberOne") activeTheme = theme1;
+            //if (startPage.returnTheme() == "themeNumberTwo") activeTheme = theme1; 
+            
+            foreach (Image bild in activeTheme)
             {
                 var image = bild;
                 var newimage = ScaleImage(image, width, height);
