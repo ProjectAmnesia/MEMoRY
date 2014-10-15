@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 215);
+            this.ClientSize = new System.Drawing.Size(393, 226);
             this.Controls.Add(this.grbxTheme);
             this.Controls.Add(this.lblMax);
             this.Controls.Add(this.lblCards);
