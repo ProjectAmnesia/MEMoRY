@@ -20,7 +20,7 @@ namespace MemoryCodeSamples
 
 
                 // will add 5 sec on the Time5back and reloop it until time has catch up
-                while (timeNow.AddMinutes(1) > DateTime.Now);
+                while (timeNow.AddMinutes(1) > DateTime.Now)
                 { MessageBox.Show("test "+timeNow+" TimerCheck"); }
             }
 
