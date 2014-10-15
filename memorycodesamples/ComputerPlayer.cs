@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace MemoryCodeSamples
 {
@@ -10,7 +11,7 @@ namespace MemoryCodeSamples
     {
         List<Card> computerMemory = new List<Card>();
         public List<Card> allCardsOnBoard = new List<Card>();
-
+        public Card firstCard, secondCard;
         int difficulty;
 
         public Computer(int _difficulty)
@@ -20,59 +21,74 @@ namespace MemoryCodeSamples
         
         public void ComputerTurn()
         {
-            List<Card> tempMemoryList = FindMatchInMemory();
-            //Find match in memory
-            if(tempMemoryList.Count == 2)
+            while (true)
             {
-                //Found two cards in memory
-                foreach(Card c in tempMemoryList)
-                {
-                    //Flip
-                    c.Flipped = true;
-                    //Remove from computer memory
-                    RemoveCardFromComputerMemory(c);
-
-                    c.Playable = false;
-                }
-            }
-            
-            else
-            {
-                //if no match in memory, pick card from card list
-                Card firstCard = PickCard();
-                //Flip
-                firstCard.Flipped = true;
+                List<Card> tempMemoryList = FindMatchInMemory();
                 //Find match in memory
-                Card matchingCard = FindMatchForFirstCard(firstCard);
-                if (matchingCard != null)
+                if (tempMemoryList.Count == 2)
                 {
-                    //Flip
-                    matchingCard.Flipped = true;
-                    //Remove card from memory
-                    RemoveCardFromComputerMemory(matchingCard);
-                    matchingCard.Playable = false;
-                    firstCard.Playable = false;
+                    //Found two cards in memory
+                    foreach (Card c in tempMemoryList)
+                    {
+                        //Flip
+                        c.Flipped = true;
+                        c.Refresh();
+                        Thread.Sleep(500);
+                        c.Disable();
+                        //Remove from computer memory
+                        RemoveCardFromComputerMemory(c);
+                    }
                 }
+
                 else
                 {
-                    // if no match in memory, pick second card
-                    Card secondCard = PickCard();
-                    secondCard.Flipped = true;
-                    //Check if match
-                    if(firstCard.Match(secondCard))
+                    //if no match in memory, pick card from card list
+                    firstCard = PickFirstCard();
+                    //Flip
+                    firstCard.Flipped = true;
+                    firstCard.Refresh();
+                    Thread.Sleep(500);
+                    //Find match in memory
+                    Card matchingCard = FindMatchForFirstCard(firstCard);
+                    if (matchingCard != null)
                     {
-                        //flip
-                        this.points++;
-                        firstCard.Playable = false;
-                        secondCard.Playable = false;
+                        //Flip
+                        matchingCard.Flipped = true;
+                        matchingCard.Refresh();
+                        Thread.Sleep(500);
+                        //Remove card from memory
+                        matchingCard.Disable();
+                        firstCard.Disable();
+                        RemoveCardFromComputerMemory(matchingCard);
+                        RemoveCardFromComputerMemory(firstCard);
                     }
-                    //if no match, add to memory and push out cards last in memory
                     else
                     {
-                        firstCard.Flipped = false;
-                        secondCard.Flipped = false;
-                        HandleComputerMemory(firstCard);
-                        HandleComputerMemory(secondCard);
+                        // if no match in memory, pick second card
+                        secondCard = PickSecondCard(firstCard);
+                        secondCard.Flipped = true;
+                        secondCard.Refresh();
+                        Thread.Sleep(500);
+                        //Check if match
+                        if (firstCard.Match(secondCard))
+                        {
+                            //flip
+                            this.points++;
+                            firstCard.Disable();
+                            secondCard.Disable();
+                            RemoveCardFromComputerMemory(firstCard);
+                            RemoveCardFromComputerMemory(secondCard);
+                        }
+                        //if no match, add to memory and push out cards last in memory
+                        else
+                        {
+                            Thread.Sleep(500);
+                            firstCard.Flipped = false;
+                            secondCard.Flipped = false;
+                            HandleComputerMemory(firstCard);
+                            HandleComputerMemory(secondCard);
+                            break;
+                        }
                     }
                 }
             }
@@ -90,6 +106,7 @@ namespace MemoryCodeSamples
                     {
                         tempMatchList.Add(match);
                         tempMatchList.Add(card);
+                        break;
                     }
                 }
             }
@@ -101,21 +118,53 @@ namespace MemoryCodeSamples
             computerMemory.Remove(card);
         }
 
-        private Card PickCard()
+        private Card PickFirstCard()
         {
             Random rand = new Random();
             while(true)
             {
-                int computerSelection = rand.Next(0, allCardsOnBoard.Count -1);
+                int computerSelection = rand.Next(0, allCardsOnBoard.Count);
                 Card card = allCardsOnBoard[computerSelection];
-                foreach(Card c in computerMemory)
+                if (computerMemory.Count != 0)
                 {
-                    if(c != card && c.Playable == true)
+                    foreach (Card c in computerMemory)
                     {
-                        return card; 
+                        if (c != card && card.Playable == true)
+                        {
+                            return card;
+                        }
                     }
                 }
+                if(card.Playable)
+                {
+                    return card;
+                }
             }
+        }
+
+        private Card PickSecondCard(Card firstCard)
+        {
+            Random rand = new Random();
+
+            while(true)
+            {
+                int computerSelection = rand.Next(0, allCardsOnBoard.Count);
+                Card card = allCardsOnBoard[computerSelection];
+                if (computerMemory.Count != 0 || card.Equals(firstCard))
+                {
+                    foreach (Card c in computerMemory)
+                    {
+                        if (c != card && card.Playable == true)
+                        {
+                            return card;
+                        }
+                    }
+                }
+                else if(card.Playable)
+                {
+                    return card;
+                }
+            } 
         }
 
         private Card FindMatchForFirstCard(Card firstCard)
@@ -137,6 +186,11 @@ namespace MemoryCodeSamples
             {
                 computerMemory.RemoveAt(difficulty);
             }
+        }
+
+        public void ResetMemory()
+        {
+            computerMemory.Clear();
         }
     }
 }
