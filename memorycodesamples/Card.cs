@@ -53,13 +53,15 @@ namespace MemoryCodeSamples
                 return false;
             else if (this.Id == card.Id && !this.Equals(card))
             {
-                this.Playable = false;
-                this.Enabled = false;
-                card.Playable = false;
-                card.Enabled = false;
                 return true;
             }            
             return false;
+        }
+
+        public void Disable()
+        {
+            Playable = false;
+            Enabled = false;
         }
     }
 }
