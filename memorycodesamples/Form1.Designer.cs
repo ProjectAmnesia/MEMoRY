@@ -38,9 +38,9 @@
             this.timerDrawTime = new System.Windows.Forms.Timer(this.components);
             this.btnCancelGame = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
             this.PlayerTimeTick = new System.Windows.Forms.Timer(this.components);
             this.playerTime_lbl = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddPlayer
@@ -170,7 +170,6 @@
             this.ClientSize = new System.Drawing.Size(895, 772);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelGame);
-            this.ClientSize = new System.Drawing.Size(700, 511);
             this.Controls.Add(this.playerTime_lbl);
             this.Controls.Add(this.btnPlayAgain);
             this.Controls.Add(this.btnAddPlayer);
@@ -182,10 +181,11 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Memory";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
