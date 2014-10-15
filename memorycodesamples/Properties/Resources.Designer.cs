@@ -383,16 +383,6 @@ namespace MemoryCodeSamples.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cutie {
-            get {
-                object obj = ResourceManager.GetObject("cutie", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap dog {
             get {
                 object obj = ResourceManager.GetObject("dog", resourceCulture);
@@ -1036,6 +1026,16 @@ namespace MemoryCodeSamples.Properties {
         internal static System.Drawing.Bitmap pumpa {
             get {
                 object obj = ResourceManager.GetObject("pumpa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rabbit {
+            get {
+                object obj = ResourceManager.GetObject("rabbit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

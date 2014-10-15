@@ -33,7 +33,7 @@ namespace MemoryCodeSamples
         public Image[] theme2 = {Properties.Resources.apa, Properties.Resources.apan,Properties.Resources.ara,Properties.Resources.baby,Properties.Resources.bird,
                                 Properties.Resources.birds,Properties.Resources.bjorn,Properties.Resources.bush,Properties.Resources.bushdog,Properties.Resources.calf,
                                 Properties.Resources.cat,Properties.Resources.catinbox,Properties.Resources.catscrat,Properties.Resources.cute,Properties.Resources.cute2,
-                                Properties.Resources.cutest,Properties.Resources.cutie,Properties.Resources.dog,Properties.Resources.dogs,Properties.Resources.ekorrar,
+                                Properties.Resources.cutest,Properties.Resources.rabbit,Properties.Resources.dog,Properties.Resources.dogs,Properties.Resources.ekorrar,
                                 Properties.Resources.ekorre,Properties.Resources.ekorre2,Properties.Resources.elefant,Properties.Resources.fox,Properties.Resources.frog,
                                 Properties.Resources.giraff,Properties.Resources.giraff2,Properties.Resources.giraff3,Properties.Resources.gorilla,Properties.Resources.hund,
                                 Properties.Resources.kanin,Properties.Resources.kaninis,Properties.Resources.katt,Properties.Resources.kisse,Properties.Resources.kitten,
