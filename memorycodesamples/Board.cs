@@ -17,6 +17,7 @@ namespace MemoryCodeSamples
         private deckEvent cardEvent;
         int width, height;
         //test
+        //test2
         public Board(int numberOfCards, deckEvent eventhandler)
         {
             cardEvent = eventhandler;
@@ -41,7 +42,8 @@ namespace MemoryCodeSamples
             }
         }
         public void CreateNewGame(int numberOfCards)
-        {            
+        {
+            BackColor = System.Drawing.Color.Transparent;
             this.Controls.Clear();
             cardList.Clear();
             int rows, columns;

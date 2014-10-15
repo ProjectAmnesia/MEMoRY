@@ -59,5 +59,15 @@ namespace MemoryCodeSamples
             lblMax.Visible = true;
             tbNumberOfCards.Visible = true;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void GameSettings_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
