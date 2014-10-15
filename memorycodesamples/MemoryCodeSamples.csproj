@@ -90,6 +90,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sounds.cs" />
     <Compile Include="Timer.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -430,6 +431,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\äpple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sounds\clock-ticking.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sounds\happy-clapps.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sounds\pianomoodhappy.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sounds\Pair_correct.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
