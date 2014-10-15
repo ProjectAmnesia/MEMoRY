@@ -12,6 +12,7 @@ namespace MemoryCodeSamples
 {
     public partial class Form1 : Form
     {
+        int seconds = 30;
         int numberOfCards = 16;
         Board board;
         int playersTurn;
@@ -152,11 +153,14 @@ namespace MemoryCodeSamples
 
             if (flippedCards == 1)
             {
-                timerDrawTime.Enabled = true;
+                //timerDrawTime.Enabled = true;
+                PlayerTimeTick.Enabled = true; 
             }
             else if (flippedCards == 2)
             {
                 timerDrawTime.Enabled = false;
+                PlayerTimeTick.Enabled = false;
+                ResetTimer();
                 timerFlipBack.Enabled = true;
                 if (clickedCard.Match(lastFlipped))
                 {
@@ -197,6 +201,32 @@ namespace MemoryCodeSamples
             IncrementPlayer();
             timerDrawTime.Enabled = false;      
             UpdateGUI();            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayerTimeOnClick_Tick(object sender, EventArgs e)
+        {   // tick intervall set to 1000 ms
+            seconds--;
+            playerTime_lbl.Text = seconds.ToString();
+            if (seconds == 0) // when time hits 0 do below
+            {
+                PlayerTimeTick.Enabled = false; // turn of timer tick so while code is run to remove issues
+                MessageBox.Show("TIme is up, Next player");
+                FlipAllPlayableCards(); // flip cards back
+                IncrementPlayer();     // force change of player
+                UpdateGUI();           // update score & player so right players turn is shown
+                ResetTimer();          // Restore values for workable loop
+
+            }
+        }
+        public void ResetTimer()
+        {
+            seconds = 30; // hard coded can make int variable to make it dynamic
+            playerTime_lbl.Text = "";
         }
 
        
