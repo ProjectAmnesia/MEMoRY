@@ -24,6 +24,7 @@ namespace MemoryCodeSamples
         Card lastFlipped;
         int flippedCards;
         int usedCards = 0;
+        int themeNum = 0;
         List<Player> players = new List<Player>();
         public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
 
@@ -38,14 +39,13 @@ namespace MemoryCodeSamples
         private void UpdateGUI()
         {
             btnAddPlayer.Enabled = (usedCards != 0) ? false : true;
-
             string info = "";
             foreach (Player p in players)
             {
-                info += p.name + ", " + p.points + " poäng\n";
+                info += p.name + ",\n" + p.points + " poäng\n";
             }
             lblPlayers.Text = info;
-            if (gameStarted && players.Count() > 1)
+            if (gameStarted && players.Count > 1)
                 lblTurn.Text = "Nu är det din tur:\n" + players[playersTurn].name;
         }
 
@@ -56,13 +56,11 @@ namespace MemoryCodeSamples
             if (dialog == DialogResult.OK)
             {
                 numberOfCards = game.EnteredNumberOfCards();
-            }
-            else
-            {
-                this.Close();
-            }
-            board.CreateNewGame(numberOfCards);
+                themeNum = game.ChooseTheme();
+                board.CreateNewGame(numberOfCards, themeNum);
             gameStarted = true;
+            }
+            else { }
         }
 
         private void NewBoard()
@@ -92,7 +90,7 @@ namespace MemoryCodeSamples
                 }
             }
         }
-
+ 
         private void IncrementPlayer()
         {
             playersTurn++;
@@ -108,7 +106,7 @@ namespace MemoryCodeSamples
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
             FlipAllCards();
-            board.CreateNewGame(numberOfCards);
+            board.CreateNewGame(numberOfCards, themeNum);
             foreach (var player in players)
             {
                 player.points = 0;
@@ -152,7 +150,7 @@ namespace MemoryCodeSamples
                 }
                 IncrementPlayer();
                 var notsmart = board.cardList.FindAll(x => !x.Playable);
-                if (notsmart.Count() == board.cardList.Count())
+                if(notsmart.Count == board.cardList.Count)
                 {
                     Player maxItem = players.OrderByDescending(obj => obj.points).First();
 
@@ -186,7 +184,7 @@ namespace MemoryCodeSamples
         {
             FlipAllPlayableCards();
             timerFlipBack.Enabled = false;
-            UpdateGUI();
+            UpdateGUI();            
         }
 
         private void timerDrawTime_Tick(object sender, EventArgs e)
@@ -194,8 +192,8 @@ namespace MemoryCodeSamples
             FlipAllPlayableCards();
             lastFlipped = null;
             IncrementPlayer();
-            timerDrawTime.Enabled = false;
-            UpdateGUI();
+            timerDrawTime.Enabled = false;      
+            UpdateGUI();            
         }
 
         private void btnCancelGame_Click(object sender, EventArgs e)
@@ -222,9 +220,9 @@ namespace MemoryCodeSamples
                 IncrementPlayer();     // force change of player
                 UpdateGUI();           // update score & player so right players turn is shown
                 ResetTimer();          // Restore values for workable loop
-
-            }
-        }
+       
+    }
+}
         public void ResetTimer()
         {
             seconds = 30; // hard coded can make int variable to make it dynamic
