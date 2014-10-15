@@ -43,7 +43,7 @@ namespace MemoryCodeSamples
             Location = new System.Drawing.Point(posX, posY);
             Size = new System.Drawing.Size(width, height);
             back = Properties.Resources.skalet;
-            BackColor = System.Drawing.Color.White;
+            BackColor = System.Drawing.Color.Transparent;
             
         }
 

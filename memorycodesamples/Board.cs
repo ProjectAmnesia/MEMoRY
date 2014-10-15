@@ -43,6 +43,7 @@ namespace MemoryCodeSamples
         }
         public void CreateNewGame(int numberOfCards)
         {            
+            BackColor = System.Drawing.Color.Transparent;
             this.Controls.Clear();
             cardList.Clear();
             int rows, columns;

@@ -37,17 +37,29 @@
             this.tbNumberOfCards = new System.Windows.Forms.TextBox();
             this.lblCards = new System.Windows.Forms.Label();
             this.lblMax = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.väljTidToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sekToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sekToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sekToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.rbUsersChoice);
             this.groupBox1.Controls.Add(this.rb36cards);
             this.groupBox1.Controls.Add(this.rb24cards);
             this.groupBox1.Controls.Add(this.rb16cards);
-            this.groupBox1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(28, 24);
+            this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox1.Location = new System.Drawing.Point(13, 242);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -62,7 +74,7 @@
             this.rbUsersChoice.Location = new System.Drawing.Point(9, 88);
             this.rbUsersChoice.Margin = new System.Windows.Forms.Padding(4);
             this.rbUsersChoice.Name = "rbUsersChoice";
-            this.rbUsersChoice.Size = new System.Drawing.Size(123, 20);
+            this.rbUsersChoice.Size = new System.Drawing.Size(135, 24);
             this.rbUsersChoice.TabIndex = 0;
             this.rbUsersChoice.Text = "Fritt antal kort";
             this.rbUsersChoice.UseVisualStyleBackColor = true;
@@ -74,7 +86,7 @@
             this.rb36cards.Location = new System.Drawing.Point(9, 66);
             this.rb36cards.Margin = new System.Windows.Forms.Padding(4);
             this.rb36cards.Name = "rb36cards";
-            this.rb36cards.Size = new System.Drawing.Size(73, 20);
+            this.rb36cards.Size = new System.Drawing.Size(80, 24);
             this.rb36cards.TabIndex = 0;
             this.rb36cards.Text = "36 kort";
             this.rb36cards.UseVisualStyleBackColor = true;
@@ -85,7 +97,7 @@
             this.rb24cards.Location = new System.Drawing.Point(9, 44);
             this.rb24cards.Margin = new System.Windows.Forms.Padding(4);
             this.rb24cards.Name = "rb24cards";
-            this.rb24cards.Size = new System.Drawing.Size(73, 20);
+            this.rb24cards.Size = new System.Drawing.Size(80, 24);
             this.rb24cards.TabIndex = 0;
             this.rb24cards.Text = "24 kort";
             this.rb24cards.UseVisualStyleBackColor = true;
@@ -94,10 +106,10 @@
             // 
             this.rb16cards.AutoSize = true;
             this.rb16cards.Checked = true;
-            this.rb16cards.Location = new System.Drawing.Point(9, 22);
+            this.rb16cards.Location = new System.Drawing.Point(9, 18);
             this.rb16cards.Margin = new System.Windows.Forms.Padding(4);
             this.rb16cards.Name = "rb16cards";
-            this.rb16cards.Size = new System.Drawing.Size(73, 20);
+            this.rb16cards.Size = new System.Drawing.Size(78, 24);
             this.rb16cards.TabIndex = 0;
             this.rb16cards.TabStop = true;
             this.rb16cards.Text = "16 kort";
@@ -105,33 +117,41 @@
             // 
             // btnPlay
             // 
+            this.btnPlay.BackColor = System.Drawing.Color.LightBlue;
+            this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlay.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnPlay.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlay.Location = new System.Drawing.Point(216, 93);
+            this.btnPlay.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlay.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnPlay.Location = new System.Drawing.Point(349, 250);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(4);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(117, 50);
             this.btnPlay.TabIndex = 1;
             this.btnPlay.Text = "Börja spela!";
-            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.UseVisualStyleBackColor = false;
             // 
             // tbNumberOfCards
             // 
-            this.tbNumberOfCards.Location = new System.Drawing.Point(216, 34);
+            this.tbNumberOfCards.BackColor = System.Drawing.Color.LightBlue;
+            this.tbNumberOfCards.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNumberOfCards.ForeColor = System.Drawing.Color.MediumBlue;
+            this.tbNumberOfCards.Location = new System.Drawing.Point(207, 315);
             this.tbNumberOfCards.Margin = new System.Windows.Forms.Padding(4);
             this.tbNumberOfCards.Name = "tbNumberOfCards";
-            this.tbNumberOfCards.Size = new System.Drawing.Size(116, 22);
+            this.tbNumberOfCards.Size = new System.Drawing.Size(116, 28);
             this.tbNumberOfCards.TabIndex = 2;
             this.tbNumberOfCards.Visible = false;
             // 
             // lblCards
             // 
             this.lblCards.AutoSize = true;
-            this.lblCards.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCards.Location = new System.Drawing.Point(236, 14);
+            this.lblCards.BackColor = System.Drawing.Color.Transparent;
+            this.lblCards.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCards.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblCards.Location = new System.Drawing.Point(221, 295);
             this.lblCards.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCards.Name = "lblCards";
-            this.lblCards.Size = new System.Drawing.Size(77, 14);
+            this.lblCards.Size = new System.Drawing.Size(86, 20);
             this.lblCards.TabIndex = 3;
             this.lblCards.Text = "Antal kort:";
             this.lblCards.Visible = false;
@@ -139,34 +159,126 @@
             // lblMax
             // 
             this.lblMax.AutoSize = true;
-            this.lblMax.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMax.Location = new System.Drawing.Point(234, 64);
+            this.lblMax.BackColor = System.Drawing.Color.Transparent;
+            this.lblMax.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMax.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblMax.Location = new System.Drawing.Point(216, 346);
             this.lblMax.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMax.Name = "lblMax";
-            this.lblMax.Size = new System.Drawing.Size(81, 13);
+            this.lblMax.Size = new System.Drawing.Size(96, 20);
             this.lblMax.TabIndex = 3;
             this.lblMax.Text = "(max 120 st)";
             this.lblMax.Visible = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.LightBlue;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnCancel.Location = new System.Drawing.Point(350, 324);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(117, 31);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Avsluta";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.menuStrip1);
+            this.groupBox2.Location = new System.Drawing.Point(193, 245);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(149, 45);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.väljTidToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 18);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(143, 28);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // väljTidToolStripMenuItem
+            // 
+            this.väljTidToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.väljTidToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sekToolStripMenuItem,
+            this.sekToolStripMenuItem1,
+            this.sekToolStripMenuItem2,
+            this.sekToolStripMenuItem3});
+            this.väljTidToolStripMenuItem.ForeColor = System.Drawing.Color.MediumBlue;
+            this.väljTidToolStripMenuItem.Name = "väljTidToolStripMenuItem";
+            this.väljTidToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.väljTidToolStripMenuItem.Text = "Välj betänketid";
+            // 
+            // sekToolStripMenuItem
+            // 
+            this.sekToolStripMenuItem.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem.ForeColor = System.Drawing.Color.MediumBlue;
+            this.sekToolStripMenuItem.Name = "sekToolStripMenuItem";
+            this.sekToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem.Text = "2 sek";
+            // 
+            // sekToolStripMenuItem1
+            // 
+            this.sekToolStripMenuItem1.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem1.ForeColor = System.Drawing.Color.MediumBlue;
+            this.sekToolStripMenuItem1.Name = "sekToolStripMenuItem1";
+            this.sekToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem1.Text = "3 sek";
+            // 
+            // sekToolStripMenuItem2
+            // 
+            this.sekToolStripMenuItem2.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem2.ForeColor = System.Drawing.Color.MediumBlue;
+            this.sekToolStripMenuItem2.Name = "sekToolStripMenuItem2";
+            this.sekToolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem2.Text = "4 sek";
+            // 
+            // sekToolStripMenuItem3
+            // 
+            this.sekToolStripMenuItem3.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem3.ForeColor = System.Drawing.Color.MediumBlue;
+            this.sekToolStripMenuItem3.Name = "sekToolStripMenuItem3";
+            this.sekToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem3.Text = "5 sek";
             // 
             // GameSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 155);
+            this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowSplashScreenBG1;
+            this.ClientSize = new System.Drawing.Size(484, 393);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblMax);
             this.Controls.Add(this.lblCards);
             this.Controls.Add(this.tbNumberOfCards);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inställningar";
+            this.Load += new System.EventHandler(this.GameSettings_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +295,13 @@
         private System.Windows.Forms.TextBox tbNumberOfCards;
         private System.Windows.Forms.Label lblCards;
         private System.Windows.Forms.Label lblMax;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem väljTidToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sekToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sekToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sekToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem sekToolStripMenuItem3;
     }
 }
