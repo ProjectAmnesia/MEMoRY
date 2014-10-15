@@ -316,4 +316,16 @@
   <data name="rainbowMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rainbowMain.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clock_ticking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sounds\clock-ticking.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="happy_clapps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sounds\happy-clapps.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Pair_correct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sounds\Pair_correct.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pianomoodhappy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sounds\pianomoodhappy.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

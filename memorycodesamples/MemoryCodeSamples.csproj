@@ -100,6 +100,7 @@
     <EmbeddedResource Include="End.resx">
       <DependentUpon>End.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Sounds.cs" />
     <Compile Include="Timer.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -440,6 +441,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\äpple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sounds\clock-ticking.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sounds\happy-clapps.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sounds\pianomoodhappy.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sounds\Pair_correct.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rainbowSplashScreenBG.jpg" />

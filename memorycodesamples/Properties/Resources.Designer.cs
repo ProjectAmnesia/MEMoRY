@@ -191,6 +191,15 @@ namespace MemoryCodeSamples.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream clock_ticking {
+            get {
+                return ResourceManager.GetStream("clock_ticking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap clouds {
@@ -307,6 +316,15 @@ namespace MemoryCodeSamples.Properties {
             get {
                 object obj = ResourceManager.GetObject("hallon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream happy_clapps {
+            get {
+                return ResourceManager.GetStream("happy_clapps", resourceCulture);
             }
         }
         
@@ -491,6 +509,15 @@ namespace MemoryCodeSamples.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Pair_correct {
+            get {
+                return ResourceManager.GetStream("Pair_correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap papaya {
@@ -537,6 +564,15 @@ namespace MemoryCodeSamples.Properties {
             get {
                 object obj = ResourceManager.GetObject("Physalis_fruit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream pianomoodhappy {
+            get {
+                return ResourceManager.GetStream("pianomoodhappy", resourceCulture);
             }
         }
         

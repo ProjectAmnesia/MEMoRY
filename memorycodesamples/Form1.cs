@@ -12,6 +12,10 @@ namespace MemoryCodeSamples
 {
     public partial class Form1 : Form
     {
+        
+        // SOUND Objects
+         Sounds SoundCollection = new Sounds();
+        
         int seconds = 30;
         int numberOfCards = 16;
         Board board;
@@ -28,6 +32,7 @@ namespace MemoryCodeSamples
             InitializeComponent();
             NewBoard();
             StartGame();
+            SoundCollection.IntroSound();   // add to splash screen
         }
 
         private void UpdateGUI()
@@ -139,6 +144,7 @@ namespace MemoryCodeSamples
                 timerFlipBack.Enabled = true;
                 if (clickedCard.Match(lastFlipped))
                 {
+                    SoundCollection.PairSound();
                     players[playersTurn].points++;
                     playersTurn--;
                     clickedCard.Disable();
@@ -157,6 +163,8 @@ namespace MemoryCodeSamples
 
                     this.Hide();
                    
+                    SoundCollection.WinnerSound();
+                    MessageBox.Show("Grattis " + maxItem.name + "Du Vann!");
                 }
             }
             lastFlipped = clickedCard;
@@ -170,6 +178,7 @@ namespace MemoryCodeSamples
             players.Add(human);
             human.name = playerNamesVec[players.Count - 1];
             UpdateGUI();
+            }
 
         }
 
@@ -203,6 +212,8 @@ namespace MemoryCodeSamples
         {   // tick intervall set to 1000 ms
             seconds--;
             playerTime_lbl.Text = seconds.ToString();
+            if (seconds == 5) // sound is 5 seconds long
+                SoundCollection.ClockSound(); // Clock ticking sound
             if (seconds == 0) // when time hits 0 do below
             {
                 PlayerTimeTick.Enabled = false; // turn of timer tick so while code is run to remove issues
@@ -220,8 +231,5 @@ namespace MemoryCodeSamples
             playerTime_lbl.Text = "";
         }
 
-       
-
-       
     }
 }
