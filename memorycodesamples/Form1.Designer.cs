@@ -39,6 +39,8 @@
             this.btnPlayAgain = new System.Windows.Forms.Button();
             this.timerFlipBack = new System.Windows.Forms.Timer(this.components);
             this.timerDrawTime = new System.Windows.Forms.Timer(this.components);
+            this.PlayerTimeTick = new System.Windows.Forms.Timer(this.components);
+            this.playerTime_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAddPlayer
@@ -136,11 +138,26 @@
             this.timerDrawTime.Interval = 3000;
             this.timerDrawTime.Tick += new System.EventHandler(this.timerDrawTime_Tick);
             // 
+            // PlayerTimeTick
+            // 
+            this.PlayerTimeTick.Interval = 1000;
+            this.PlayerTimeTick.Tick += new System.EventHandler(this.PlayerTimeOnClick_Tick);
+            // 
+            // playerTime_lbl
+            // 
+            this.playerTime_lbl.AutoSize = true;
+            this.playerTime_lbl.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerTime_lbl.Location = new System.Drawing.Point(583, 196);
+            this.playerTime_lbl.Name = "playerTime_lbl";
+            this.playerTime_lbl.Size = new System.Drawing.Size(0, 29);
+            this.playerTime_lbl.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 511);
+            this.Controls.Add(this.playerTime_lbl);
             this.Controls.Add(this.btnPlayAgain);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.label2);
@@ -173,6 +190,8 @@
         private System.Windows.Forms.Button btnPlayAgain;
         private System.Windows.Forms.Timer timerFlipBack;
         private System.Windows.Forms.Timer timerDrawTime;
+        private System.Windows.Forms.Timer PlayerTimeTick;
+        private System.Windows.Forms.Label playerTime_lbl;
 
 
     }
