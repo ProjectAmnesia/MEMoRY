@@ -162,7 +162,7 @@ namespace MemoryCodeSamples
                     this.Hide();
 
                     SoundCollection.WinnerSound();
-                    MessageBox.Show("Grattis " + maxItem.name + "Du Vann!");
+                    //MessageBox.Show("Grattis " + maxItem.name + "Du Vann!");
                 }
             }
             lastFlipped = clickedCard;

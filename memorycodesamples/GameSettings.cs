@@ -55,7 +55,7 @@ namespace MemoryCodeSamples
         }
         public int ChooseTheme()
         {
-            if(rbT1.Checked)
+            if(rbtnFruit.Checked)
             {
                 return 1;
             }
