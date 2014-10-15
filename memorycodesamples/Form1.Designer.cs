@@ -49,10 +49,10 @@
             this.btnAddPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddPlayer.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPlayer.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnAddPlayer.Location = new System.Drawing.Point(559, 63);
+            this.btnAddPlayer.Location = new System.Drawing.Point(695, 5);
             this.btnAddPlayer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddPlayer.Name = "btnAddPlayer";
-            this.btnAddPlayer.Size = new System.Drawing.Size(124, 33);
+            this.btnAddPlayer.Size = new System.Drawing.Size(195, 33);
             this.btnAddPlayer.TabIndex = 1;
             this.btnAddPlayer.Text = "Ny spelare";
             this.btnAddPlayer.UseVisualStyleBackColor = false;
@@ -103,10 +103,10 @@
             this.btnPlayAgain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlayAgain.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlayAgain.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnPlayAgain.Location = new System.Drawing.Point(592, 447);
+            this.btnPlayAgain.Location = new System.Drawing.Point(803, 359);
             this.btnPlayAgain.Name = "btnPlayAgain";
             this.btnPlayAgain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnPlayAgain.Size = new System.Drawing.Size(100, 37);
+            this.btnPlayAgain.Size = new System.Drawing.Size(87, 37);
             this.btnPlayAgain.TabIndex = 6;
             this.btnPlayAgain.Text = "Spela igen";
             this.btnPlayAgain.UseVisualStyleBackColor = false;
@@ -127,7 +127,7 @@
             this.btnCancelGame.BackColor = System.Drawing.Color.LightBlue;
             this.btnCancelGame.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelGame.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnCancelGame.Location = new System.Drawing.Point(501, 447);
+            this.btnCancelGame.Location = new System.Drawing.Point(695, 359);
             this.btnCancelGame.Name = "btnCancelGame";
             this.btnCancelGame.Size = new System.Drawing.Size(87, 37);
             this.btnCancelGame.TabIndex = 7;
@@ -141,9 +141,9 @@
             this.groupBox1.Controls.Add(this.lblTurn);
             this.groupBox1.Controls.Add(this.lblPlayers);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(501, 131);
+            this.groupBox1.Location = new System.Drawing.Point(695, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(192, 287);
+            this.groupBox1.Size = new System.Drawing.Size(195, 287);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
@@ -165,9 +165,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowMain;
+            this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowMain1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(700, 513);
+            this.ClientSize = new System.Drawing.Size(895, 772);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelGame);
             this.ClientSize = new System.Drawing.Size(700, 511);
