@@ -39,7 +39,6 @@
             this.btnPlayAgain = new System.Windows.Forms.Button();
             this.timerFlipBack = new System.Windows.Forms.Timer(this.components);
             this.timerDrawTime = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddPlayer
@@ -137,22 +136,11 @@
             this.timerDrawTime.Interval = 3000;
             this.timerDrawTime.Tick += new System.EventHandler(this.timerDrawTime_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(559, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 511);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPlayAgain);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.label2);
@@ -184,7 +172,6 @@
         private System.Windows.Forms.Button btnPlayAgain;
         private System.Windows.Forms.Timer timerFlipBack;
         private System.Windows.Forms.Timer timerDrawTime;
-        private System.Windows.Forms.Button button1;
 
 
     }

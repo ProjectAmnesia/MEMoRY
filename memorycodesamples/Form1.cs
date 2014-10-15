@@ -137,6 +137,8 @@ namespace MemoryCodeSamples
                 {
                     players[playersTurn].points++;
                     playersTurn--;
+                    clickedCard.Disable();
+                    lastFlipped.Disable();
                 }
                 IncrementPlayer();
                 var notsmart = board.cardList.FindAll(x => !x.Playable);
