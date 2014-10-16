@@ -48,6 +48,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbtnAnimals = new System.Windows.Forms.RadioButton();
             this.rbtnFruit = new System.Windows.Forms.RadioButton();
+            this.rbtnCartoons = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -262,6 +263,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.rbtnCartoons);
             this.groupBox3.Controls.Add(this.rbtnAnimals);
             this.groupBox3.Controls.Add(this.rbtnFruit);
             this.groupBox3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,7 +278,7 @@
             // rbtnAnimals
             // 
             this.rbtnAnimals.AutoSize = true;
-            this.rbtnAnimals.Location = new System.Drawing.Point(9, 57);
+            this.rbtnAnimals.Location = new System.Drawing.Point(9, 51);
             this.rbtnAnimals.Name = "rbtnAnimals";
             this.rbtnAnimals.Size = new System.Drawing.Size(59, 24);
             this.rbtnAnimals.TabIndex = 7;
@@ -294,6 +296,16 @@
             this.rbtnFruit.TabStop = true;
             this.rbtnFruit.Text = "Frukt och grönt";
             this.rbtnFruit.UseVisualStyleBackColor = true;
+            // 
+            // rbtnCartoons
+            // 
+            this.rbtnCartoons.AutoSize = true;
+            this.rbtnCartoons.Location = new System.Drawing.Point(9, 79);
+            this.rbtnCartoons.Name = "rbtnCartoons";
+            this.rbtnCartoons.Size = new System.Drawing.Size(85, 24);
+            this.rbtnCartoons.TabIndex = 7;
+            this.rbtnCartoons.Text = "Tecknat";
+            this.rbtnCartoons.UseVisualStyleBackColor = true;
             // 
             // GameSettings
             // 
@@ -352,5 +364,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton rbtnAnimals;
         private System.Windows.Forms.RadioButton rbtnFruit;
+        private System.Windows.Forms.RadioButton rbtnCartoons;
     }
 }

@@ -55,14 +55,16 @@ namespace MemoryCodeSamples
         }
         public int ChooseTheme()
         {
-            if(rbtnFruit.Checked)
+            if (rbtnFruit.Checked)
             {
                 return 1;
             }
-            else
+            else if (rbtnAnimals.Checked)
             {
                 return 2;
             }
+            else
+                return 3;
         }
         private void rbUsersChoice_CheckedChanged(object sender, EventArgs e)
         {
