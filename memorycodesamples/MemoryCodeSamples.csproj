@@ -628,6 +628,186 @@
   <ItemGroup>
     <None Include="Resources\rainbowMain1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\belle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bu.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cru.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dgr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frozen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ft.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ftkjrd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ftko.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gjy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glitch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gtui.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hacke.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hello.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ho.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\j.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jdtr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jerry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jyp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kty.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lisa.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minnie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nj.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pluto1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\princesssjazmine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rht.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smurfelina.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trhe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Velma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vgy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vhj.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vj.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vjt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wonder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ytYeft8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tangled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\daphne.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ut.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grisalisa.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

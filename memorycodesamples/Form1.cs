@@ -191,8 +191,7 @@ namespace MemoryCodeSamples
         }
 
         private void timerDrawTime_Tick(object sender, EventArgs e)
-        {
-            
+        {            
             FlipAllPlayableCards();
             lastFlipped = null;
             IncrementPlayer();
@@ -215,7 +214,6 @@ namespace MemoryCodeSamples
         //        SoundCollection.ClockSound(); // Clock ticking sound
         //    if (seconds == 0) // when time hits 0 do below
         //    {
-        //        lastFlipped = null;
         //        PlayerTimeTick.Enabled = false; // turn of timer tick so while code is run to remove issues
         //        //MessageBox.Show("Tiden gick ut! Turen går över."); //man tappar flowet med popupen som dyker upp. 
         //        FlipAllPlayableCards(); // flip cards back

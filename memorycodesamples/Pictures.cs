@@ -42,7 +42,17 @@ namespace MemoryCodeSamples
                                 Properties.Resources.pandared,Properties.Resources.pingvin7,Properties.Resources.racoons,Properties.Resources.red,Properties.Resources.redPanda,
                                 Properties.Resources.räv,Properties.Resources.sel,Properties.Resources.squirrel,Properties.Resources.surikat,Properties.Resources.surikatter,
                                 Properties.Resources.säl,Properties.Resources.söt,Properties.Resources.söööt,Properties.Resources.söööta,Properties.Resources.tiger};
-        public Image[] theme3;
+        /*public Image[] theme3 = {Properties.Resources.belle,Properties.Resources.brave,Properties.Resources.bu,Properties.Resources.c,Properties.Resources.cru,
+                                Properties.Resources.daphne,Properties.Resources.dgr,Properties.Resources.dio,Properties.Resources.grisalisa,Properties.Resources.dre,
+                                Properties.Resources.dt,Properties.Resources.Frozen,Properties.Resources.fry,Properties.Resources.ft,Properties.Resources.ftkjrd,Properties.Resources.ftko,
+                                Properties.Resources.g,Properties.Resources.gjy,Properties.Resources.glitch,Properties.Resources.gtui,Properties.Resources.ut,Properties.Resources.gu,
+                                Properties.Resources.guk,Properties.Resources.gy,Properties.Resources.hacke,Properties.Resources.hello,Properties.Resources.hg,Properties.Resources.ho,
+                                Properties.Resources.images,Properties.Resources.j,Properties.Resources.jdtr,Properties.Resources.jerry,Properties.Resources.jg,Properties.Resources.jy,
+                                Properties.Resources.jyp,Properties.Resources.kty,Properties.Resources.lisa,Properties.Resources.minnie,Properties.Resources.mus,Properties.Resources.nj,
+                                Properties.Resources.pluto1,Properties.Resources.princesssjazmine,Properties.Resources.rht,Properties.Resources.smurfelina,Properties.Resources.snow,
+                                Properties.Resources.Tangled,Properties.Resources.timon,Properties.Resources.ting,Properties.Resources.top,Properties.Resources.trhe,Properties.Resources.Velma,
+                                Properties.Resources.vg,Properties.Resources.vgy,Properties.Resources.vh,Properties.Resources.vhj,Properties.Resources.vj,Properties.Resources.vjt,
+                                Properties.Resources.wonder,Properties.Resources.yt,Properties.Resources.ytYeft8};    */    
         //public List<Image> bilder = new List<Image>();
 
         public Pictures() { }
