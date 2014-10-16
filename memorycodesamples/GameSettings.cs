@@ -75,10 +75,16 @@ namespace MemoryCodeSamples
         {
             Application.Exit();
         }
-
-        private void GameSettings_Load(object sender, EventArgs e)
+        public int ChooseTime()
         {
-
+            if (sekToolStripMenuItem.Checked)
+                return 2000;
+            else if (sekToolStripMenuItem1.Checked)
+                return 3000;
+            else if (sekToolStripMenuItem2.Checked)
+                return 4000;
+            else
+                return 5000;
         }
     }
 }

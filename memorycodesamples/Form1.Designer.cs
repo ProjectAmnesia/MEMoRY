@@ -150,13 +150,12 @@
             // PlayerTimeTick
             // 
             this.PlayerTimeTick.Interval = 1000;
-            this.PlayerTimeTick.Tick += new System.EventHandler(this.PlayerTimeOnClick_Tick);
             // 
             // playerTime_lbl
             // 
             this.playerTime_lbl.AutoSize = true;
             this.playerTime_lbl.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTime_lbl.Location = new System.Drawing.Point(583, 196);
+            this.playerTime_lbl.Location = new System.Drawing.Point(766, 439);
             this.playerTime_lbl.Name = "playerTime_lbl";
             this.playerTime_lbl.Size = new System.Drawing.Size(0, 29);
             this.playerTime_lbl.TabIndex = 7;
@@ -167,7 +166,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowMain1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(895, 772);
+            this.ClientSize = new System.Drawing.Size(895, 741);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelGame);
             this.Controls.Add(this.playerTime_lbl);
@@ -181,7 +180,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Memory";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

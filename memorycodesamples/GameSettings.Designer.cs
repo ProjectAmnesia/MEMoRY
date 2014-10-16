@@ -46,8 +46,8 @@
             this.sekToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.sekToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbtnFruit = new System.Windows.Forms.RadioButton();
             this.rbtnAnimals = new System.Windows.Forms.RadioButton();
+            this.rbtnFruit = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -226,33 +226,37 @@
             // sekToolStripMenuItem
             // 
             this.sekToolStripMenuItem.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem.CheckOnClick = true;
             this.sekToolStripMenuItem.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem.Name = "sekToolStripMenuItem";
-            this.sekToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.sekToolStripMenuItem.Text = "2 sek";
             // 
             // sekToolStripMenuItem1
             // 
             this.sekToolStripMenuItem1.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem1.CheckOnClick = true;
             this.sekToolStripMenuItem1.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem1.Name = "sekToolStripMenuItem1";
-            this.sekToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
             this.sekToolStripMenuItem1.Text = "3 sek";
             // 
             // sekToolStripMenuItem2
             // 
             this.sekToolStripMenuItem2.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem2.CheckOnClick = true;
             this.sekToolStripMenuItem2.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem2.Name = "sekToolStripMenuItem2";
-            this.sekToolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem2.Size = new System.Drawing.Size(115, 24);
             this.sekToolStripMenuItem2.Text = "4 sek";
             // 
             // sekToolStripMenuItem3
             // 
             this.sekToolStripMenuItem3.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem3.CheckOnClick = true;
             this.sekToolStripMenuItem3.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem3.Name = "sekToolStripMenuItem3";
-            this.sekToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem3.Size = new System.Drawing.Size(115, 24);
             this.sekToolStripMenuItem3.Text = "5 sek";
             // 
             // groupBox3
@@ -269,17 +273,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tema på korten";
             // 
-            // rbtnFruit
-            // 
-            this.rbtnFruit.AutoSize = true;
-            this.rbtnFruit.Location = new System.Drawing.Point(9, 27);
-            this.rbtnFruit.Name = "rbtnFruit";
-            this.rbtnFruit.Size = new System.Drawing.Size(137, 24);
-            this.rbtnFruit.TabIndex = 7;
-            this.rbtnFruit.TabStop = true;
-            this.rbtnFruit.Text = "Frukt och grönt";
-            this.rbtnFruit.UseVisualStyleBackColor = true;
-            // 
             // rbtnAnimals
             // 
             this.rbtnAnimals.AutoSize = true;
@@ -287,9 +280,20 @@
             this.rbtnAnimals.Name = "rbtnAnimals";
             this.rbtnAnimals.Size = new System.Drawing.Size(59, 24);
             this.rbtnAnimals.TabIndex = 7;
-            this.rbtnAnimals.TabStop = true;
             this.rbtnAnimals.Text = "Djur";
             this.rbtnAnimals.UseVisualStyleBackColor = true;
+            // 
+            // rbtnFruit
+            // 
+            this.rbtnFruit.AutoSize = true;
+            this.rbtnFruit.Checked = true;
+            this.rbtnFruit.Location = new System.Drawing.Point(9, 27);
+            this.rbtnFruit.Name = "rbtnFruit";
+            this.rbtnFruit.Size = new System.Drawing.Size(137, 24);
+            this.rbtnFruit.TabIndex = 7;
+            this.rbtnFruit.TabStop = true;
+            this.rbtnFruit.Text = "Frukt och grönt";
+            this.rbtnFruit.UseVisualStyleBackColor = true;
             // 
             // GameSettings
             // 
@@ -313,7 +317,6 @@
             this.Name = "GameSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inställningar";
-            this.Load += new System.EventHandler(this.GameSettings_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
