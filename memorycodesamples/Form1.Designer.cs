@@ -67,7 +67,7 @@
             this.lblPlayers.Location = new System.Drawing.Point(9, 86);
             this.lblPlayers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayers.Name = "lblPlayers";
-            this.lblPlayers.Size = new System.Drawing.Size(18, 20);
+            this.lblPlayers.Size = new System.Drawing.Size(24, 26);
             this.lblPlayers.TabIndex = 3;
             this.lblPlayers.Text = "...";
             // 
@@ -80,7 +80,7 @@
             this.lblTurn.Location = new System.Drawing.Point(8, 9);
             this.lblTurn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTurn.Name = "lblTurn";
-            this.lblTurn.Size = new System.Drawing.Size(18, 20);
+            this.lblTurn.Size = new System.Drawing.Size(24, 26);
             this.lblTurn.TabIndex = 3;
             this.lblTurn.Text = "...";
             // 
@@ -93,7 +93,7 @@
             this.label2.Location = new System.Drawing.Point(7, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 20);
+            this.label2.Size = new System.Drawing.Size(177, 26);
             this.label2.TabIndex = 5;
             this.label2.Text = "Spelare och poäng:";
             // 
@@ -158,12 +158,12 @@
             this.playerTime_lbl.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerTime_lbl.Location = new System.Drawing.Point(583, 196);
             this.playerTime_lbl.Name = "playerTime_lbl";
-            this.playerTime_lbl.Size = new System.Drawing.Size(0, 29);
+            this.playerTime_lbl.Size = new System.Drawing.Size(0, 36);
             this.playerTime_lbl.TabIndex = 7;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowMain1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
