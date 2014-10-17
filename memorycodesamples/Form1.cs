@@ -156,10 +156,17 @@ namespace MemoryCodeSamples
                 if (notsmart.Count == board.cardList.Count)
                 {
                     Player maxItem = players.OrderByDescending(obj => obj.points).First();
-
+                    List<Player> lista = players.FindAll(obj => obj.points == maxItem.points);
 
                     End frm = new End();
-                    frm.winner = maxItem.name;
+                    if(lista.Count > 1)
+                    {
+                        frm.Winner = "Det blev oavgjort";
+                    }
+                    else 
+                    { frm.Winner = maxItem.name;}
+                    
+                    frm.ShowWinner();
                     frm.Show();
 
                     this.Hide();
