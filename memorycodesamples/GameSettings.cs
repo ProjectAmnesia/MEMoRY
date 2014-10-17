@@ -12,10 +12,12 @@ namespace MemoryCodeSamples
 {
     public partial class GameSettings : Form
     {
-        Pictures pic = new Pictures();
+        Pictures pic = new Pictures();  
         public GameSettings()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            grBTheme.Visible = true;
+            btnPlay.Visible = false;
         }
 
         public int EnteredNumberOfCards()
@@ -34,12 +36,16 @@ namespace MemoryCodeSamples
             }
             else
             {
-                int numberOfCards;
-                while (IsNumber() == false)
+                int numberOfCards = 0;
+                if(IsNumber(tbNumberOfCards.Text))
                 {
-                    MessageBox.Show("Det där är inte en siffra!");
+                    numberOfCards = int.Parse(tbNumberOfCards.Text);
                 }
-                numberOfCards = int.Parse(tbNumberOfCards.Text);
+                else
+                {
+                    numberOfCards = 16;
+                    MessageBox.Show("Du skrev bokstäver,\n du får istället spela med " + numberOfCards + " kort");
+                }
                 if (numberOfCards % 2 != 0)
                 {
                     numberOfCards += 1;
@@ -64,7 +70,7 @@ namespace MemoryCodeSamples
             if (rbtnFruit.Checked)
             {
                 return 1;
-            }
+        }
             else
             {
                 return 2;
@@ -86,17 +92,37 @@ namespace MemoryCodeSamples
         {
 
         }
-        private bool IsNumber()
+
+        private void rbtnFruit_CheckedChanged(object sender, EventArgs e)
+        {
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
+            btnPlay.Visible = true;
+        }
+
+        private void rbtnAnimals_CheckedChanged(object sender, EventArgs e)
+        {
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
+            btnPlay.Visible = true;
+        }
+
+        private bool IsNumber(string tbInput)
         {
             try
             {
-                int.Parse(tbNumberOfCards.Text);
+                int.Parse(tbInput);
             }
             catch
             {
+
                 return false;
-            }
+        }
             return true;
         }
+
+        
+
+        
     }
 }
