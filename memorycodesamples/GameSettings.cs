@@ -12,15 +12,15 @@ namespace MemoryCodeSamples
 {
     public partial class GameSettings : Form
     {
-        Pictures pic = new Pictures();  
+        Pictures pic = new Pictures();
         public GameSettings()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         public int EnteredNumberOfCards()
         {
-            if(rb16cards.Checked)
+            if (rb16cards.Checked)
             {
                 return 16;
             }
@@ -28,13 +28,18 @@ namespace MemoryCodeSamples
             {
                 return 24;
             }
-            else if(rb36cards.Checked)
+            else if (rb36cards.Checked)
             {
                 return 36;
             }
             else
             {
-                int numberOfCards = int.Parse(tbNumberOfCards.Text);
+                int numberOfCards;
+                while (IsNumber() == false)
+                {
+                    MessageBox.Show("Det där är inte en siffra!");
+                }
+                numberOfCards = int.Parse(tbNumberOfCards.Text);
                 if (numberOfCards % 2 != 0)
                 {
                     numberOfCards += 1;
@@ -50,12 +55,13 @@ namespace MemoryCodeSamples
                     numberOfCards = 4;
                     MessageBox.Show("Det är ingen utmaning med bara två kort\ntesta 4!");
                 }
+
                 return numberOfCards;
             }
         }
         public int ChooseTheme()
         {
-            if(rbtnFruit.Checked)
+            if (rbtnFruit.Checked)
             {
                 return 1;
             }
@@ -79,6 +85,18 @@ namespace MemoryCodeSamples
         private void GameSettings_Load(object sender, EventArgs e)
         {
 
+        }
+        private bool IsNumber()
+        {
+            try
+            {
+                int.Parse(tbNumberOfCards.Text);
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
