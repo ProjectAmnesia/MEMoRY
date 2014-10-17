@@ -69,6 +69,7 @@ namespace MemoryCodeSamples
                 {
                     Card myCard = new Card(j * width + j * margin, i * height + i * margin, width, height);
                     myCard.Flipped = false;
+                    this.Cursor = Cursors.Hand;
                     myCard.Click += new System.EventHandler(cardEvent);
                     this.Controls.Add(myCard);
                     cardList.Add(myCard);
