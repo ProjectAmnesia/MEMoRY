@@ -36,7 +36,16 @@ namespace MemoryCodeSamples
             }
             else
             {
-                int numberOfCards = int.Parse(tbNumberOfCards.Text);
+                int numberOfCards = 0;
+                if(IsNumber(tbNumberOfCards.Text))
+                {
+                    numberOfCards = int.Parse(tbNumberOfCards.Text);
+                }
+                else
+                {
+                    numberOfCards = 16;
+                    MessageBox.Show("Du skrev bokstäver,\n du får istället spela med " + numberOfCards + " kort");
+                }
                 if (numberOfCards % 2 != 0)
                 {
                     numberOfCards += 1;
@@ -101,7 +110,19 @@ namespace MemoryCodeSamples
             btnPlay.Visible = true;
         }
 
-        
+        private bool IsNumber(string tbInput)
+        {
+            try
+            {
+                int.Parse(tbInput);
+            }
+            catch
+            {
+
+                return false;
+            }
+            return true;
+        }
 
         
 
