@@ -92,7 +92,14 @@ namespace MemoryCodeSamples
         }
         public int ChooseTime()
         {
-
+            if (sekToolStripMenuItem.Checked)
+                return 2000;
+            else if (sekToolStripMenuItem1.Checked)
+                return 3000;
+            else if (sekToolStripMenuItem2.Checked)
+                return 4000;
+            else
+                return 5000;
         }
 
         private void rbtnFruit_CheckedChanged(object sender, EventArgs e)
@@ -128,14 +135,6 @@ namespace MemoryCodeSamples
             grBTheme.Visible = false;
             grBNumberOfCards.Visible = true;
             btnPlay.Visible = true;
-            if (sekToolStripMenuItem.Checked)
-                return 2000;
-            else if (sekToolStripMenuItem1.Checked)
-                return 3000;
-            else if (sekToolStripMenuItem2.Checked)
-                return 4000;
-            else
-                return 5000;
         }
 
         
