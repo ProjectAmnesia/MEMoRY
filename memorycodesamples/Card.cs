@@ -43,7 +43,7 @@ namespace MemoryCodeSamples
             Location = new System.Drawing.Point(posX, posY);
             Size = new System.Drawing.Size(width, height);
             back = Properties.Resources.skalet;
-            BackColor = System.Drawing.Color.White;
+            BackColor = System.Drawing.Color.Transparent;
             
         }
 
@@ -53,13 +53,15 @@ namespace MemoryCodeSamples
                 return false;
             else if (this.Id == card.Id && !this.Equals(card))
             {
-                this.Playable = false;
-                this.Enabled = false;
-                card.Playable = false;
-                card.Enabled = false;
                 return true;
             }            
             return false;
+        }
+
+        public void Disable()
+        {
+            Playable = false;
+            Enabled = false;
         }
     }
 }

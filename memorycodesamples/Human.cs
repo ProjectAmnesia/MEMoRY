@@ -8,9 +8,9 @@ namespace MemoryCodeSamples
 {
     class Human : Player
     {
-        public Human(string _name)
+        public Human()
         {
-            name = _name;
+            
         }
     }
 }

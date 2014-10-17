@@ -11,6 +11,15 @@
     <AssemblyName>MemoryCodeSamples</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,17 +32,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,6 +73,13 @@
     <Compile Include="Board.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="End.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="End.Designer.cs">
+      <DependentUpon>End.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComputerPlayer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +97,16 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="End.resx">
+      <DependentUpon>End.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sounds.cs" />
+    <Compile Include="Timer.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,14 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -206,13 +218,7 @@
     <None Include="Resources\clouds2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\crazy.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\gurkor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rosagrapefrukt.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\apple1.jpg" />
@@ -242,6 +248,423 @@
     <None Include="Resources\clouds1.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\blueberries_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crazy-fruit-5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grönkål.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lime.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rosa-grapefrukt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tranbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cutie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rainbowMain1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gjy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jdtr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kty.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vjt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ytYeft8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grisalisa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\belle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brave.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bu.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cru.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\daphne.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dgr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frozen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ft.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ftkjrd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ftko.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gjy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glitch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grisalisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gtui.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hacke.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hello.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ho.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\j.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jdtr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jerry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jyp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lisa.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minnie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nj.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pluto1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\princesssjazmine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rht.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smurfelina.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tangled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trhe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ut.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Velma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vgy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vhj.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vj.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vjt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wonder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ytYeft8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ara.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baby.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bird.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\birds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bjorn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bush.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bushdog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\catinbox.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\catscrat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cute.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cute2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cutest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dogs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ekorrar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ekorre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ekorre2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elefant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fox.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frog.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giraff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giraff2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giraff3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gorilla.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hund.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kanin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kaninis.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\katt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kitten.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ladybird.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lion2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monkey.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noshorn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orm.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\owl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pandared.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pingvin7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rabbit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\racoons.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redPanda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\räv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\squirrel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\surikat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\surikatter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\säl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\söt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\söööt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\söööta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tiger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\apple.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -263,7 +686,7 @@
     <None Include="Resources\bjornbar.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\blueberries_03.png" />
+    <None Include="Resources\blueberries_03.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Broccoli.jpg" />
@@ -284,7 +707,7 @@
     <None Include="Resources\clouds.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\crazy-fruit-5.jpg" />
+    <None Include="Resources\crazy.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\empeher3.jpg" />
@@ -299,7 +722,7 @@
     <None Include="Resources\granat.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\grönkål.png" />
+    <None Include="Resources\grönkål.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\guanabana.gif" />
@@ -338,7 +761,7 @@
     <None Include="Resources\krusbar.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lime.gif" />
+    <None Include="Resources\lime.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Lingon_2.jpg" />
@@ -365,13 +788,13 @@
     <None Include="Resources\oliver.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\orange.png" />
+    <None Include="Resources\orange.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\papaya.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\passion.png" />
+    <None Include="Resources\passion.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pear.jpg" />
@@ -395,7 +818,7 @@
     <None Include="Resources\rodavindruvor.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\rosa-grapefrukt.jpg" />
+    <None Include="Resources\rosagrapefrukt.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\skalet.png" />
@@ -422,13 +845,25 @@
     <None Include="Resources\tomatillo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tranbar.png" />
+    <None Include="Resources\tranbar.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\watermelon.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\äpple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloudBG31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloudBG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rainbowMain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rainbowSplashScreenBG.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

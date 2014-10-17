@@ -12,9 +12,12 @@ namespace MemoryCodeSamples
 {
     public partial class GameSettings : Form
     {
+        Pictures pic = new Pictures();  
         public GameSettings()
         {
             InitializeComponent();            
+            grBTheme.Visible = true;
+            btnPlay.Visible = false;
         }
 
         public int EnteredNumberOfCards()
@@ -33,7 +36,16 @@ namespace MemoryCodeSamples
             }
             else
             {
-                int numberOfCards = int.Parse(tbNumberOfCards.Text);
+                int numberOfCards = 0;
+                if(IsNumber(tbNumberOfCards.Text))
+                {
+                    numberOfCards = int.Parse(tbNumberOfCards.Text);
+                }
+                else
+                {
+                    numberOfCards = 16;
+                    MessageBox.Show("Du skrev bokstäver,\n du får istället spela med " + numberOfCards + " kort");
+                }
                 if (numberOfCards % 2 != 0)
                 {
                     numberOfCards += 1;
@@ -52,12 +64,81 @@ namespace MemoryCodeSamples
                 return numberOfCards;
             }
         }
-
+        public int ChooseTheme()
+        {
+            if (rbtnFruit.Checked)
+            {
+                return 1;
+                
+            }
+            else if (rbtnAnimals.Checked)
+            {
+                return 2;
+                
+            }
+            else
+                return 3;
+        }
         private void rbUsersChoice_CheckedChanged(object sender, EventArgs e)
         {
             lblCards.Visible = true;
             lblMax.Visible = true;
             tbNumberOfCards.Visible = true;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        public int ChooseTime()
+        {
+            if (sekToolStripMenuItem.Checked)
+                return 2000;
+            else if (sekToolStripMenuItem1.Checked)
+                return 3000;
+            else if (sekToolStripMenuItem2.Checked)
+                return 4000;
+            else
+                return 5000;
+        }
+
+        private void rbtnFruit_CheckedChanged(object sender, EventArgs e)
+        {
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
+            btnPlay.Visible = true;
+        }
+
+        private void rbtnAnimals_CheckedChanged(object sender, EventArgs e)
+        {
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
+            btnPlay.Visible = true;
+        }
+
+        private bool IsNumber(string tbInput)
+        {
+            try
+            {
+                int.Parse(tbInput);
+            }
+            catch
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+        private void rbtnCartoon_CheckedChanged(object sender, EventArgs e)
+        {
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
+            btnPlay.Visible = true;
+        }
+
+        
+
+        
     }
 }
