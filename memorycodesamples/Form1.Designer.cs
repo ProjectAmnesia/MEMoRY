@@ -39,6 +39,11 @@
             this.btnPlayAgain = new System.Windows.Forms.Button();
             this.timerFlipBack = new System.Windows.Forms.Timer(this.components);
             this.timerDrawTime = new System.Windows.Forms.Timer(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbComputer = new System.Windows.Forms.RadioButton();
+            this.rbHuman = new System.Windows.Forms.RadioButton();
+            this.timerHaltComputer = new System.Windows.Forms.Timer(this.components);
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddPlayer
@@ -112,7 +117,6 @@
             this.btnNewGame.TabIndex = 6;
             this.btnNewGame.Text = "Nytt spel";
             this.btnNewGame.UseVisualStyleBackColor = true;
-            this.btnNewGame.Visible = false;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // btnPlayAgain
@@ -136,11 +140,52 @@
             this.timerDrawTime.Interval = 3000;
             this.timerDrawTime.Tick += new System.EventHandler(this.timerDrawTime_Tick);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbComputer);
+            this.groupBox1.Controls.Add(this.rbHuman);
+            this.groupBox1.Enabled = false;
+            this.groupBox1.Location = new System.Drawing.Point(560, 283);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(128, 56);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ny spelare är:";
+            // 
+            // rbComputer
+            // 
+            this.rbComputer.AutoSize = true;
+            this.rbComputer.Location = new System.Drawing.Point(5, 38);
+            this.rbComputer.Name = "rbComputer";
+            this.rbComputer.Size = new System.Drawing.Size(60, 18);
+            this.rbComputer.TabIndex = 1;
+            this.rbComputer.TabStop = true;
+            this.rbComputer.Text = "Dator";
+            this.rbComputer.UseVisualStyleBackColor = true;
+            // 
+            // rbHuman
+            // 
+            this.rbHuman.AutoSize = true;
+            this.rbHuman.Checked = true;
+            this.rbHuman.Location = new System.Drawing.Point(4, 22);
+            this.rbHuman.Name = "rbHuman";
+            this.rbHuman.Size = new System.Drawing.Size(84, 18);
+            this.rbHuman.TabIndex = 0;
+            this.rbHuman.TabStop = true;
+            this.rbHuman.Text = "Människa";
+            this.rbHuman.UseVisualStyleBackColor = true;
+            // 
+            // timerHaltComputer
+            // 
+            this.timerHaltComputer.Interval = 500;
+            this.timerHaltComputer.Tick += new System.EventHandler(this.timerHaltComputer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 511);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnPlayAgain);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.label2);
@@ -155,6 +200,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Memory";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +219,10 @@
         private System.Windows.Forms.Button btnPlayAgain;
         private System.Windows.Forms.Timer timerFlipBack;
         private System.Windows.Forms.Timer timerDrawTime;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbComputer;
+        private System.Windows.Forms.RadioButton rbHuman;
+        private System.Windows.Forms.Timer timerHaltComputer;
 
 
     }

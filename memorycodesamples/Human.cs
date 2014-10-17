@@ -12,5 +12,16 @@ namespace MemoryCodeSamples
         {
             name = _name;
         }
+
+        public override bool IsComputer()
+        {
+            return false;
+        }
+
+        public override Card ClickARandomCard(int _numberOfCards, List<Card> _cardlist)
+        {
+            //den här ska aldrig användas
+            return null;
+        }
     }
 }
