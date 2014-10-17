@@ -13,16 +13,23 @@ namespace MemoryCodeSamples
     public partial class End : Form
     {
 
-        internal string winner;
+        public string winner;
 
-
+        public string Winner
+        {
+            get { return winner; }
+            set { winner = value; }
+        }
         public End()
         {
             InitializeComponent();
 
             lblWinner.Text = winner;
         }
-
+        public void ShowWinner()
+        {
+            lblWinner.Text = winner;
+        }
         private void btnYes_Click(object sender, EventArgs e)
         {
             Application.Restart();

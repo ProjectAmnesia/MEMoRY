@@ -22,7 +22,7 @@ namespace MemoryCodeSamples
 
         public int EnteredNumberOfCards()
         {
-            if (rb16cards.Checked)
+            if(rb16cards.Checked)
             {
                 return 16;
             }
@@ -30,7 +30,7 @@ namespace MemoryCodeSamples
             {
                 return 24;
             }
-            else if (rb36cards.Checked)
+            else if(rb36cards.Checked)
             {
                 return 36;
             }
@@ -61,7 +61,6 @@ namespace MemoryCodeSamples
                     numberOfCards = 4;
                     MessageBox.Show("Det är ingen utmaning med bara två kort\ntesta 4!");
                 }
-
                 return numberOfCards;
             }
         }
@@ -70,11 +69,15 @@ namespace MemoryCodeSamples
             if (rbtnFruit.Checked)
             {
                 return 1;
-        }
-            else
+                
+            }
+            else if (rbtnAnimals.Checked)
             {
                 return 2;
+                
             }
+            else
+                return 3;
         }
         private void rbUsersChoice_CheckedChanged(object sender, EventArgs e)
         {
@@ -87,10 +90,16 @@ namespace MemoryCodeSamples
         {
             Application.Exit();
         }
-
-        private void GameSettings_Load(object sender, EventArgs e)
+        public int ChooseTime()
         {
-
+            if (sekToolStripMenuItem.Checked)
+                return 2000;
+            else if (sekToolStripMenuItem1.Checked)
+                return 3000;
+            else if (sekToolStripMenuItem2.Checked)
+                return 4000;
+            else
+                return 5000;
         }
 
         private void rbtnFruit_CheckedChanged(object sender, EventArgs e)
@@ -117,8 +126,15 @@ namespace MemoryCodeSamples
             {
 
                 return false;
-        }
+            }
             return true;
+        }
+
+        private void rbtnCartoon_CheckedChanged(object sender, EventArgs e)
+        {
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
+            btnPlay.Visible = true;
         }
 
         
