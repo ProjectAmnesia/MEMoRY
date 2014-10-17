@@ -128,7 +128,7 @@ namespace MemoryCodeSamples
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
             FlipAllCards();
-            board.CreateNewGame(numberOfCards);
+            board.CreateNewGame(numberOfCards, themeChosen);
             foreach (var player in players)
             {
                 player.points = 0;
