@@ -49,6 +49,7 @@
             this.rbtnAnimals = new System.Windows.Forms.RadioButton();
             this.rbtnFruit = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rbtnCartoon = new System.Windows.Forms.RadioButton();
             this.grBNumberOfCards.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -232,7 +233,7 @@
             this.sekToolStripMenuItem.BackColor = System.Drawing.Color.LightBlue;
             this.sekToolStripMenuItem.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem.Name = "sekToolStripMenuItem";
-            this.sekToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.sekToolStripMenuItem.Text = "2 sek";
             // 
             // sekToolStripMenuItem1
@@ -240,16 +241,15 @@
             this.sekToolStripMenuItem1.BackColor = System.Drawing.Color.LightBlue;
             this.sekToolStripMenuItem1.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem1.Name = "sekToolStripMenuItem1";
-            this.sekToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
             this.sekToolStripMenuItem1.Text = "3 sek";
-            
             // 
             // sekToolStripMenuItem2
             // 
             this.sekToolStripMenuItem2.BackColor = System.Drawing.Color.LightBlue;
             this.sekToolStripMenuItem2.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem2.Name = "sekToolStripMenuItem2";
-            this.sekToolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem2.Size = new System.Drawing.Size(115, 24);
             this.sekToolStripMenuItem2.Text = "4 sek";
             // 
             // sekToolStripMenuItem3
@@ -257,17 +257,18 @@
             this.sekToolStripMenuItem3.BackColor = System.Drawing.Color.LightBlue;
             this.sekToolStripMenuItem3.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem3.Name = "sekToolStripMenuItem3";
-            this.sekToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
+            this.sekToolStripMenuItem3.Size = new System.Drawing.Size(115, 24);
             this.sekToolStripMenuItem3.Text = "5 sek";
             // 
             // grBTheme
             // 
             this.grBTheme.BackColor = System.Drawing.Color.White;
+            this.grBTheme.Controls.Add(this.rbtnCartoon);
             this.grBTheme.Controls.Add(this.rbtnAnimals);
             this.grBTheme.Controls.Add(this.rbtnFruit);
             this.grBTheme.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grBTheme.ForeColor = System.Drawing.Color.MediumBlue;
-            this.grBTheme.Location = new System.Drawing.Point(162, 107);
+            this.grBTheme.Location = new System.Drawing.Point(162, 106);
             this.grBTheme.Name = "grBTheme";
             this.grBTheme.Size = new System.Drawing.Size(168, 131);
             this.grBTheme.TabIndex = 6;
@@ -311,20 +312,32 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // rbtnCartoon
+            // 
+            this.rbtnCartoon.AutoSize = true;
+            this.rbtnCartoon.Location = new System.Drawing.Point(9, 87);
+            this.rbtnCartoon.Name = "rbtnCartoon";
+            this.rbtnCartoon.Size = new System.Drawing.Size(85, 24);
+            this.rbtnCartoon.TabIndex = 8;
+            this.rbtnCartoon.TabStop = true;
+            this.rbtnCartoon.Text = "Tecknat";
+            this.rbtnCartoon.UseVisualStyleBackColor = true;
+            this.rbtnCartoon.CheckedChanged += new System.EventHandler(this.rbtnCartoon_CheckedChanged);
+            // 
             // GameSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowSplashScreenBG1;
             this.ClientSize = new System.Drawing.Size(484, 393);
-            this.Controls.Add(this.grBNumberOfCards);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblMax);
-            this.Controls.Add(this.lblCards);
             this.Controls.Add(this.tbNumberOfCards);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.grBTheme);
+            this.Controls.Add(this.grBNumberOfCards);
+            this.Controls.Add(this.lblCards);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -372,5 +385,6 @@
         private System.Windows.Forms.RadioButton rbtnAnimals;
         private System.Windows.Forms.RadioButton rbtnFruit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton rbtnCartoon;
     }
 }

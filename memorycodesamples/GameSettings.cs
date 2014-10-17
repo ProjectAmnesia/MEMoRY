@@ -124,6 +124,13 @@ namespace MemoryCodeSamples
             return true;
         }
 
+        private void rbtnCartoon_CheckedChanged(object sender, EventArgs e)
+        {
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
+            btnPlay.Visible = true;
+        }
+
         
 
         
