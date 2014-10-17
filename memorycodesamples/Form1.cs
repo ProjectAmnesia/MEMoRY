@@ -103,8 +103,6 @@ namespace MemoryCodeSamples
             }
         }
 
-
-
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
             FlipAllCards();
@@ -181,13 +179,10 @@ namespace MemoryCodeSamples
 
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
-
             Human human = new Human();
             players.Add(human);
             human.name = playerNamesVec[players.Count - 1];
             UpdateGUI();
-
-
         }
 
         private void timerFlipBack_Tick(object sender, EventArgs e)

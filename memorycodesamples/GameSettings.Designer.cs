@@ -98,6 +98,7 @@
             this.rb36cards.TabIndex = 0;
             this.rb36cards.Text = "36 kort";
             this.rb36cards.UseVisualStyleBackColor = true;
+            this.rb36cards.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
             // 
             // rb24cards
             // 
@@ -109,6 +110,7 @@
             this.rb24cards.TabIndex = 0;
             this.rb24cards.Text = "24 kort";
             this.rb24cards.UseVisualStyleBackColor = true;
+            this.rb24cards.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
             // 
             // rb16cards
             // 
@@ -122,6 +124,7 @@
             this.rb16cards.TabStop = true;
             this.rb16cards.Text = "16 kort";
             this.rb16cards.UseVisualStyleBackColor = true;
+            this.rb16cards.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
             // 
             // btnPlay
             // 

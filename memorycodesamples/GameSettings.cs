@@ -68,13 +68,11 @@ namespace MemoryCodeSamples
         {
             if (rbtnFruit.Checked)
             {
-                return 1;
-                
+                return 1;                
             }
             else if (rbtnAnimals.Checked)
             {
-                return 2;
-                
+                return 2;                
             }
             else
                 return 3;
@@ -135,6 +133,13 @@ namespace MemoryCodeSamples
             grBTheme.Visible = false;
             grBNumberOfCards.Visible = true;
             btnPlay.Visible = true;
+        }
+
+        private void rb_CheckedChanged(object sender, EventArgs e)
+        {
+            tbNumberOfCards.Visible = false;
+            lblMax.Visible = false;
+            lblCards.Visible = false;
         }
 
         
