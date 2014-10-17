@@ -231,6 +231,7 @@
             // sekToolStripMenuItem
             // 
             this.sekToolStripMenuItem.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem.CheckOnClick = true;
             this.sekToolStripMenuItem.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem.Name = "sekToolStripMenuItem";
             this.sekToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
@@ -239,6 +240,7 @@
             // sekToolStripMenuItem1
             // 
             this.sekToolStripMenuItem1.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem1.CheckOnClick = true;
             this.sekToolStripMenuItem1.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem1.Name = "sekToolStripMenuItem1";
             this.sekToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
@@ -247,6 +249,7 @@
             // sekToolStripMenuItem2
             // 
             this.sekToolStripMenuItem2.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem2.CheckOnClick = true;
             this.sekToolStripMenuItem2.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem2.Name = "sekToolStripMenuItem2";
             this.sekToolStripMenuItem2.Size = new System.Drawing.Size(115, 24);
@@ -255,6 +258,7 @@
             // sekToolStripMenuItem3
             // 
             this.sekToolStripMenuItem3.BackColor = System.Drawing.Color.LightBlue;
+            this.sekToolStripMenuItem3.CheckOnClick = true;
             this.sekToolStripMenuItem3.ForeColor = System.Drawing.Color.MediumBlue;
             this.sekToolStripMenuItem3.Name = "sekToolStripMenuItem3";
             this.sekToolStripMenuItem3.Size = new System.Drawing.Size(115, 24);
@@ -291,6 +295,7 @@
             // rbtnFruit
             // 
             this.rbtnFruit.AutoSize = true;
+            this.rbtnFruit.Checked = true;
             this.rbtnFruit.Location = new System.Drawing.Point(9, 27);
             this.rbtnFruit.Name = "rbtnFruit";
             this.rbtnFruit.Size = new System.Drawing.Size(137, 24);

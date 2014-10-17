@@ -15,7 +15,7 @@ namespace MemoryCodeSamples
         Pictures pic = new Pictures();  
         public GameSettings()
         {
-            InitializeComponent();
+            InitializeComponent();            
             grBTheme.Visible = true;
             btnPlay.Visible = false;
         }
@@ -66,18 +66,18 @@ namespace MemoryCodeSamples
         }
         public int ChooseTheme()
         {
-            if(rbtnFruit.Checked)
+            if (rbtnFruit.Checked)
             {
                 return 1;
                 
             }
-            else
+            else if (rbtnAnimals.Checked)
             {
                 return 2;
                 
             }
-
-           
+            else
+                return 3;
         }
         private void rbUsersChoice_CheckedChanged(object sender, EventArgs e)
         {
@@ -90,8 +90,7 @@ namespace MemoryCodeSamples
         {
             Application.Exit();
         }
-
-        private void GameSettings_Load(object sender, EventArgs e)
+        public int ChooseTime()
         {
 
         }
@@ -129,6 +128,14 @@ namespace MemoryCodeSamples
             grBTheme.Visible = false;
             grBNumberOfCards.Visible = true;
             btnPlay.Visible = true;
+            if (sekToolStripMenuItem.Checked)
+                return 2000;
+            else if (sekToolStripMenuItem1.Checked)
+                return 3000;
+            else if (sekToolStripMenuItem2.Checked)
+                return 4000;
+            else
+                return 5000;
         }
 
         
