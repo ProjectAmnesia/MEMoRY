@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grBNumberOfCards = new System.Windows.Forms.GroupBox();
             this.rbUsersChoice = new System.Windows.Forms.RadioButton();
             this.rb36cards = new System.Windows.Forms.RadioButton();
             this.rb24cards = new System.Windows.Forms.RadioButton();
@@ -45,32 +45,35 @@
             this.sekToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sekToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.sekToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbtnFruit = new System.Windows.Forms.RadioButton();
+            this.grBTheme = new System.Windows.Forms.GroupBox();
             this.rbtnAnimals = new System.Windows.Forms.RadioButton();
-            this.groupBox1.SuspendLayout();
+            this.rbtnFruit = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.grBNumberOfCards.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.grBTheme.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grBNumberOfCards
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.rbUsersChoice);
-            this.groupBox1.Controls.Add(this.rb36cards);
-            this.groupBox1.Controls.Add(this.rb24cards);
-            this.groupBox1.Controls.Add(this.rb16cards);
-            this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.groupBox1.Location = new System.Drawing.Point(314, 157);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(165, 117);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Antal kort";
+            this.grBNumberOfCards.BackColor = System.Drawing.Color.White;
+            this.grBNumberOfCards.Controls.Add(this.rbUsersChoice);
+            this.grBNumberOfCards.Controls.Add(this.rb36cards);
+            this.grBNumberOfCards.Controls.Add(this.rb24cards);
+            this.grBNumberOfCards.Controls.Add(this.rb16cards);
+            this.grBNumberOfCards.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grBNumberOfCards.ForeColor = System.Drawing.Color.MediumBlue;
+            this.grBNumberOfCards.Location = new System.Drawing.Point(165, 89);
+            this.grBNumberOfCards.Margin = new System.Windows.Forms.Padding(4);
+            this.grBNumberOfCards.Name = "grBNumberOfCards";
+            this.grBNumberOfCards.Padding = new System.Windows.Forms.Padding(4);
+            this.grBNumberOfCards.Size = new System.Drawing.Size(165, 117);
+            this.grBNumberOfCards.TabIndex = 0;
+            this.grBNumberOfCards.TabStop = false;
+            this.grBNumberOfCards.Text = "Antal kort";
+            this.grBNumberOfCards.Visible = false;
             // 
             // rbUsersChoice
             // 
@@ -126,10 +129,10 @@
             this.btnPlay.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnPlay.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlay.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnPlay.Location = new System.Drawing.Point(4, 354);
+            this.btnPlay.Location = new System.Drawing.Point(192, 354);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(4);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(343, 35);
+            this.btnPlay.Size = new System.Drawing.Size(137, 35);
             this.btnPlay.TabIndex = 1;
             this.btnPlay.Text = "Börja spela!";
             this.btnPlay.UseVisualStyleBackColor = false;
@@ -139,7 +142,7 @@
             this.tbNumberOfCards.BackColor = System.Drawing.Color.LightBlue;
             this.tbNumberOfCards.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNumberOfCards.ForeColor = System.Drawing.Color.MediumBlue;
-            this.tbNumberOfCards.Location = new System.Drawing.Point(342, 298);
+            this.tbNumberOfCards.Location = new System.Drawing.Point(192, 230);
             this.tbNumberOfCards.Margin = new System.Windows.Forms.Padding(4);
             this.tbNumberOfCards.Name = "tbNumberOfCards";
             this.tbNumberOfCards.Size = new System.Drawing.Size(116, 28);
@@ -149,10 +152,10 @@
             // lblCards
             // 
             this.lblCards.AutoSize = true;
-            this.lblCards.BackColor = System.Drawing.Color.Transparent;
+            this.lblCards.BackColor = System.Drawing.Color.White;
             this.lblCards.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCards.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblCards.Location = new System.Drawing.Point(356, 278);
+            this.lblCards.Location = new System.Drawing.Point(206, 210);
             this.lblCards.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCards.Name = "lblCards";
             this.lblCards.Size = new System.Drawing.Size(86, 20);
@@ -163,10 +166,10 @@
             // lblMax
             // 
             this.lblMax.AutoSize = true;
-            this.lblMax.BackColor = System.Drawing.Color.Transparent;
+            this.lblMax.BackColor = System.Drawing.Color.White;
             this.lblMax.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMax.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblMax.Location = new System.Drawing.Point(351, 329);
+            this.lblMax.Location = new System.Drawing.Point(201, 261);
             this.lblMax.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMax.Name = "lblMax";
             this.lblMax.Size = new System.Drawing.Size(96, 20);
@@ -180,9 +183,9 @@
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnCancel.Location = new System.Drawing.Point(354, 354);
+            this.btnCancel.Location = new System.Drawing.Point(381, 354);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(117, 35);
+            this.btnCancel.Size = new System.Drawing.Size(91, 35);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Avsluta";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -197,6 +200,7 @@
             this.groupBox2.Size = new System.Drawing.Size(149, 45);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Visible = false;
             // 
             // menuStrip1
             // 
@@ -238,6 +242,7 @@
             this.sekToolStripMenuItem1.Name = "sekToolStripMenuItem1";
             this.sekToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.sekToolStripMenuItem1.Text = "3 sek";
+            
             // 
             // sekToolStripMenuItem2
             // 
@@ -255,30 +260,20 @@
             this.sekToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
             this.sekToolStripMenuItem3.Text = "5 sek";
             // 
-            // groupBox3
+            // grBTheme
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.rbtnAnimals);
-            this.groupBox3.Controls.Add(this.rbtnFruit);
-            this.groupBox3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.groupBox3.Location = new System.Drawing.Point(4, 157);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(165, 109);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tema på korten";
-            // 
-            // rbtnFruit
-            // 
-            this.rbtnFruit.AutoSize = true;
-            this.rbtnFruit.Location = new System.Drawing.Point(9, 27);
-            this.rbtnFruit.Name = "rbtnFruit";
-            this.rbtnFruit.Size = new System.Drawing.Size(137, 24);
-            this.rbtnFruit.TabIndex = 7;
-            this.rbtnFruit.TabStop = true;
-            this.rbtnFruit.Text = "Frukt och grönt";
-            this.rbtnFruit.UseVisualStyleBackColor = true;
+            this.grBTheme.BackColor = System.Drawing.Color.White;
+            this.grBTheme.Controls.Add(this.rbtnAnimals);
+            this.grBTheme.Controls.Add(this.rbtnFruit);
+            this.grBTheme.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grBTheme.ForeColor = System.Drawing.Color.MediumBlue;
+            this.grBTheme.Location = new System.Drawing.Point(162, 107);
+            this.grBTheme.Name = "grBTheme";
+            this.grBTheme.Size = new System.Drawing.Size(168, 131);
+            this.grBTheme.TabIndex = 6;
+            this.grBTheme.TabStop = false;
+            this.grBTheme.Text = "Tema på korten";
+            this.grBTheme.Visible = false;
             // 
             // rbtnAnimals
             // 
@@ -290,6 +285,31 @@
             this.rbtnAnimals.TabStop = true;
             this.rbtnAnimals.Text = "Djur";
             this.rbtnAnimals.UseVisualStyleBackColor = true;
+            this.rbtnAnimals.CheckedChanged += new System.EventHandler(this.rbtnAnimals_CheckedChanged);
+            // 
+            // rbtnFruit
+            // 
+            this.rbtnFruit.AutoSize = true;
+            this.rbtnFruit.Location = new System.Drawing.Point(9, 27);
+            this.rbtnFruit.Name = "rbtnFruit";
+            this.rbtnFruit.Size = new System.Drawing.Size(137, 24);
+            this.rbtnFruit.TabIndex = 7;
+            this.rbtnFruit.TabStop = true;
+            this.rbtnFruit.Text = "Frukt och grönt";
+            this.rbtnFruit.UseVisualStyleBackColor = true;
+            this.rbtnFruit.CheckedChanged += new System.EventHandler(this.rbtnFruit_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::MemoryCodeSamples.Properties.Resources.cloudBG;
+            this.pictureBox1.Location = new System.Drawing.Point(117, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(291, 287);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // GameSettings
             // 
@@ -297,14 +317,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowSplashScreenBG1;
             this.ClientSize = new System.Drawing.Size(484, 393);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.grBNumberOfCards);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblMax);
             this.Controls.Add(this.lblCards);
             this.Controls.Add(this.tbNumberOfCards);
             this.Controls.Add(this.btnPlay);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grBTheme);
+            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -314,14 +335,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inställningar";
             this.Load += new System.EventHandler(this.GameSettings_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grBNumberOfCards.ResumeLayout(false);
+            this.grBNumberOfCards.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.grBTheme.ResumeLayout(false);
+            this.grBTheme.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,7 +351,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grBNumberOfCards;
         private System.Windows.Forms.RadioButton rb36cards;
         private System.Windows.Forms.RadioButton rb24cards;
         private System.Windows.Forms.RadioButton rb16cards;
@@ -346,8 +368,9 @@
         private System.Windows.Forms.ToolStripMenuItem sekToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sekToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem sekToolStripMenuItem3;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grBTheme;
         private System.Windows.Forms.RadioButton rbtnAnimals;
         private System.Windows.Forms.RadioButton rbtnFruit;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

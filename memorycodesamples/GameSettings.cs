@@ -15,7 +15,9 @@ namespace MemoryCodeSamples
         Pictures pic = new Pictures();  
         public GameSettings()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            grBTheme.Visible = true;
+            btnPlay.Visible = false;
         }
 
         public int EnteredNumberOfCards()
@@ -58,11 +60,15 @@ namespace MemoryCodeSamples
             if(rbtnFruit.Checked)
             {
                 return 1;
+                
             }
             else
             {
                 return 2;
+                
             }
+
+           
         }
         private void rbUsersChoice_CheckedChanged(object sender, EventArgs e)
         {
@@ -80,5 +86,25 @@ namespace MemoryCodeSamples
         {
 
         }
+
+        private void rbtnFruit_CheckedChanged(object sender, EventArgs e)
+        {
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
+            btnPlay.Visible = true;
+        }
+
+        private void rbtnAnimals_CheckedChanged(object sender, EventArgs e)
+        {
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
+            btnPlay.Visible = true;
+        }
+
+        
+
+        
+
+        
     }
 }
