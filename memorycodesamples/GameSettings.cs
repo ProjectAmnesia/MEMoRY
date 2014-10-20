@@ -15,8 +15,8 @@ namespace MemoryCodeSamples
         Pictures pic = new Pictures();  
         public GameSettings()
         {
-            InitializeComponent();
-            picBoxTheme.Visible = true;
+            InitializeComponent();            
+            grBTheme.Visible = true;
             btnPlay.Visible = false;
         }
 
@@ -79,8 +79,8 @@ namespace MemoryCodeSamples
         }
         private void rbUsersChoice_CheckedChanged(object sender, EventArgs e)
         {
-            picBoxAmountFree.Visible = true;
-            picBCardAmount.Visible = false;
+            lblCards.Visible = true;
+            lblMax.Visible = true;
             tbNumberOfCards.Visible = true;
         }
 
@@ -102,34 +102,16 @@ namespace MemoryCodeSamples
 
         private void rbtnFruit_CheckedChanged(object sender, EventArgs e)
         {
-            
-            
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
             btnPlay.Visible = true;
-            rbtnFruit.Visible = false;
-            rbtnAnimals.Visible = false;
-            rbtnCartoon.Visible = false;
-            picBoxTheme.Visible = false;
-            picBCardAmount.Visible = true;
-            rb16cards.Visible = true;
-            rb24cards.Visible = true;
-            rb36cards.Visible = true;
-            rbUsersChoice.Visible = true;
         }
 
         private void rbtnAnimals_CheckedChanged(object sender, EventArgs e)
         {
-            
-            
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
             btnPlay.Visible = true;
-            rbtnFruit.Visible = false;
-            rbtnAnimals.Visible = false;
-            rbtnCartoon.Visible = false;
-            picBoxTheme.Visible = false;
-            picBCardAmount.Visible = true;
-            rb16cards.Visible = true;
-            rb24cards.Visible = true;
-            rb36cards.Visible = true;
-            rbUsersChoice.Visible = true;
         }
 
         private bool IsNumber(string tbInput)
@@ -148,32 +130,17 @@ namespace MemoryCodeSamples
 
         private void rbtnCartoon_CheckedChanged(object sender, EventArgs e)
         {
+            grBTheme.Visible = false;
+            grBNumberOfCards.Visible = true;
             btnPlay.Visible = true;
-            rbtnFruit.Visible = false;
-            rbtnAnimals.Visible = false;
-            rbtnCartoon.Visible = false;
-            picBoxTheme.Visible = false;
-            picBCardAmount.Visible = true;
-            rb16cards.Visible = true;
-            rb24cards.Visible = true;
-            rb36cards.Visible = true;
-            rbUsersChoice.Visible = true;                        
         }
 
         private void rb_CheckedChanged(object sender, EventArgs e)
         {
-            //picBoxAmountFree.Visible = true;
-            //picBCardAmount.Visible = false;
             tbNumberOfCards.Visible = false;
-            
+            lblMax.Visible = false;
+            lblCards.Visible = false;
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        
 
         
 
