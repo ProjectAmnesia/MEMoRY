@@ -71,7 +71,6 @@ namespace MemoryCodeSamples
             {temabilder = theme3;}
             foreach (Image bild in temabilder)
             {
-                
                 var image = bild;
                 var newimage = ScaleImage(image, width, height);
                 bilder.Add(newimage);

@@ -16,6 +16,7 @@ namespace MemoryCodeSamples
         // SOUND Objects
         Sounds SoundCollection = new Sounds();
         GameSettings game = new GameSettings();
+        //int seconds = 30;
         int numberOfCards = 16;
         Board board;
         int playersTurn;
@@ -50,6 +51,7 @@ namespace MemoryCodeSamples
 
         private void StartGame()
         {
+            //GameSettings game = new GameSettings();
             DialogResult dialog = game.ShowDialog();
             if (dialog == DialogResult.OK)
             {
@@ -66,6 +68,7 @@ namespace MemoryCodeSamples
             board = new Board(numberOfCards, this.card_Click);
             board.Location = new System.Drawing.Point(0, 0);
             this.Controls.Add(board);
+            //ResetTimer();
             timerDrawTime.Interval = game.ChooseTime();
         }
 
@@ -121,6 +124,7 @@ namespace MemoryCodeSamples
             }
             timerFlipBack.Enabled = false;
             timerDrawTime.Enabled = false;
+            //PlayerTimeTick.Enabled = false;
             Card clickedCard = (Card)sender;
             clickedCard.Flipped = !clickedCard.Flipped;
             flippedCards++;
@@ -129,10 +133,13 @@ namespace MemoryCodeSamples
             if (flippedCards == 1)
             {
                 timerDrawTime.Enabled = true;
+                //PlayerTimeTick.Enabled = true;
             }
             else if (flippedCards == 2)
             {
                 timerDrawTime.Enabled = false;
+                //PlayerTimeTick.Enabled = false;
+                //ResetTimer();
                 timerFlipBack.Enabled = true;
                 if (clickedCard.Match(lastFlipped))
                 {
@@ -163,6 +170,7 @@ namespace MemoryCodeSamples
                     this.Hide();
 
                     SoundCollection.WinnerSound();
+                    //MessageBox.Show("Grattis " + maxItem.name + "Du Vann!");
                 }
             }
             lastFlipped = clickedCard;
@@ -198,6 +206,30 @@ namespace MemoryCodeSamples
             Application.Exit();
         }
 
+        //ett annat sätt att göra det som redan var gjort:
+        //private void PlayerTimeOnClick_Tick(object sender, EventArgs e)
+        //{   // tick intervall set to 1000 ms
+        //    --seconds;
+        //    playerTime_lbl.Text = seconds.ToString();
+
+        //    if (seconds == 5) // sound is 5 seconds long
+        //        SoundCollection.ClockSound(); // Clock ticking sound
+        //    if (seconds == 0) // when time hits 0 do below
+        //    {
+        //        PlayerTimeTick.Enabled = false; // turn of timer tick so while code is run to remove issues
+        //        //MessageBox.Show("Tiden gick ut! Turen går över."); //man tappar flowet med popupen som dyker upp. 
+        //        FlipAllPlayableCards(); // flip cards back
+        //        IncrementPlayer();     // force change of player
+        //        UpdateGUI();           // update score & player so right players turn is shown
+        //        //ResetTimer();          // Restore values for workable loop
+
+        //    }
+        //}
+        //        public void ResetTimer()
+        //        {
+        //            seconds = game.ChooseTime(); // hard coded can make int variable to make it dynamic
+        //            playerTime_lbl.Text = "";
+        //        }
     }
 }
 
