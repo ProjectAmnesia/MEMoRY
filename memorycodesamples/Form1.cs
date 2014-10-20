@@ -68,8 +68,8 @@ namespace MemoryCodeSamples
             board = new Board(numberOfCards, this.card_Click);
             board.Location = new System.Drawing.Point(0, 0);
             this.Controls.Add(board);
-            //ResetTimer();
-            timerDrawTime.Interval = game.ChooseTime();
+            ////ResetTimer();
+            //timerDrawTime.Interval = game.ChooseTime();
         }
 
         private void FlipAllCards()
@@ -125,7 +125,7 @@ namespace MemoryCodeSamples
                 FlipAllPlayableCards();
             }
             timerFlipBack.Enabled = false;
-            timerDrawTime.Enabled = false;
+            //timerDrawTime.Enabled = false;
             //PlayerTimeTick.Enabled = false;
             Card clickedCard = (Card)sender;
             clickedCard.Flipped = !clickedCard.Flipped;
@@ -134,12 +134,12 @@ namespace MemoryCodeSamples
 
             if (flippedCards == 1)
             {
-                timerDrawTime.Enabled = true;
+            //timerDrawTime.Enabled = true;
                 //PlayerTimeTick.Enabled = true;
             }
             else if (flippedCards == 2)
             {
-                timerDrawTime.Enabled = false;
+            //    timerDrawTime.Enabled = false;
                 //PlayerTimeTick.Enabled = false;
                 //ResetTimer();
                 timerFlipBack.Enabled = true;
@@ -197,14 +197,14 @@ namespace MemoryCodeSamples
             UpdateGUI();
         }
 
-        private void timerDrawTime_Tick(object sender, EventArgs e)
-        {            
-            FlipAllPlayableCards();
-            lastFlipped = null;
-            IncrementPlayer();
-            timerDrawTime.Enabled = false;
-            UpdateGUI();
-        }
+        //private void timerDrawTime_Tick(object sender, EventArgs e)
+        //{            
+        //    FlipAllPlayableCards();
+        //    lastFlipped = null;
+        //    IncrementPlayer();
+        //    timerDrawTime.Enabled = false;
+        //    UpdateGUI();
+        //}
 
         private void btnCancelGame_Click(object sender, EventArgs e)
         {

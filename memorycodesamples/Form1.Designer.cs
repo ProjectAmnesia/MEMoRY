@@ -35,7 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnPlayAgain = new System.Windows.Forms.Button();
             this.timerFlipBack = new System.Windows.Forms.Timer(this.components);
-            this.timerDrawTime = new System.Windows.Forms.Timer(this.components);
             this.btnCancelGame = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PlayerTimeTick = new System.Windows.Forms.Timer(this.components);
@@ -117,11 +116,6 @@
             this.timerFlipBack.Interval = 1000;
             this.timerFlipBack.Tick += new System.EventHandler(this.timerFlipBack_Tick);
             // 
-            // timerDrawTime
-            // 
-            this.timerDrawTime.Interval = 3000;
-            this.timerDrawTime.Tick += new System.EventHandler(this.timerDrawTime_Tick);
-            // 
             // btnCancelGame
             // 
             this.btnCancelGame.BackColor = System.Drawing.Color.LightBlue;
@@ -195,7 +189,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPlayAgain;
         private System.Windows.Forms.Timer timerFlipBack;
-        private System.Windows.Forms.Timer timerDrawTime;
         private System.Windows.Forms.Button btnCancelGame;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer PlayerTimeTick;
