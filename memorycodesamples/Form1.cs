@@ -24,6 +24,7 @@ namespace MemoryCodeSamples
         Card lastFlipped;
         int flippedCards;
         int usedCards = 0;
+        int computersTurn = 0;
         int themeNum = 0;
         List<Player> players = new List<Player>();
         public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
@@ -58,8 +59,8 @@ namespace MemoryCodeSamples
                 numberOfCards = game.EnteredNumberOfCards();
                 themeNum = game.ChooseTheme();
                 board.CreateNewGame(numberOfCards, themeNum);
-                gameStarted = true;
-            }
+            gameStarted = true;
+        }
             else { }
         }
 
@@ -92,7 +93,7 @@ namespace MemoryCodeSamples
                 }
             }
         }
-
+ 
         private void IncrementPlayer()
         {
             playersTurn++;
@@ -113,6 +114,7 @@ namespace MemoryCodeSamples
             {
                 player.points = 0;
             }
+            playersTurn = 0;
             UpdateGUI();
         }
 
@@ -120,6 +122,17 @@ namespace MemoryCodeSamples
         {
             if (players.Count < 1)
                 return;
+            if (players[playersTurn].IsComputer())
+            {
+                if (computersTurn == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    computersTurn = 0;
+                }
+            }
             if (flippedCards == 0)
             {
                 FlipAllPlayableCards();
@@ -131,7 +144,6 @@ namespace MemoryCodeSamples
             clickedCard.Flipped = !clickedCard.Flipped;
             flippedCards++;
             usedCards++;
-
             if (flippedCards == 1)
             {
             //timerDrawTime.Enabled = true;
@@ -181,20 +193,31 @@ namespace MemoryCodeSamples
 
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
+            if (rbHuman.Checked)
+            {
 
-            Human human = new Human();
+                Human human = new Human(tbxPlayerName.Text);
             players.Add(human);
-            human.name = playerNamesVec[players.Count - 1];
+            }
+            else
+            {
+                Computer computer = new Computer(tbxPlayerName.Text);
+                players.Add(computer);
+            }
+            groupBox1.Enabled = true;
             UpdateGUI();
-
-
         }
 
         private void timerFlipBack_Tick(object sender, EventArgs e)
         {
             FlipAllPlayableCards();
             timerFlipBack.Enabled = false;
-            UpdateGUI();
+            //datorns tur startar efter att korten här vänts, så man tydligt ser vilka kort den väljer
+            if (players[playersTurn].IsComputer())
+            {
+                timerHaltComputer.Enabled = true;
+            }
+            UpdateGUI();            
         }
 
         //private void timerDrawTime_Tick(object sender, EventArgs e)
@@ -209,6 +232,26 @@ namespace MemoryCodeSamples
         private void btnCancelGame_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void timerHaltComputer_Tick(object sender, EventArgs e)
+        {
+            //om det finns spelbara kort väljer den två kort och trycker på dem.
+            var unplayable = board.cardList.FindAll(x => !x.Playable);
+            if (unplayable.Count() != board.cardList.Count())
+            {
+                object o = players[playersTurn].ClickARandomCard(numberOfCards, board.cardList);
+                computersTurn = 1;
+                card_Click(o, EventArgs.Empty);
+            }
+            unplayable = board.cardList.FindAll(x => !x.Playable);
+            if (unplayable.Count() != board.cardList.Count())
+            {
+                object o = players[playersTurn].ClickARandomCard(numberOfCards, board.cardList);
+                computersTurn = 1;
+                card_Click(o, EventArgs.Empty);
+            }
+            timerHaltComputer.Enabled = false;
         }
 
         //ett annat sätt att göra det som redan var gjort:
@@ -227,7 +270,7 @@ namespace MemoryCodeSamples
         //        IncrementPlayer();     // force change of player
         //        UpdateGUI();           // update score & player so right players turn is shown
         //        //ResetTimer();          // Restore values for workable loop
-
+       
         //    }
         //}
         //        public void ResetTimer()
