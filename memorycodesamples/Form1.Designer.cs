@@ -32,15 +32,14 @@
             this.btnAddPlayer = new System.Windows.Forms.Button();
             this.lblPlayers = new System.Windows.Forms.Label();
             this.lblTurn = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnPlayAgain = new System.Windows.Forms.Button();
             this.timerFlipBack = new System.Windows.Forms.Timer(this.components);
             this.timerDrawTime = new System.Windows.Forms.Timer(this.components);
             this.btnCancelGame = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PlayerTimeTick = new System.Windows.Forms.Timer(this.components);
             this.playerTime_lbl = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddPlayer
@@ -61,10 +60,10 @@
             // lblPlayers
             // 
             this.lblPlayers.AutoSize = true;
-            this.lblPlayers.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayers.BackColor = System.Drawing.Color.White;
             this.lblPlayers.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayers.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblPlayers.Location = new System.Drawing.Point(9, 86);
+            this.lblPlayers.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblPlayers.Location = new System.Drawing.Point(748, 281);
             this.lblPlayers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayers.Name = "lblPlayers";
             this.lblPlayers.Size = new System.Drawing.Size(18, 20);
@@ -74,28 +73,15 @@
             // lblTurn
             // 
             this.lblTurn.AutoSize = true;
-            this.lblTurn.BackColor = System.Drawing.Color.Transparent;
+            this.lblTurn.BackColor = System.Drawing.Color.White;
             this.lblTurn.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTurn.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblTurn.Location = new System.Drawing.Point(8, 9);
+            this.lblTurn.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblTurn.Location = new System.Drawing.Point(748, 175);
             this.lblTurn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTurn.Name = "lblTurn";
             this.lblTurn.Size = new System.Drawing.Size(18, 20);
             this.lblTurn.TabIndex = 3;
             this.lblTurn.Text = "...";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label2.Location = new System.Drawing.Point(7, 59);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Spelare och poäng:";
             // 
             // btnPlayAgain
             // 
@@ -135,18 +121,6 @@
             this.btnCancelGame.UseVisualStyleBackColor = false;
             this.btnCancelGame.Click += new System.EventHandler(this.btnCancelGame_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.LightBlue;
-            this.groupBox1.Controls.Add(this.lblTurn);
-            this.groupBox1.Controls.Add(this.lblPlayers);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(709, 44);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(181, 634);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            // 
             // PlayerTimeTick
             // 
             this.PlayerTimeTick.Interval = 1000;
@@ -160,6 +134,16 @@
             this.playerTime_lbl.Size = new System.Drawing.Size(0, 29);
             this.playerTime_lbl.TabIndex = 7;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::MemoryCodeSamples.Properties.Resources.scoreBox;
+            this.pictureBox1.Location = new System.Drawing.Point(709, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(181, 634);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -167,7 +151,9 @@
             this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowMain1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(895, 733);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.lblPlayers);
+            this.Controls.Add(this.lblTurn);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelGame);
             this.Controls.Add(this.playerTime_lbl);
             this.Controls.Add(this.btnPlayAgain);
@@ -180,8 +166,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Memory";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,14 +177,13 @@
         private System.Windows.Forms.Button btnAddPlayer;
         private System.Windows.Forms.Label lblPlayers;
         private System.Windows.Forms.Label lblTurn;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPlayAgain;
         private System.Windows.Forms.Timer timerFlipBack;
         private System.Windows.Forms.Timer timerDrawTime;
         private System.Windows.Forms.Button btnCancelGame;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer PlayerTimeTick;
         private System.Windows.Forms.Label playerTime_lbl;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
 
     }
