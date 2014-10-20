@@ -28,24 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCongrats = new System.Windows.Forms.Label();
             this.btnNo = new System.Windows.Forms.Button();
             this.btnYes = new System.Windows.Forms.Button();
             this.lblWinner = new System.Windows.Forms.Label();
-            this.lblPlayAgain = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblCongrats
-            // 
-            this.lblCongrats.BackColor = System.Drawing.Color.Transparent;
-            this.lblCongrats.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCongrats.ForeColor = System.Drawing.Color.Navy;
-            this.lblCongrats.Location = new System.Drawing.Point(12, 76);
-            this.lblCongrats.Name = "lblCongrats";
-            this.lblCongrats.Size = new System.Drawing.Size(444, 29);
-            this.lblCongrats.TabIndex = 0;
-            this.lblCongrats.Text = "Grattis!";
-            this.lblCongrats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnNo
             // 
@@ -53,9 +41,9 @@
             this.btnNo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNo.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNo.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnNo.Location = new System.Drawing.Point(248, 279);
+            this.btnNo.Location = new System.Drawing.Point(235, 291);
             this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(104, 34);
+            this.btnNo.Size = new System.Drawing.Size(63, 34);
             this.btnNo.TabIndex = 1;
             this.btnNo.Text = "Nej";
             this.btnNo.UseVisualStyleBackColor = false;
@@ -67,9 +55,9 @@
             this.btnYes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYes.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYes.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnYes.Location = new System.Drawing.Point(123, 279);
+            this.btnYes.Location = new System.Drawing.Point(172, 291);
             this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(104, 34);
+            this.btnYes.Size = new System.Drawing.Size(59, 34);
             this.btnYes.TabIndex = 1;
             this.btnYes.Text = "Ja!";
             this.btnYes.UseVisualStyleBackColor = false;
@@ -77,28 +65,27 @@
             // 
             // lblWinner
             // 
-            this.lblWinner.BackColor = System.Drawing.Color.Transparent;
+            this.lblWinner.BackColor = System.Drawing.Color.White;
             this.lblWinner.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWinner.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblWinner.Location = new System.Drawing.Point(17, 148);
+            this.lblWinner.Location = new System.Drawing.Point(192, 154);
             this.lblWinner.Name = "lblWinner";
-            this.lblWinner.Size = new System.Drawing.Size(439, 29);
+            this.lblWinner.Size = new System.Drawing.Size(73, 29);
             this.lblWinner.TabIndex = 0;
             this.lblWinner.Text = "...";
             this.lblWinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblWinner.UseCompatibleTextRendering = true;
             // 
-            // lblPlayAgain
+            // pictureBox1
             // 
-            this.lblPlayAgain.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlayAgain.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayAgain.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblPlayAgain.Location = new System.Drawing.Point(17, 253);
-            this.lblPlayAgain.Name = "lblPlayAgain";
-            this.lblPlayAgain.Size = new System.Drawing.Size(439, 23);
-            this.lblPlayAgain.TabIndex = 0;
-            this.lblPlayAgain.Text = "Vill du spela igen?";
-            this.lblPlayAgain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::MemoryCodeSamples.Properties.Resources.endScreen;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(469, 355);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // End
             // 
@@ -108,23 +95,22 @@
             this.ClientSize = new System.Drawing.Size(468, 354);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.btnNo);
-            this.Controls.Add(this.lblPlayAgain);
             this.Controls.Add(this.lblWinner);
-            this.Controls.Add(this.lblCongrats);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "End";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "End";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblCongrats;
         private System.Windows.Forms.Button btnNo;
         private System.Windows.Forms.Button btnYes;
         private System.Windows.Forms.Label lblWinner;
-        private System.Windows.Forms.Label lblPlayAgain;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
