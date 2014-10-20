@@ -864,6 +864,21 @@
   <ItemGroup>
     <None Include="Resources\rainbowSplashScreenBG.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\theme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardAmount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardAmountFree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scoreBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\endScreen.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
