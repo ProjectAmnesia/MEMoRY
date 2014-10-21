@@ -69,7 +69,7 @@ namespace MemoryCodeSamples
             board.Location = new System.Drawing.Point(0, 0);
             this.Controls.Add(board);
             //ResetTimer();
-            timerDrawTime.Interval = game.ChooseTime();
+            
         }
 
         private void FlipAllCards()

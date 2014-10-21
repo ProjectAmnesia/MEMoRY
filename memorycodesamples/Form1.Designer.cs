@@ -169,7 +169,6 @@
             this.ClientSize = new System.Drawing.Size(895, 733);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelGame);
-            this.ClientSize = new System.Drawing.Size(700, 511);
             this.Controls.Add(this.playerTime_lbl);
             this.Controls.Add(this.btnPlayAgain);
             this.Controls.Add(this.btnAddPlayer);
@@ -183,7 +182,6 @@
             this.Text = "Memory";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
