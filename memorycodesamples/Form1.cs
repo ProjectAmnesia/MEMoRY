@@ -23,12 +23,12 @@ namespace MemoryCodeSamples
         Card lastFlipped;
         int flippedCards;
         int usedCards = 0;
-        int computersTurn = 0;
-        int lastComputer;
+        //int computersTurn = 0;
+        //int lastComputer;
         int themeNum = 0;
         List<Player> players = new List<Player>();
         public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
-        int nameCount = 0; // Victor: remove
+        //int nameCount = 0; // Victor: remove
 
         public Form1()
         {
@@ -129,7 +129,7 @@ namespace MemoryCodeSamples
             clickedCard.Flipped = !clickedCard.Flipped;
             flippedCards++;
             usedCards++;
-            players[lastComputer].HandleComputerMemory(clickedCard); //victor: ny
+            //players[lastComputer].HandleComputerMemory(clickedCard); //victor: ny
             if (flippedCards == 1)
             {
                 timerDrawTime.Enabled = true;
@@ -206,7 +206,7 @@ namespace MemoryCodeSamples
 
         private void btnAIeasy_Click(object sender, EventArgs e)
         {
-            Computer comp = new Computer(3);
+            Computer comp = new Computer();
             players.Add(comp);
             comp.name = playerNamesVec[players.Count - 1];
             UpdateGUI();
