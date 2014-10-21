@@ -1311,9 +1311,9 @@ namespace MemoryCodeSamples.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mus1 {
+        internal static System.Drawing.Bitmap musse {
             get {
-                object obj = ResourceManager.GetObject("mus1", resourceCulture);
+                object obj = ResourceManager.GetObject("musse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

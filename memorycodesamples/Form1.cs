@@ -70,7 +70,7 @@ namespace MemoryCodeSamples
             board = new Board(numberOfCards, this.card_Click);
             board.Location = new System.Drawing.Point(0, 0);
             this.Controls.Add(board);
-            timerDrawTime.Interval = game.ChooseTime();
+            //timerDrawTime.Interval = game.ChooseTime();
         }
 
         private void FlipAllCards()
@@ -94,7 +94,7 @@ namespace MemoryCodeSamples
             }
         }
 
-        private void IncrementPlayer()
+        private void NextPlayer()
         {
             playersTurn++;
             flippedCards = 0;
@@ -146,7 +146,7 @@ namespace MemoryCodeSamples
                     clickedCard.Disable();
                     lastFlipped.Disable();
                 }
-                IncrementPlayer();
+                NextPlayer();
                 var notsmart = board.cardList.FindAll(x => !x.Playable);
                 if (notsmart.Count == board.cardList.Count)
                 {
@@ -154,6 +154,7 @@ namespace MemoryCodeSamples
                     List<Player> lista = players.FindAll(obj => obj.points == maxItem.points);
 
                     End frm = new End();
+                    
                     if(lista.Count > 1)
                     {
                         frm.Winner = "Det blev oavgjort";
@@ -162,10 +163,20 @@ namespace MemoryCodeSamples
                     { frm.Winner = maxItem.name;}
                     
                     frm.ShowWinner();
-                    frm.Show();
-
+                    //frm.Show();
                     this.Hide();
-
+                    DialogResult dialog = frm.ShowDialog();
+                    if(dialog == DialogResult.OK)
+                    {
+                        FlipAllCards();
+                        board.CreateNewGame(numberOfCards, themeNum);
+                        foreach (var player in players)
+                        {
+                            player.points = 0;
+                        }
+                        UpdateGUI();
+                        this.Show();
+                    }      
                     SoundCollection.WinnerSound();
                 }
             }
@@ -186,7 +197,7 @@ namespace MemoryCodeSamples
         {            
             FlipAllPlayableCards();
             lastFlipped = null;
-            IncrementPlayer();
+            NextPlayer();
             timerDrawTime.Enabled = false;
             UpdateGUI();
         }
@@ -235,6 +246,11 @@ namespace MemoryCodeSamples
             UpdateGUI();
             board.CreateNewGame(numberOfCards, themeNum);
             
+        }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
 
 

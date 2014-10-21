@@ -45,6 +45,7 @@
             this.btnAIhard = new System.Windows.Forms.Button();
             this.lblAddAI = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
+            this.btnNewGame = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,13 +131,13 @@
             // btnCancelGame
             // 
             this.btnCancelGame.BackColor = System.Drawing.Color.LightBlue;
-            this.btnCancelGame.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelGame.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnCancelGame.Location = new System.Drawing.Point(710, 684);
+            this.btnCancelGame.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelGame.ForeColor = System.Drawing.Color.Red;
+            this.btnCancelGame.Location = new System.Drawing.Point(848, 1);
             this.btnCancelGame.Name = "btnCancelGame";
-            this.btnCancelGame.Size = new System.Drawing.Size(87, 37);
+            this.btnCancelGame.Size = new System.Drawing.Size(42, 37);
             this.btnCancelGame.TabIndex = 7;
-            this.btnCancelGame.Text = "Avsluta";
+            this.btnCancelGame.Text = "X";
             this.btnCancelGame.UseVisualStyleBackColor = false;
             this.btnCancelGame.Click += new System.EventHandler(this.btnCancelGame_Click);
             // 
@@ -210,18 +211,18 @@
             this.btnAIhard.UseVisualStyleBackColor = false;
             this.btnAIhard.Click += new System.EventHandler(this.btnAIhard_Click);
             // 
-            // label1
+            // lblAddAI
             // 
             this.lblAddAI.AutoSize = true;
             this.lblAddAI.BackColor = System.Drawing.Color.Transparent;
             this.lblAddAI.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblAddAI.Location = new System.Drawing.Point(385, 243);
-            this.lblAddAI.Name = "label1";
+            this.lblAddAI.Name = "lblAddAI";
             this.lblAddAI.Size = new System.Drawing.Size(133, 14);
             this.lblAddAI.TabIndex = 9;
             this.lblAddAI.Text = "Spela mot en dator:";
             // 
-            // button1
+            // btnPlay
             // 
             this.btnPlay.BackColor = System.Drawing.Color.LightBlue;
             this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -229,12 +230,27 @@
             this.btnPlay.ForeColor = System.Drawing.Color.MediumBlue;
             this.btnPlay.Location = new System.Drawing.Point(476, 313);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnPlay.Name = "button1";
+            this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(54, 33);
             this.btnPlay.TabIndex = 1;
             this.btnPlay.Text = "Spela";
             this.btnPlay.UseVisualStyleBackColor = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
+            // btnNewGame
+            // 
+            this.btnNewGame.BackColor = System.Drawing.Color.LightBlue;
+            this.btnNewGame.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewGame.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewGame.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnNewGame.Location = new System.Drawing.Point(710, 684);
+            this.btnNewGame.Name = "btnNewGame";
+            this.btnNewGame.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnNewGame.Size = new System.Drawing.Size(87, 37);
+            this.btnNewGame.TabIndex = 6;
+            this.btnNewGame.Text = "Nytt spel";
+            this.btnNewGame.UseVisualStyleBackColor = false;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // Form1
             // 
@@ -247,6 +263,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelGame);
             this.Controls.Add(this.playerTime_lbl);
+            this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.btnPlayAgain);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnAIhard);
@@ -286,6 +303,7 @@
         private System.Windows.Forms.Button btnAIhard;
         private System.Windows.Forms.Label lblAddAI;
         private System.Windows.Forms.Button btnPlay;
+        private System.Windows.Forms.Button btnNewGame;
 
 
     }

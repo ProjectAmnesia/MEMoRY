@@ -66,6 +66,7 @@
             this.rb36cards.Size = new System.Drawing.Size(14, 13);
             this.rb36cards.TabIndex = 0;
             this.rb36cards.UseVisualStyleBackColor = true;
+            this.rb36cards.CheckedChanged += new System.EventHandler(this.rb36cards_CheckedChanged);
             // 
             // rb24cards
             // 
@@ -76,6 +77,7 @@
             this.rb24cards.Size = new System.Drawing.Size(14, 13);
             this.rb24cards.TabIndex = 0;
             this.rb24cards.UseVisualStyleBackColor = true;
+            this.rb24cards.CheckedChanged += new System.EventHandler(this.rb24cards_CheckedChanged);
             // 
             // rb16cards
             // 
@@ -88,6 +90,7 @@
             this.rb16cards.TabIndex = 0;
             this.rb16cards.TabStop = true;
             this.rb16cards.UseVisualStyleBackColor = true;
+            this.rb16cards.CheckedChanged += new System.EventHandler(this.rb16cards_CheckedChanged);
             // 
             // btnPlay
             // 
