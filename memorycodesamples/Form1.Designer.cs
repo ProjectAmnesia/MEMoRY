@@ -40,6 +40,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PlayerTimeTick = new System.Windows.Forms.Timer(this.components);
             this.playerTime_lbl = new System.Windows.Forms.Label();
+            this.btnAIeasy = new System.Windows.Forms.Button();
+            this.btnAImedium = new System.Windows.Forms.Button();
+            this.btnAIhard = new System.Windows.Forms.Button();
+            this.lblAddAI = new System.Windows.Forms.Label();
+            this.btnPlay = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,10 +54,10 @@
             this.btnAddPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddPlayer.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPlayer.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnAddPlayer.Location = new System.Drawing.Point(709, 5);
+            this.btnAddPlayer.Location = new System.Drawing.Point(388, 207);
             this.btnAddPlayer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddPlayer.Name = "btnAddPlayer";
-            this.btnAddPlayer.Size = new System.Drawing.Size(181, 33);
+            this.btnAddPlayer.Size = new System.Drawing.Size(129, 33);
             this.btnAddPlayer.TabIndex = 1;
             this.btnAddPlayer.Text = "Ny spelare";
             this.btnAddPlayer.UseVisualStyleBackColor = false;
@@ -160,6 +165,77 @@
             this.playerTime_lbl.Size = new System.Drawing.Size(0, 29);
             this.playerTime_lbl.TabIndex = 7;
             // 
+            // btnAIeasy
+            // 
+            this.btnAIeasy.BackColor = System.Drawing.Color.LightBlue;
+            this.btnAIeasy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAIeasy.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAIeasy.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnAIeasy.Location = new System.Drawing.Point(358, 265);
+            this.btnAIeasy.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAIeasy.Name = "btnAIeasy";
+            this.btnAIeasy.Size = new System.Drawing.Size(54, 33);
+            this.btnAIeasy.TabIndex = 1;
+            this.btnAIeasy.Text = "Lätt";
+            this.btnAIeasy.UseVisualStyleBackColor = false;
+            this.btnAIeasy.Click += new System.EventHandler(this.btnAIeasy_Click);
+            // 
+            // btnAImedium
+            // 
+            this.btnAImedium.BackColor = System.Drawing.Color.LightBlue;
+            this.btnAImedium.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAImedium.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAImedium.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnAImedium.Location = new System.Drawing.Point(426, 265);
+            this.btnAImedium.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAImedium.Name = "btnAImedium";
+            this.btnAImedium.Size = new System.Drawing.Size(54, 33);
+            this.btnAImedium.TabIndex = 1;
+            this.btnAImedium.Text = "Medel";
+            this.btnAImedium.UseVisualStyleBackColor = false;
+            this.btnAImedium.Click += new System.EventHandler(this.btnAImedium_Click);
+            // 
+            // btnAIhard
+            // 
+            this.btnAIhard.BackColor = System.Drawing.Color.LightBlue;
+            this.btnAIhard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAIhard.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAIhard.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnAIhard.Location = new System.Drawing.Point(494, 265);
+            this.btnAIhard.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAIhard.Name = "btnAIhard";
+            this.btnAIhard.Size = new System.Drawing.Size(54, 33);
+            this.btnAIhard.TabIndex = 1;
+            this.btnAIhard.Text = "Svår";
+            this.btnAIhard.UseVisualStyleBackColor = false;
+            this.btnAIhard.Click += new System.EventHandler(this.btnAIhard_Click);
+            // 
+            // label1
+            // 
+            this.lblAddAI.AutoSize = true;
+            this.lblAddAI.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddAI.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblAddAI.Location = new System.Drawing.Point(385, 243);
+            this.lblAddAI.Name = "label1";
+            this.lblAddAI.Size = new System.Drawing.Size(133, 14);
+            this.lblAddAI.TabIndex = 9;
+            this.lblAddAI.Text = "Spela mot en dator:";
+            // 
+            // button1
+            // 
+            this.btnPlay.BackColor = System.Drawing.Color.LightBlue;
+            this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPlay.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlay.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnPlay.Location = new System.Drawing.Point(476, 313);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnPlay.Name = "button1";
+            this.btnPlay.Size = new System.Drawing.Size(54, 33);
+            this.btnPlay.TabIndex = 1;
+            this.btnPlay.Text = "Spela";
+            this.btnPlay.UseVisualStyleBackColor = false;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -167,10 +243,15 @@
             this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowMain1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(895, 733);
+            this.Controls.Add(this.lblAddAI);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelGame);
             this.Controls.Add(this.playerTime_lbl);
             this.Controls.Add(this.btnPlayAgain);
+            this.Controls.Add(this.btnPlay);
+            this.Controls.Add(this.btnAIhard);
+            this.Controls.Add(this.btnAImedium);
+            this.Controls.Add(this.btnAIeasy);
             this.Controls.Add(this.btnAddPlayer);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -200,6 +281,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer PlayerTimeTick;
         private System.Windows.Forms.Label playerTime_lbl;
+        private System.Windows.Forms.Button btnAIeasy;
+        private System.Windows.Forms.Button btnAImedium;
+        private System.Windows.Forms.Button btnAIhard;
+        private System.Windows.Forms.Label lblAddAI;
+        private System.Windows.Forms.Button btnPlay;
 
 
     }

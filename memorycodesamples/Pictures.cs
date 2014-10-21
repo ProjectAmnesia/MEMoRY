@@ -71,9 +71,11 @@ namespace MemoryCodeSamples
             {temabilder = theme3;}
             foreach (Image bild in temabilder)
             {
+                Random rand = new Random();
                 var image = bild;
                 var newimage = ScaleImage(image, width, height);
-                bilder.Add(newimage);
+                bilder.Insert(rand.Next(0, bilder.Count), newimage);
+                //bilder.Add(newimage);
             }
             
         }

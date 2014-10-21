@@ -136,8 +136,26 @@ namespace MemoryCodeSamples
             grBNumberOfCards.Visible = true;
             btnPlay.Visible = true;
         }
+        private void rb16cards_CheckedChanged(object sender, EventArgs e)
+        {
+            lblCards.Visible = false;
+            lblMax.Visible = false;
+            tbNumberOfCards.Visible = false;
+        }
+        private void rb24cards_CheckedChanged(object sender, EventArgs e)
+        {
+            lblCards.Visible = false;
+            lblMax.Visible = false;
+            tbNumberOfCards.Visible = false;
+        }
+        private void rb36cards_CheckedChanged(object sender, EventArgs e)
+        {
+            lblCards.Visible = false;
+            lblMax.Visible = false;
+            tbNumberOfCards.Visible = false;
+        }
 
-        
+       
 
         
     }
