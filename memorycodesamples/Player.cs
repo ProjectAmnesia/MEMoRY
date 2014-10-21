@@ -13,6 +13,5 @@ namespace MemoryCodeSamples
 
         public abstract bool IsComputer();
         public abstract Card ClickARandomCard(int _numberOfCards, List<Card> _cardlist);
-        public abstract void HandleComputerMemory(Card card);
     }
 }
