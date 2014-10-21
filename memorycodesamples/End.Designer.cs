@@ -68,7 +68,7 @@
             // 
             this.lblWinner.BackColor = System.Drawing.Color.White;
             this.lblWinner.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWinner.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblWinner.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblWinner.Location = new System.Drawing.Point(190, 155);
             this.lblWinner.Name = "lblWinner";
             this.lblWinner.Size = new System.Drawing.Size(82, 29);
