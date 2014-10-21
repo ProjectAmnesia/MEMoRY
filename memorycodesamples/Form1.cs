@@ -23,13 +23,16 @@ namespace MemoryCodeSamples
         Card lastFlipped;
         int flippedCards;
         int usedCards = 0;
+        int computersTurn = 0;
+        int lastComputer;
         int themeNum = 0;
         List<Player> players = new List<Player>();
         public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
+        int nameCount = 0; // Victor: remove
 
         public Form1()
         {
-            InitializeComponent();            
+            InitializeComponent();
             StartGame();
             SoundCollection.IntroSound();   // add to splash screen
         }
@@ -43,7 +46,7 @@ namespace MemoryCodeSamples
                 if(p is Computer)
                     info += p.name + ", dator\n" + p.points + " poäng\n";            
                 else
-                    info += p.name + ",\n" + p.points + " poäng\n";  
+                info += p.name + ",\n" + p.points + " poäng\n";
             }
            
             lblPlayers.Text = info;
@@ -126,7 +129,7 @@ namespace MemoryCodeSamples
             clickedCard.Flipped = !clickedCard.Flipped;
             flippedCards++;
             usedCards++;
-
+            players[lastComputer].HandleComputerMemory(clickedCard); //victor: ny
             if (flippedCards == 1)
             {
                 timerDrawTime.Enabled = true;
@@ -191,8 +194,8 @@ namespace MemoryCodeSamples
         private void btnCancelGame_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }  
-        
+        }
+
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
             Human human = new Human();
@@ -234,7 +237,7 @@ namespace MemoryCodeSamples
             
         }
 
-   
+
     }
 }
 
