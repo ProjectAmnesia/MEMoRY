@@ -117,6 +117,7 @@
             this.tbNumberOfCards.Name = "tbNumberOfCards";
             this.tbNumberOfCards.Size = new System.Drawing.Size(62, 24);
             this.tbNumberOfCards.TabIndex = 2;
+            this.tbNumberOfCards.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbNumberOfCards.Visible = false;
             // 
             // btnCancel

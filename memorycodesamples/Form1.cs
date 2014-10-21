@@ -16,19 +16,20 @@ namespace MemoryCodeSamples
         // SOUND Objects
         Sounds SoundCollection = new Sounds();
         GameSettings game = new GameSettings();
+        End frm = new End();
         int numberOfCards = 16;
         Board board;
         int playersTurn;
         bool gameStarted = false;
         Card lastFlipped;
+        Card clickedCard;
+        Computer c;
         int flippedCards;
-        int usedCards = 0;
-        //int computersTurn = 0;
-        //int lastComputer;
+        //int usedCards = 0;
         int themeNum = 0;
         List<Player> players = new List<Player>();
         public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
-        //int nameCount = 0; // Victor: remove
+
 
         public Form1()
         {
@@ -39,16 +40,16 @@ namespace MemoryCodeSamples
 
         private void UpdateGUI()
         {
-            btnAddPlayer.Enabled = (usedCards != 0) ? false : true;
+            //btnAddPlayer.Enabled = (usedCards != 0) ? false : true;
             string info = "";
             foreach (Player p in players)
             {
-                if(p is Computer)
-                    info += p.name + ", dator\n" + p.points + " poäng\n";            
+                if (p is Computer)
+                    info += p.name + ", dator\n" + p.points + " poäng\n";
                 else
-                info += p.name + ",\n" + p.points + " poäng\n";
+                    info += p.name + ",\n" + p.points + " poäng\n";
             }
-           
+
             lblPlayers.Text = info;
             if (gameStarted && players.Count > 1)
                 lblTurn.Text = "Nu är det din tur:\n" + players[playersTurn].name;
@@ -75,7 +76,7 @@ namespace MemoryCodeSamples
 
         private void FlipAllCards()
         {
-            usedCards = 0;
+            //usedCards = 0;
             foreach (var card in board.cardList)
             {
                 card.Flipped = false;
@@ -104,7 +105,7 @@ namespace MemoryCodeSamples
             }
         }
 
-        private void btnPlayAgain_Click(object sender, EventArgs e)
+        private void ResetGame()
         {
             FlipAllCards();
             board.CreateNewGame(numberOfCards, themeNum);
@@ -115,76 +116,75 @@ namespace MemoryCodeSamples
             UpdateGUI();
         }
 
+        private void FindWinner()
+        {
+            Player maxItem = players.OrderByDescending(obj => obj.points).First();
+            List<Player> lista = players.FindAll(obj => obj.points == maxItem.points);
+
+            if (lista.Count > 1)
+                frm.Winner = "Det blev oavgjort";
+            else
+                frm.Winner = maxItem.name;
+            frm.ShowWinner();
+        }
+
+        private void EndingGame()
+        {
+            FindWinner();
+            this.Hide();
+            SoundCollection.WinnerSound();
+            DialogResult dialog = frm.ShowDialog();
+            if (dialog == DialogResult.OK)
+            {
+                ResetGame();
+                this.Show();
+            }
+        }
+        private void MatchedCards()
+        {
+            SoundCollection.PairSound();
+            players[playersTurn].points++;
+            playersTurn--;
+            clickedCard.Disable();
+            lastFlipped.Disable();
+            c.RemoveCardFromComputerMemory(lastFlipped);
+            c.RemoveCardFromComputerMemory(clickedCard);
+        }
         private void card_Click(object sender, EventArgs e)
         {
-            if (players.Count < 1)
-                return;
             if (flippedCards == 0)
             {
                 FlipAllPlayableCards();
             }
             timerFlipBack.Enabled = false;
             timerDrawTime.Enabled = false;
-            Card clickedCard = (Card)sender;
+            clickedCard = (Card)sender;
             clickedCard.Flipped = !clickedCard.Flipped;
             flippedCards++;
-            usedCards++;
-            //players[lastComputer].HandleComputerMemory(clickedCard); //victor: ny
             if (flippedCards == 1)
             {
                 timerDrawTime.Enabled = true;
             }
             else if (flippedCards == 2)
             {
+                c.HandleComputerMemory(clickedCard);
+                c.HandleComputerMemory(lastFlipped);
                 timerDrawTime.Enabled = false;
                 timerFlipBack.Enabled = true;
                 if (clickedCard.Match(lastFlipped))
                 {
-                    SoundCollection.PairSound();
-                    players[playersTurn].points++;
-                    playersTurn--;
-                    clickedCard.Disable();
-                    lastFlipped.Disable();
+                    MatchedCards();
                 }
                 NextPlayer();
-                var notsmart = board.cardList.FindAll(x => !x.Playable);
-                if (notsmart.Count == board.cardList.Count)
+                var usedCards = board.cardList.FindAll(x => !x.Playable);
+                if (usedCards.Count == board.cardList.Count)
                 {
-                    Player maxItem = players.OrderByDescending(obj => obj.points).First();
-                    List<Player> lista = players.FindAll(obj => obj.points == maxItem.points);
-
-                    End frm = new End();
-                    
-                    if(lista.Count > 1)
-                    {
-                        frm.Winner = "Det blev oavgjort";
-                    }
-                    else 
-                    { frm.Winner = maxItem.name;}
-                    
-                    frm.ShowWinner();
-                    //frm.Show();
-                    this.Hide();
-                    DialogResult dialog = frm.ShowDialog();
-                    if(dialog == DialogResult.OK)
-                    {
-                        FlipAllCards();
-                        board.CreateNewGame(numberOfCards, themeNum);
-                        foreach (var player in players)
-                        {
-                            player.points = 0;
-                        }
-                        UpdateGUI();
-                        this.Show();
-                    }      
-                    SoundCollection.WinnerSound();
+                    EndingGame();
                 }
             }
             lastFlipped = clickedCard;
             UpdateGUI();
         }
-
-      
 
         private void timerFlipBack_Tick(object sender, EventArgs e)
         {
@@ -194,17 +194,12 @@ namespace MemoryCodeSamples
         }
 
         private void timerDrawTime_Tick(object sender, EventArgs e)
-        {            
+        {
             FlipAllPlayableCards();
             lastFlipped = null;
             NextPlayer();
             timerDrawTime.Enabled = false;
             UpdateGUI();
-        }
-
-        private void btnCancelGame_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void btnAddPlayer_Click(object sender, EventArgs e)
@@ -217,7 +212,7 @@ namespace MemoryCodeSamples
 
         private void btnAIeasy_Click(object sender, EventArgs e)
         {
-            Computer comp = new Computer();
+            Computer comp = new Computer(3);
             players.Add(comp);
             comp.name = playerNamesVec[players.Count - 1];
             UpdateGUI();
@@ -245,7 +240,7 @@ namespace MemoryCodeSamples
             NewBoard();
             UpdateGUI();
             board.CreateNewGame(numberOfCards, themeNum);
-            
+
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
@@ -253,6 +248,15 @@ namespace MemoryCodeSamples
             Application.Restart();
         }
 
+        private void btnExitGame_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnPlayAgain_Click(object sender, EventArgs e)
+        {
+            ResetGame();
+        }
 
     }
 }

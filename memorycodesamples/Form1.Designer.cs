@@ -125,7 +125,7 @@
             // 
             // timerDrawTime
             // 
-            this.timerDrawTime.Interval = 3000;
+            this.timerDrawTime.Interval = 9000;
             this.timerDrawTime.Tick += new System.EventHandler(this.timerDrawTime_Tick);
             // 
             // btnCancelGame
@@ -139,7 +139,7 @@
             this.btnCancelGame.TabIndex = 7;
             this.btnCancelGame.Text = "X";
             this.btnCancelGame.UseVisualStyleBackColor = false;
-            this.btnCancelGame.Click += new System.EventHandler(this.btnCancelGame_Click);
+            this.btnCancelGame.Click += new System.EventHandler(this.btnExitGame_Click);
             // 
             // groupBox1
             // 
