@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace MemoryCodeSamples
 {
-    class Player
+    abstract class Player
     {
         public string name;
         public int points;
+
+        public abstract bool IsComputer();
+        public abstract Card ClickARandomCard(int _numberOfCards, List<Card> _cardlist);
+        public abstract void HandleComputerMemory(Card card);
     }
 }

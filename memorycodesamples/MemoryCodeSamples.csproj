@@ -73,6 +73,7 @@
     <Compile Include="Board.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Computer.cs" />
     <Compile Include="End.cs">
       <SubType>Form</SubType>
     </Compile>
