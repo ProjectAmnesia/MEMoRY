@@ -8,9 +8,9 @@ namespace MemoryCodeSamples
 {
     class Human : Player
     {
-        public Human(string _name)
+        public Human()
         {
-            name = _name;
+            
         }
 
         public override bool IsComputer()
@@ -20,13 +20,8 @@ namespace MemoryCodeSamples
 
         public override Card ClickARandomCard(int _numberOfCards, List<Card> _cardlist)
         {
-            //does not need to be used
+            //den här ska aldrig användas
             return null;
-        }
-
-        public override void HandleComputerMemory(Card card)
-        {
-            //does not need to be used
         }
     }
 }
