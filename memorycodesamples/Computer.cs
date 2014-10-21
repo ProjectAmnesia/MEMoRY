@@ -11,7 +11,9 @@ namespace MemoryCodeSamples
         int lastSelection;
         bool useNextCard = false;
         Random rand = new Random();
+        List<Card> computerMemory = new List<Card>();
         public List<Card> cardList = new List<Card>();
+        int difficulty = 6; //temporary
 
         public Computer(string _name)
         {
@@ -63,7 +65,7 @@ namespace MemoryCodeSamples
                     }
                 }
             }
-            //om man har kommit hit finns antagligen få spelbara kort
+            //victor: text
             foreach (Card c in cardList)
             {
                 if (c.Playable == true)
@@ -71,7 +73,42 @@ namespace MemoryCodeSamples
                     return c;
                 }
             }
-            return null; //man borde aldrig komma hit
+            return null; //this code should never run
+        }
+
+        public override void HandleComputerMemory(Card card)
+        {
+            computerMemory.Add(card);
+            if (computerMemory.Count > difficulty)
+            {
+                computerMemory.RemoveAt(difficulty);
+            }
+        }
+
+        private List<Card> FindMatchInMemory()
+        {
+            List<Card> tempMatchList = new List<Card>();
+            foreach (Card card in computerMemory)
+            {
+                if (card.Playable == true)
+                {
+                    var match = computerMemory.Find(c => c.Match(card));
+                    if (match != null)
+                    {
+                        tempMatchList.Add(match);
+                        tempMatchList.Add(card);
+                        break;
+                    }
+                }
+            }
+            return tempMatchList;
+        }
+
+        private Card SecondMatch (Card _card)
+        {
+            //returns second matching card
+            Card card = _card;
+            return card;
         }
 
     }

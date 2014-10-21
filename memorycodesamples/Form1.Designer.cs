@@ -39,6 +39,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PlayerTimeTick = new System.Windows.Forms.Timer(this.components);
             this.playerTime_lbl = new System.Windows.Forms.Label();
+            this.timerHaltComputer = new System.Windows.Forms.Timer(this.components);
+            this.cbHuman = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +134,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightBlue;
+            this.groupBox1.Controls.Add(this.cbHuman);
             this.groupBox1.Controls.Add(this.lblTurn);
             this.groupBox1.Controls.Add(this.lblPlayers);
             this.groupBox1.Controls.Add(this.label2);
@@ -153,6 +156,23 @@
             this.playerTime_lbl.Name = "playerTime_lbl";
             this.playerTime_lbl.Size = new System.Drawing.Size(0, 29);
             this.playerTime_lbl.TabIndex = 7;
+            // 
+            // timerHaltComputer
+            // 
+            this.timerHaltComputer.Interval = 300;
+            this.timerHaltComputer.Tick += new System.EventHandler(this.timerHaltComputer_Tick);
+            // 
+            // cbHuman
+            // 
+            this.cbHuman.AutoSize = true;
+            this.cbHuman.Checked = true;
+            this.cbHuman.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbHuman.Location = new System.Drawing.Point(94, 22);
+            this.cbHuman.Name = "cbHuman";
+            this.cbHuman.Size = new System.Drawing.Size(70, 18);
+            this.cbHuman.TabIndex = 6;
+            this.cbHuman.Text = "Human";
+            this.cbHuman.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -193,6 +213,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer PlayerTimeTick;
         private System.Windows.Forms.Label playerTime_lbl;
+        private System.Windows.Forms.Timer timerHaltComputer;
+        private System.Windows.Forms.CheckBox cbHuman;
 
 
     }

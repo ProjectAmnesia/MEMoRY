@@ -25,9 +25,11 @@ namespace MemoryCodeSamples
         int flippedCards;
         int usedCards = 0;
         int computersTurn = 0;
+        int lastComputer;
         int themeNum = 0;
         List<Player> players = new List<Player>();
         public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
+        int nameCount = 0; // Victor: remove
 
         public Form1()
         {
@@ -130,6 +132,7 @@ namespace MemoryCodeSamples
                 }
                 else
                 {
+                    lastComputer = playersTurn; //victor: ny
                     computersTurn = 0;
                 }
             }
@@ -144,6 +147,7 @@ namespace MemoryCodeSamples
             clickedCard.Flipped = !clickedCard.Flipped;
             flippedCards++;
             usedCards++;
+            players[lastComputer].HandleComputerMemory(clickedCard); //victor: ny
             if (flippedCards == 1)
             {
             //timerDrawTime.Enabled = true;
@@ -193,15 +197,16 @@ namespace MemoryCodeSamples
 
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
-            if (rbHuman.Checked)
+            if (cbHuman.Checked)
             {
-
-                Human human = new Human(tbxPlayerName.Text);
+                Human human = new Human(playerNamesVec[nameCount]);
+                nameCount++;
             players.Add(human);
             }
             else
             {
-                Computer computer = new Computer(tbxPlayerName.Text);
+                Computer computer = new Computer(playerNamesVec[nameCount]);
+                nameCount++;
                 players.Add(computer);
             }
             groupBox1.Enabled = true;
@@ -212,7 +217,7 @@ namespace MemoryCodeSamples
         {
             FlipAllPlayableCards();
             timerFlipBack.Enabled = false;
-            //datorns tur startar efter att korten här vänts, så man tydligt ser vilka kort den väljer
+            //begin computers turn
             if (players[playersTurn].IsComputer())
             {
                 timerHaltComputer.Enabled = true;
@@ -236,7 +241,6 @@ namespace MemoryCodeSamples
 
         private void timerHaltComputer_Tick(object sender, EventArgs e)
         {
-            //om det finns spelbara kort väljer den två kort och trycker på dem.
             var unplayable = board.cardList.FindAll(x => !x.Playable);
             if (unplayable.Count() != board.cardList.Count())
             {
