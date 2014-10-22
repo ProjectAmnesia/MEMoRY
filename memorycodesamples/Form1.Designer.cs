@@ -38,7 +38,7 @@
             this.timerDrawTime = new System.Windows.Forms.Timer(this.components);
             this.btnCancelGame = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.PlayerTimeTick = new System.Windows.Forms.Timer(this.components);
+            this.timerComputerTick = new System.Windows.Forms.Timer(this.components);
             this.playerTime_lbl = new System.Windows.Forms.Label();
             this.btnAIeasy = new System.Windows.Forms.Button();
             this.btnAImedium = new System.Windows.Forms.Button();
@@ -73,7 +73,7 @@
             this.lblPlayers.Location = new System.Drawing.Point(9, 86);
             this.lblPlayers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayers.Name = "lblPlayers";
-            this.lblPlayers.Size = new System.Drawing.Size(18, 20);
+            this.lblPlayers.Size = new System.Drawing.Size(24, 26);
             this.lblPlayers.TabIndex = 3;
             this.lblPlayers.Text = "...";
             // 
@@ -86,7 +86,7 @@
             this.lblTurn.Location = new System.Drawing.Point(8, 9);
             this.lblTurn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTurn.Name = "lblTurn";
-            this.lblTurn.Size = new System.Drawing.Size(18, 20);
+            this.lblTurn.Size = new System.Drawing.Size(24, 26);
             this.lblTurn.TabIndex = 3;
             this.lblTurn.Text = "...";
             // 
@@ -99,7 +99,7 @@
             this.label2.Location = new System.Drawing.Point(7, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 20);
+            this.label2.Size = new System.Drawing.Size(177, 26);
             this.label2.TabIndex = 5;
             this.label2.Text = "Spelare och poäng:";
             // 
@@ -153,9 +153,10 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
-            // PlayerTimeTick
+            // timerComputerTick
             // 
-            this.PlayerTimeTick.Interval = 1000;
+            this.timerComputerTick.Interval = 2000;
+            this.timerComputerTick.Tick += new System.EventHandler(this.timerComputerTick_Tick);
             // 
             // playerTime_lbl
             // 
@@ -163,7 +164,7 @@
             this.playerTime_lbl.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerTime_lbl.Location = new System.Drawing.Point(766, 439);
             this.playerTime_lbl.Name = "playerTime_lbl";
-            this.playerTime_lbl.Size = new System.Drawing.Size(0, 29);
+            this.playerTime_lbl.Size = new System.Drawing.Size(0, 36);
             this.playerTime_lbl.TabIndex = 7;
             // 
             // btnAIeasy
@@ -218,7 +219,7 @@
             this.lblAddAI.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblAddAI.Location = new System.Drawing.Point(385, 252);
             this.lblAddAI.Name = "lblAddAI";
-            this.lblAddAI.Size = new System.Drawing.Size(133, 14);
+            this.lblAddAI.Size = new System.Drawing.Size(159, 18);
             this.lblAddAI.TabIndex = 9;
             this.lblAddAI.Text = "Spela mot en dator:";
             // 
@@ -254,7 +255,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowMain1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -296,7 +297,7 @@
         private System.Windows.Forms.Timer timerDrawTime;
         private System.Windows.Forms.Button btnCancelGame;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Timer PlayerTimeTick;
+        private System.Windows.Forms.Timer timerComputerTick;
         private System.Windows.Forms.Label playerTime_lbl;
         private System.Windows.Forms.Button btnAIeasy;
         private System.Windows.Forms.Button btnAImedium;

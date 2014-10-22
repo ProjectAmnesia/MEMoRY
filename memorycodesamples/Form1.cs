@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace MemoryCodeSamples
 {
@@ -70,7 +71,14 @@ namespace MemoryCodeSamples
             board = new Board(numberOfCards, this.card_Click);
             board.Location = new System.Drawing.Point(0, 0);
             this.Controls.Add(board);
-            //timerDrawTime.Interval = game.ChooseTime();
+
+            foreach (Player player in players)
+            {
+                if (player is ComputerTwo)
+                {
+                    ((ComputerTwo)player).CardsOnBoard(board.cardList);
+                }
+            }
         }
 
         private void FlipAllCards()
@@ -102,6 +110,13 @@ namespace MemoryCodeSamples
             {
                 playersTurn = 0;
             }
+
+            if (players[playersTurn] is ComputerTwo)
+            {
+                timerComputerTick.Enabled = true;
+            }
+
+            UpdateGUI();
         }
 
         private void ResetGame()
@@ -170,11 +185,14 @@ namespace MemoryCodeSamples
                 {
                     MatchedCards();
                 }
-                NextPlayer();
-                var usedCards = board.cardList.FindAll(x => !x.Playable);
-                if (usedCards.Count == board.cardList.Count)
+
+                if (DidGameEnd())
                 {
                     EndingGame();
+                }
+                else
+                {
+                    NextPlayer();
                 }
             }
             lastFlipped = clickedCard;
@@ -207,10 +225,56 @@ namespace MemoryCodeSamples
 
         private void btnAIeasy_Click(object sender, EventArgs e)
         {
-            Computer comp = new Computer(3);
-            players.Add(comp);
-            comp.name = playerNamesVec[players.Count - 1];
+            ComputerTwo computer = new ComputerTwo(6);
+            players.Add(computer);
+            computer.name = playerNamesVec[players.Count - 1];
+            computer.DidFindMatchingCards += this.ComputerDidFindMatch;
+            computer.DidNotFindMatchingCards += this.ComputerDidNotFindMatch;
+
             UpdateGUI();
+
+        }
+
+        private void ComputerDidFindMatch(Card cardOne, Card cardTwo, ComputerTwo computer)
+        {
+            cardOne.Flipped = true;
+            cardTwo.Flipped = true;
+
+            cardOne.Disable();
+            cardTwo.Disable();
+
+            computer.points++;
+
+            SoundCollection.PairSound();
+
+            if (DidGameEnd())
+            {
+                EndingGame();
+            }
+            else
+            {
+                Thread.Sleep(1000);
+                computer.Play();
+            }
+            UpdateGUI();
+        }
+
+        private void ComputerDidNotFindMatch(Card cardOne, Card cardTwo, ComputerTwo computer)
+        {
+
+
+            cardOne.Flipped = true;
+            cardTwo.Flipped = true;
+
+            cardOne.Refresh();
+            cardTwo.Refresh();
+
+            Thread.Sleep(1500);
+
+            FlipAllPlayableCards();
+            
+
+            NextPlayer();
         }
 
         private void btnAImedium_Click(object sender, EventArgs e)
@@ -251,6 +315,23 @@ namespace MemoryCodeSamples
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
             ResetGame();
+        }
+
+        private void timerComputerTick_Tick(object sender, EventArgs e)
+        {
+            if (players[playersTurn] is ComputerTwo && !DidGameEnd())
+            {
+                ((ComputerTwo)players[playersTurn]).Play();
+            }
+
+            timerComputerTick.Enabled = false;
+        }
+
+        private bool DidGameEnd()
+        {
+            var usedCards = board.cardList.FindAll(x => !x.Playable);
+
+            return usedCards.Count == board.cardList.Count;
         }
 
     }
