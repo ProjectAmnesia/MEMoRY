@@ -26,7 +26,7 @@ namespace MemoryCodeSamples
         Card clickedCard;
         int flippedCards;
         //int usedCards = 0;
-        int themeNum = 0;
+        int themeNum;
         List<Player> players = new List<Player>();
         public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
 
@@ -44,10 +44,10 @@ namespace MemoryCodeSamples
             string info = "";
             foreach (Player p in players)
             {
-                if (p is Computer)
-                    info += p.name + ", dator\n" + p.points + " poäng\n";
+                if (p is ComputerTwo)
+                    info += p.name + ", dator " + p.diff +"\n" + p.points + " poäng\n";
                 else
-                    info += p.name + ",\n" + p.points + " poäng\n";//mmm
+                    info += p.name + ",\n" + p.points + " poäng\n";
             }
 
             lblPlayers.Text = info;
@@ -71,7 +71,6 @@ namespace MemoryCodeSamples
             board = new Board(numberOfCards, this.card_Click);
             board.Location = new System.Drawing.Point(0, 0);
             this.Controls.Add(board);
-
             foreach (Player player in players)
             {
                 if (player is ComputerTwo)
@@ -114,6 +113,7 @@ namespace MemoryCodeSamples
             if (players[playersTurn] is ComputerTwo)
             {
                 timerComputerTick.Enabled = true;
+                
             }
 
             UpdateGUI();
@@ -126,6 +126,13 @@ namespace MemoryCodeSamples
             foreach (var player in players)
             {
                 player.points = 0;
+            }
+            foreach (Player player in players)
+            {
+                if(player is ComputerTwo)
+                {
+                    ((ComputerTwo)player).CardsOnBoard(board.cardList);
+                }
             }
             UpdateGUI();
         }
@@ -154,6 +161,7 @@ namespace MemoryCodeSamples
                 this.Show();
             }
         }
+
         private void MatchedCards()
         {
             SoundCollection.PairSound();
@@ -162,12 +170,13 @@ namespace MemoryCodeSamples
             clickedCard.Disable();
             lastFlipped.Disable();
         }
+
         private void card_Click(object sender, EventArgs e)
         {
-            if (flippedCards == 0)
-            {
-                FlipAllPlayableCards();
-            }
+            //if (flippedCards == 0)
+            //{
+            //    FlipAllPlayableCards();
+            //}
             timerFlipBack.Enabled = false;
             timerDrawTime.Enabled = false;
             clickedCard = (Card)sender;
@@ -185,13 +194,20 @@ namespace MemoryCodeSamples
                 {
                     MatchedCards();
                 }
-
                 if (DidGameEnd())
                 {
                     EndingGame();
                 }
                 else
                 {
+                    foreach (Player player in players)
+                    {
+                        if (player is ComputerTwo)
+                        {
+                            ((ComputerTwo)player).AddToComputerMemory(clickedCard);
+                            ((ComputerTwo)player).AddToComputerMemory(lastFlipped);
+                        }
+                    }
                     NextPlayer();
                 }
             }
@@ -225,8 +241,9 @@ namespace MemoryCodeSamples
 
         private void btnAIeasy_Click(object sender, EventArgs e)
         {
-            ComputerTwo computer = new ComputerTwo(6);
+            ComputerTwo computer = new ComputerTwo(numberOfCards/4);
             players.Add(computer);
+            computer.diff = "lätt";
             computer.name = playerNamesVec[players.Count - 1];
             computer.DidFindMatchingCards += this.ComputerDidFindMatch;
             computer.DidNotFindMatchingCards += this.ComputerDidNotFindMatch;
@@ -262,8 +279,9 @@ namespace MemoryCodeSamples
         private void ComputerDidNotFindMatch(Card cardOne, Card cardTwo, ComputerTwo computer)
         {
 
-
             cardOne.Flipped = true;
+            timerBetweenCards.Enabled = true;
+            timerBetweenCards.Start();
             cardTwo.Flipped = true;
 
             cardOne.Refresh();
@@ -272,19 +290,33 @@ namespace MemoryCodeSamples
             Thread.Sleep(1500);
 
             FlipAllPlayableCards();
-            
+
 
             NextPlayer();
         }
 
         private void btnAImedium_Click(object sender, EventArgs e)
         {
+            ComputerTwo computerMedium = new ComputerTwo(numberOfCards/3);
+            players.Add(computerMedium);
+            computerMedium.diff = "medel";
+            computerMedium.name = playerNamesVec[players.Count - 1];
+            computerMedium.DidFindMatchingCards += this.ComputerDidFindMatch;
+            computerMedium.DidNotFindMatchingCards += this.ComputerDidNotFindMatch;
 
+            UpdateGUI();
         }
 
         private void btnAIhard_Click(object sender, EventArgs e)
         {
+            ComputerTwo computerHard = new ComputerTwo(numberOfCards/2);
+            players.Add(computerHard);
+            computerHard.diff = "svår";
+            computerHard.name = playerNamesVec[players.Count - 1];
+            computerHard.DidFindMatchingCards += this.ComputerDidFindMatch;
+            computerHard.DidNotFindMatchingCards += this.ComputerDidNotFindMatch;
 
+            UpdateGUI();
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -297,9 +329,17 @@ namespace MemoryCodeSamples
             btnPlay.Visible = false;
             lblAddAI.Visible = false;
             NewBoard();
+            board.CreateNewGame(numberOfCards, themeNum); 
             UpdateGUI();
-            board.CreateNewGame(numberOfCards, themeNum);
-
+               
+            if(IsFirstPlayerAI())
+            {
+                if (players[playersTurn] is ComputerTwo)
+                {                    
+                    timerComputerTick.Enabled = true;
+                    //((ComputerTwo)players[playersTurn]).Play();
+                }
+            }
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
@@ -334,6 +374,23 @@ namespace MemoryCodeSamples
             return usedCards.Count == board.cardList.Count;
         }
 
+        private void timerWhatever_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerBetweenCards_Tick(object sender, EventArgs e)
+        {
+            timerBetweenCards.Stop();
+            timerBetweenCards.Enabled = false;
+        }
+        private bool IsFirstPlayerAI()
+        {
+            if (players[playersTurn] is ComputerTwo)
+                return true;
+            else
+                return false;
+        }
     }
 }
 

@@ -42,6 +42,7 @@ namespace MemoryCodeSamples
 
         public ComputerTwo(int difficulty)
         {
+           
             _difficulty = difficulty;
         }
 
@@ -162,9 +163,9 @@ namespace MemoryCodeSamples
                     {
                         foreach (Card c in memory)
                         {
-                            if (!randomCard.Equals(c))
+                            if (!randomCard.Equals(c))//varför inte egentligen?
                             {
-                                return randomCard;
+                                return randomCard;//vad blir det annars?
                             }
                         }
                     }

@@ -46,6 +46,8 @@
             this.lblAddAI = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnNewGame = new System.Windows.Forms.Button();
+            this.timerBetweenCards = new System.Windows.Forms.Timer(this.components);
+            this.timerWhatever = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,10 +72,10 @@
             this.lblPlayers.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayers.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayers.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblPlayers.Location = new System.Drawing.Point(9, 86);
+            this.lblPlayers.Location = new System.Drawing.Point(9, 102);
             this.lblPlayers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayers.Name = "lblPlayers";
-            this.lblPlayers.Size = new System.Drawing.Size(24, 26);
+            this.lblPlayers.Size = new System.Drawing.Size(18, 20);
             this.lblPlayers.TabIndex = 3;
             this.lblPlayers.Text = "...";
             // 
@@ -81,7 +83,7 @@
             // 
             this.lblTurn.AutoSize = true;
             this.lblTurn.BackColor = System.Drawing.Color.Transparent;
-            this.lblTurn.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurn.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTurn.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblTurn.Location = new System.Drawing.Point(8, 9);
             this.lblTurn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -96,10 +98,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label2.Location = new System.Drawing.Point(7, 59);
+            this.label2.Location = new System.Drawing.Point(7, 75);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 26);
+            this.label2.Size = new System.Drawing.Size(138, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Spelare och poäng:";
             // 
@@ -164,7 +166,7 @@
             this.playerTime_lbl.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerTime_lbl.Location = new System.Drawing.Point(766, 439);
             this.playerTime_lbl.Name = "playerTime_lbl";
-            this.playerTime_lbl.Size = new System.Drawing.Size(0, 36);
+            this.playerTime_lbl.Size = new System.Drawing.Size(0, 29);
             this.playerTime_lbl.TabIndex = 7;
             // 
             // btnAIeasy
@@ -219,7 +221,7 @@
             this.lblAddAI.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblAddAI.Location = new System.Drawing.Point(385, 252);
             this.lblAddAI.Name = "lblAddAI";
-            this.lblAddAI.Size = new System.Drawing.Size(159, 18);
+            this.lblAddAI.Size = new System.Drawing.Size(133, 14);
             this.lblAddAI.TabIndex = 9;
             this.lblAddAI.Text = "Spela mot en dator:";
             // 
@@ -253,9 +255,19 @@
             this.btnNewGame.UseVisualStyleBackColor = false;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
+            // timerBetweenCards
+            // 
+            this.timerBetweenCards.Interval = 500;
+            this.timerBetweenCards.Tick += new System.EventHandler(this.timerBetweenCards_Tick);
+            // 
+            // timerWhatever
+            // 
+            this.timerWhatever.Interval = 500;
+            this.timerWhatever.Tick += new System.EventHandler(this.timerWhatever_Tick);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowMain1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -305,6 +317,8 @@
         private System.Windows.Forms.Label lblAddAI;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnNewGame;
+        private System.Windows.Forms.Timer timerBetweenCards;
+        private System.Windows.Forms.Timer timerWhatever;
 
 
     }

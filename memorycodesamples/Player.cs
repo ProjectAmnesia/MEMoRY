@@ -10,7 +10,7 @@ namespace MemoryCodeSamples
     {
         public string name;
         public int points;
-
+        public string diff;
         //public abstract bool IsComputer();
         //public abstract Card ClickARandomCard(int _numberOfCards, List<Card> _cardlist);
     }
