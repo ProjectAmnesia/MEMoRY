@@ -53,7 +53,7 @@
             // 
             this.btnAddPlayer.BackColor = System.Drawing.Color.LightBlue;
             this.btnAddPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddPlayer.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPlayer.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPlayer.ForeColor = System.Drawing.Color.MediumBlue;
             this.btnAddPlayer.Location = new System.Drawing.Point(388, 207);
             this.btnAddPlayer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -172,10 +172,10 @@
             this.btnAIeasy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAIeasy.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAIeasy.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnAIeasy.Location = new System.Drawing.Point(358, 265);
+            this.btnAIeasy.Location = new System.Drawing.Point(358, 269);
             this.btnAIeasy.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAIeasy.Name = "btnAIeasy";
-            this.btnAIeasy.Size = new System.Drawing.Size(54, 33);
+            this.btnAIeasy.Size = new System.Drawing.Size(54, 26);
             this.btnAIeasy.TabIndex = 1;
             this.btnAIeasy.Text = "Lätt";
             this.btnAIeasy.UseVisualStyleBackColor = false;
@@ -187,10 +187,10 @@
             this.btnAImedium.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAImedium.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAImedium.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnAImedium.Location = new System.Drawing.Point(426, 265);
+            this.btnAImedium.Location = new System.Drawing.Point(426, 269);
             this.btnAImedium.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAImedium.Name = "btnAImedium";
-            this.btnAImedium.Size = new System.Drawing.Size(54, 33);
+            this.btnAImedium.Size = new System.Drawing.Size(54, 26);
             this.btnAImedium.TabIndex = 1;
             this.btnAImedium.Text = "Medel";
             this.btnAImedium.UseVisualStyleBackColor = false;
@@ -202,10 +202,10 @@
             this.btnAIhard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAIhard.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAIhard.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnAIhard.Location = new System.Drawing.Point(494, 265);
+            this.btnAIhard.Location = new System.Drawing.Point(494, 269);
             this.btnAIhard.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAIhard.Name = "btnAIhard";
-            this.btnAIhard.Size = new System.Drawing.Size(54, 33);
+            this.btnAIhard.Size = new System.Drawing.Size(54, 26);
             this.btnAIhard.TabIndex = 1;
             this.btnAIhard.Text = "Svår";
             this.btnAIhard.UseVisualStyleBackColor = false;
@@ -216,7 +216,7 @@
             this.lblAddAI.AutoSize = true;
             this.lblAddAI.BackColor = System.Drawing.Color.Transparent;
             this.lblAddAI.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblAddAI.Location = new System.Drawing.Point(385, 243);
+            this.lblAddAI.Location = new System.Drawing.Point(385, 252);
             this.lblAddAI.Name = "lblAddAI";
             this.lblAddAI.Size = new System.Drawing.Size(133, 14);
             this.lblAddAI.TabIndex = 9;
@@ -226,14 +226,14 @@
             // 
             this.btnPlay.BackColor = System.Drawing.Color.LightBlue;
             this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPlay.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlay.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlay.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnPlay.Location = new System.Drawing.Point(476, 313);
+            this.btnPlay.Location = new System.Drawing.Point(456, 301);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(54, 33);
+            this.btnPlay.Size = new System.Drawing.Size(104, 33);
             this.btnPlay.TabIndex = 1;
-            this.btnPlay.Text = "Spela";
+            this.btnPlay.Text = "Starta spelet";
             this.btnPlay.UseVisualStyleBackColor = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
