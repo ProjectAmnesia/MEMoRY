@@ -23,7 +23,6 @@ namespace MemoryCodeSamples
         bool gameStarted = false;
         Card lastFlipped;
         Card clickedCard;
-        Computer c;
         int flippedCards;
         //int usedCards = 0;
         int themeNum = 0;
@@ -147,8 +146,6 @@ namespace MemoryCodeSamples
             playersTurn--;
             clickedCard.Disable();
             lastFlipped.Disable();
-            c.RemoveCardFromComputerMemory(lastFlipped);
-            c.RemoveCardFromComputerMemory(clickedCard);
         }
         private void card_Click(object sender, EventArgs e)
         {
@@ -167,8 +164,6 @@ namespace MemoryCodeSamples
             }
             else if (flippedCards == 2)
             {
-                c.HandleComputerMemory(clickedCard);
-                c.HandleComputerMemory(lastFlipped);
                 timerDrawTime.Enabled = false;
                 timerFlipBack.Enabled = true;
                 if (clickedCard.Match(lastFlipped))

@@ -16,7 +16,6 @@ namespace MemoryCodeSamples
         private int margin = 1;
         private deckEvent cardEvent;
         int width, height;
-        Computer c;
         
 
         public Board(int numberOfCards, deckEvent eventhandler)
@@ -73,7 +72,6 @@ namespace MemoryCodeSamples
                     myCard.Click += new System.EventHandler(cardEvent);
                     this.Controls.Add(myCard);
                     cardList.Add(myCard);
-                    c.allCardsOnBoard.Add(myCard);
                 }
             }
             randomizeIdInCardList(numberOfCards);
