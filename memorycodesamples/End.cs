@@ -30,14 +30,19 @@ namespace MemoryCodeSamples
         {
             lblWinner.Text = winner;
         }
-        private void btnYes_Click(object sender, EventArgs e)
+        private void btnNewGame_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
 
-        private void btnNo_Click(object sender, EventArgs e)
+        private void btnEndGame_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+
         }
 
 

@@ -18,7 +18,7 @@ namespace MemoryCodeSamples
         {
             difficulty = _difficulty;
         }
-        
+
         public void ComputerTurn()
         {
             while (true)
@@ -97,7 +97,7 @@ namespace MemoryCodeSamples
         private List<Card> FindMatchInMemory()
         {
             List<Card> tempMatchList = new List<Card>();
-            foreach(Card card in computerMemory)
+            foreach (Card card in computerMemory)
             {
                 if (card.Playable == true)
                 {
@@ -113,7 +113,7 @@ namespace MemoryCodeSamples
             return tempMatchList;
         }
 
-        private void RemoveCardFromComputerMemory(Card card)
+        public void RemoveCardFromComputerMemory(Card card)
         {
             computerMemory.Remove(card);
         }
@@ -121,7 +121,7 @@ namespace MemoryCodeSamples
         private Card PickFirstCard()
         {
             Random rand = new Random();
-            while(true)
+            while (true)
             {
                 int computerSelection = rand.Next(0, allCardsOnBoard.Count);
                 Card card = allCardsOnBoard[computerSelection];
@@ -135,7 +135,7 @@ namespace MemoryCodeSamples
                         }
                     }
                 }
-                if(card.Playable)
+                if (card.Playable)
                 {
                     return card;
                 }
@@ -146,7 +146,7 @@ namespace MemoryCodeSamples
         {
             Random rand = new Random();
 
-            while(true)
+            while (true)
             {
                 int computerSelection = rand.Next(0, allCardsOnBoard.Count);
                 Card card = allCardsOnBoard[computerSelection];
@@ -160,18 +160,18 @@ namespace MemoryCodeSamples
                         }
                     }
                 }
-                else if(card.Playable)
+                else if (card.Playable)
                 {
                     return card;
                 }
-            } 
+            }
         }
 
         private Card FindMatchForFirstCard(Card firstCard)
         {
-            foreach(Card c in computerMemory)
+            foreach (Card c in computerMemory)
             {
-                if(firstCard.Match(c))
+                if (firstCard.Match(c))
                 {
                     return c;
                 }
@@ -182,7 +182,7 @@ namespace MemoryCodeSamples
         public void HandleComputerMemory(Card card)
         {
             computerMemory.Add(card);
-            if(computerMemory.Count > difficulty)
+            if (computerMemory.Count > difficulty)
             {
                 computerMemory.RemoveAt(difficulty);
             }
