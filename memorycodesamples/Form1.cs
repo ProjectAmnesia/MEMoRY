@@ -15,7 +15,7 @@ namespace MemoryCodeSamples
     {
         Sounds SoundCollection = new Sounds();
         GameSettings game = new GameSettings();
-        End frm = new End();
+        End endForm = new End();
         int numberOfCards = 16;
         Board board;
         int playersTurn;
@@ -151,13 +151,13 @@ namespace MemoryCodeSamples
 
             if (lista.Count > 1)
             {
-                frm.Winner = "Det blev oavgjort";
+                endForm.Winner = "Det blev oavgjort";
             }
             else
             {
-                frm.Winner = maxItem.name;
+                endForm.Winner = maxItem.name;
             }
-            frm.ShowWinner();
+            endForm.ShowWinner();
         }
 
         private void EndGame()
@@ -165,7 +165,7 @@ namespace MemoryCodeSamples
             FindWinner();
             this.Hide();
             SoundCollection.WinnerSound();
-            DialogResult dialog = frm.ShowDialog();
+            DialogResult dialog = endForm.ShowDialog();
             if (dialog == DialogResult.OK)
             {
                 RestartGame();
