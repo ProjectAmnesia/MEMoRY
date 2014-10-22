@@ -47,7 +47,7 @@ namespace MemoryCodeSamples
                 if (p is Computer)
                     info += p.name + ", dator\n" + p.points + " poäng\n";
                 else
-                    info += p.name + ",\n" + p.points + " poäng\n";//mmmm
+                    info += p.name + ",\n" + p.points + " poäng\n";//mmm
             }
 
             lblPlayers.Text = info;
