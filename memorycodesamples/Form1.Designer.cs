@@ -46,6 +46,7 @@
             this.lblAddAI = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnNewGame = new System.Windows.Forms.Button();
+            this.timerFlipBackCards = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -253,6 +254,11 @@
             this.btnNewGame.UseVisualStyleBackColor = false;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
+            // timerFlipBackCards
+            // 
+            this.timerFlipBackCards.Interval = 1000;
+            this.timerFlipBackCards.Tick += new System.EventHandler(this.timerFlipBackCards_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -305,6 +311,7 @@
         private System.Windows.Forms.Label lblAddAI;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnNewGame;
+        private System.Windows.Forms.Timer timerFlipBackCards;
 
 
     }

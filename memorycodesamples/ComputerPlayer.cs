@@ -4,12 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Diagnostics;
 
 namespace MemoryCodeSamples
 {
+    public enum Level
+    {
+        Easy = 10,
+        Medium = 25,
+        Hard = 50
+    }
+
     class ComputerTwo : Player
     {
-
         // Delegates & Events:
 
         public delegate void EventComputerDidFinish(Card cardOne, Card cardTwo, ComputerTwo computer);
@@ -21,14 +28,9 @@ namespace MemoryCodeSamples
         private List<Card> memory = new List<Card>();
         private List<Card> cardsOnBoard = new List<Card>();
         private Random random = new Random();
-        private int _difficulty;
+        private Level level;
 
         // Properties:
-
-        public int Difficulty
-        {
-            get { return _difficulty; }
-        }
 
         private List<Card> AllPlayableCards
         {
@@ -38,11 +40,32 @@ namespace MemoryCodeSamples
             }
         }
 
+        private int Difficulty {
+            get
+            {
+                float percent = 0.0f;
+                if (level == Level.Easy)
+                {
+                    percent = 20.0f;
+                }
+                else if(level == Level.Medium)
+                {
+                    percent = 40.0f;
+                }
+                else
+                {
+                    percent = 50.0f;
+                }
+                float x = cardsOnBoard.Count * ((float)percent / 100.0f);
+                return (int)x;
+            }
+        }
+
         // Constructors:
 
-        public ComputerTwo(int difficulty)
+        public ComputerTwo(Level level)
         {
-            _difficulty = difficulty;
+            this.level = level;
         }
 
         // Methods:
@@ -90,8 +113,8 @@ namespace MemoryCodeSamples
                     {
                         // Did NOT find two cards that matched!
                         // Add cards to memory
-                        AddToComputerMemory(firstCard);
-                        AddToComputerMemory(secondCard);
+                        //AddToComputerMemory(firstCard);
+                        //AddToComputerMemory(secondCard);
 
                         // Invoke event
                         DidNotFindMatchingCards.Invoke(firstCard, secondCard, this);
@@ -119,9 +142,27 @@ namespace MemoryCodeSamples
 
         private Card PickFirstCard()
         {
-            int computerSelection = random.Next(0, AllPlayableCards.Count);
-            Card card = AllPlayableCards[computerSelection];
-            return card;
+            while (true)
+            {
+                var temp = cardsOnBoard;
+                int computerSelection = random.Next(0, AllPlayableCards.Count);
+                Card card = AllPlayableCards[computerSelection];
+
+                
+                if (memory.Count < AllPlayableCards.Count)
+                {
+                    if (!memory.Contains(card))
+                    {
+                        return card;
+                    }
+                }
+                else
+                {
+                    return card;
+                }
+                
+            }
+            
         }
 
         private Card FindMatchInMemoryForFirstCard(Card firstCard)
@@ -184,6 +225,11 @@ namespace MemoryCodeSamples
         private void RemoveCardFromComputerMemory(Card card)
         {
             memory.Remove(card);
+        }
+
+        public void ResetMemory()
+        {
+            memory.Clear();
         }
 
     }
