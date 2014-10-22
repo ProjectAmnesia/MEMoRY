@@ -103,8 +103,6 @@ namespace MemoryCodeSamples
             }
         }
 
-
-
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
             FlipAllCards();
@@ -122,7 +120,7 @@ namespace MemoryCodeSamples
                 return;
             if (flippedCards == 0)
             {
-                FlipAllPlayableCards();
+                FlipAllPlayableCards();//Show only the backside.
             }
             timerFlipBack.Enabled = false;
             timerDrawTime.Enabled = false;

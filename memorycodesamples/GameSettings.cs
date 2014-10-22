@@ -16,8 +16,8 @@ namespace MemoryCodeSamples
         public GameSettings()
         {
             InitializeComponent();            
-            grBTheme.Visible = true;
-            btnPlay.Visible = false;
+            grBTheme.Visible = true;//This is groupbox of themes renamed.  
+            btnPlay.Visible = false;//
         }
 
         public int EnteredNumberOfCards()
