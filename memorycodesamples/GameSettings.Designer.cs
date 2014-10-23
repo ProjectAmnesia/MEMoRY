@@ -62,6 +62,7 @@
             this.rbUsersChoice.TabIndex = 0;
             this.rbUsersChoice.UseVisualStyleBackColor = true;
             this.rbUsersChoice.CheckedChanged += new System.EventHandler(this.rbUsersChoice_CheckedChanged);
+            this.rbUsersChoice.Click += new System.EventHandler(this.rbUsersChoice_Click);
             // 
             // rb36cards
             // 
@@ -73,6 +74,7 @@
             this.rb36cards.TabIndex = 0;
             this.rb36cards.UseVisualStyleBackColor = true;
             this.rb36cards.CheckedChanged += new System.EventHandler(this.rb36cards_CheckedChanged);
+            this.rb36cards.Click += new System.EventHandler(this.rb36cards_Click);
             // 
             // rb24cards
             // 
@@ -84,6 +86,7 @@
             this.rb24cards.TabIndex = 0;
             this.rb24cards.UseVisualStyleBackColor = true;
             this.rb24cards.CheckedChanged += new System.EventHandler(this.rb24cards_CheckedChanged);
+            this.rb24cards.Click += new System.EventHandler(this.rb24cards_Click);
             // 
             // rb16cards
             // 
@@ -95,6 +98,7 @@
             this.rb16cards.TabIndex = 0;
             this.rb16cards.UseVisualStyleBackColor = true;
             this.rb16cards.CheckedChanged += new System.EventHandler(this.rb16cards_CheckedChanged);
+            this.rb16cards.Click += new System.EventHandler(this.rb16cards_Click);
             // 
             // btnPlay
             // 

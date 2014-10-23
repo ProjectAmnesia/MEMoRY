@@ -83,8 +83,7 @@ namespace MemoryCodeSamples
 
         private void rbUsersChoice_CheckedChanged(object sender, EventArgs e)
         {
-            picBoxCardAmountFree.Visible = true;
-            tbNumberOfCards.Visible = true;
+    
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -108,20 +107,17 @@ namespace MemoryCodeSamples
 
         private void rb16cards_CheckedChanged(object sender, EventArgs e)
         {
-            picBoxCardAmountFree.Visible = false;
-            tbNumberOfCards.Visible = false;
+        
         }
 
         private void rb24cards_CheckedChanged(object sender, EventArgs e)
         {
-            picBoxCardAmountFree.Visible = false;
-            tbNumberOfCards.Visible = false;
+             
         }
 
         private void rb36cards_CheckedChanged(object sender, EventArgs e)
         {
-            picBoxCardAmountFree.Visible = false;
-            tbNumberOfCards.Visible = false;
+        
         }
 
         private void rbtnAnimals_Click(object sender, EventArgs e)
@@ -153,6 +149,41 @@ namespace MemoryCodeSamples
             panel36free.Visible = true;
             panelTheme.Visible = false;
         }
+
+
+        private void rb16cards_Click(object sender, EventArgs e)
+        {
+            tbNumberOfCards.Visible = false;
+            rb36cards.Checked = false;
+            rbUsersChoice.Checked = false;
+            picBoxCardAmountFree.Visible = false;
+        }
+
+        private void rb36cards_Click(object sender, EventArgs e)
+        {
+            rb16cards.Checked = false;
+            rb24cards.Checked = false;
+            picBoxCardAmountFree.Visible = false;
+            tbNumberOfCards.Visible = false;
+        }
+
+        private void rb24cards_Click(object sender, EventArgs e)
+        {
+            rb36cards.Checked = false;
+            rbUsersChoice.Checked = false;
+            picBoxCardAmountFree.Visible = false;
+            tbNumberOfCards.Visible = false;
+        }
+
+        private void rbUsersChoice_Click(object sender, EventArgs e)
+        {
+            tbNumberOfCards.Visible = true;
+            rb16cards.Checked = false;
+            rb24cards.Checked = false;
+            picBoxCardAmountFree.Visible = true;
+        }
+
+    
 
     }
 }

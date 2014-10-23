@@ -67,11 +67,11 @@
             // lblWinner
             // 
             this.lblWinner.BackColor = System.Drawing.Color.White;
-            this.lblWinner.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWinner.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWinner.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblWinner.Location = new System.Drawing.Point(129, 155);
+            this.lblWinner.Location = new System.Drawing.Point(122, 140);
             this.lblWinner.Name = "lblWinner";
-            this.lblWinner.Size = new System.Drawing.Size(216, 29);
+            this.lblWinner.Size = new System.Drawing.Size(216, 61);
             this.lblWinner.TabIndex = 0;
             this.lblWinner.Text = "...";
             this.lblWinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

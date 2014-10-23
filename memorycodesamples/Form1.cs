@@ -25,6 +25,7 @@ namespace MemoryCodeSamples
         int flippedCards;
         int themeNum = 0;
         List<Player> players = new List<Player>();
+        List<string> playerNames = new List<string>() { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
         public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
 
 
@@ -155,7 +156,7 @@ namespace MemoryCodeSamples
             }
             else
             {
-                endForm.Winner = maxItem.name;
+                endForm.Winner = maxItem.name + "\n " + maxItem.points + " poäng";
             }
             endForm.ShowWinner();
         }
@@ -217,13 +218,20 @@ namespace MemoryCodeSamples
         {
             Computer computer = new Computer(level);
             players.Add(computer);
+            if(players.Count == playerNames.Count)
+            {
+                btnAddPlayer.Enabled = false;
+                btnAIeasy.Enabled = false;
+                btnAIhard.Enabled = false;
+                btnAImedium.Enabled = false;
+            }
             if (level == Level.Easy)
                 computer.diff = "lätt";
             else if (level == Level.Medium)
                 computer.diff = "medel";
             else
                 computer.diff = "svår";
-            computer.name = playerNamesVec[players.Count - 1];
+            computer.name = playerNames[players.Count - 1];
             computer.DidFindMatchingCards += this.ComputerDidFindMatch;
             computer.DidNotFindMatchingCards += this.ComputerDidNotFindMatch;
             UpdateGUI();
@@ -282,7 +290,14 @@ namespace MemoryCodeSamples
         {
             Human human = new Human();
             players.Add(human);
-            human.name = playerNamesVec[players.Count - 1];
+            if (players.Count == playerNames.Count)
+            {
+                btnAddPlayer.Enabled = false;
+                btnAIeasy.Enabled = false;
+                btnAIhard.Enabled = false;
+                btnAImedium.Enabled = false;
+            }
+            human.name = playerNames[players.Count - 1];
             UpdateGUI();
         }
 
