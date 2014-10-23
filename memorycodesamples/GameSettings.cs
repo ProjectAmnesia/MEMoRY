@@ -152,6 +152,11 @@ namespace MemoryCodeSamples
             rbUsersChoice.Visible = true;
         }
 
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
 
         

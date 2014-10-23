@@ -40,6 +40,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PlayerTimeTick = new System.Windows.Forms.Timer(this.components);
             this.playerTime_lbl = new System.Windows.Forms.Label();
+            this.lblAddComputer = new System.Windows.Forms.Label();
+            this.btnStartGame = new System.Windows.Forms.Button();
+            this.btnHard = new System.Windows.Forms.Button();
+            this.btnMedium = new System.Windows.Forms.Button();
+            this.btnEasy = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +54,7 @@
             this.btnAddPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddPlayer.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPlayer.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnAddPlayer.Location = new System.Drawing.Point(709, 5);
+            this.btnAddPlayer.Location = new System.Drawing.Point(325, 170);
             this.btnAddPlayer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddPlayer.Name = "btnAddPlayer";
             this.btnAddPlayer.Size = new System.Drawing.Size(181, 33);
@@ -160,6 +165,67 @@
             this.playerTime_lbl.Size = new System.Drawing.Size(0, 29);
             this.playerTime_lbl.TabIndex = 7;
             // 
+            // lblAddComputer
+            // 
+            this.lblAddComputer.AutoSize = true;
+            this.lblAddComputer.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddComputer.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddComputer.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblAddComputer.Location = new System.Drawing.Point(363, 217);
+            this.lblAddComputer.Name = "lblAddComputer";
+            this.lblAddComputer.Size = new System.Drawing.Size(107, 20);
+            this.lblAddComputer.TabIndex = 9;
+            this.lblAddComputer.Text = "Lägg till dator";
+            // 
+            // btnStartGame
+            // 
+            this.btnStartGame.BackColor = System.Drawing.Color.LightBlue;
+            this.btnStartGame.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartGame.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnStartGame.Location = new System.Drawing.Point(360, 297);
+            this.btnStartGame.Name = "btnStartGame";
+            this.btnStartGame.Size = new System.Drawing.Size(110, 46);
+            this.btnStartGame.TabIndex = 10;
+            this.btnStartGame.Text = "Starta spel";
+            this.btnStartGame.UseVisualStyleBackColor = false;
+            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
+            // 
+            // btnHard
+            // 
+            this.btnHard.BackColor = System.Drawing.Color.LightBlue;
+            this.btnHard.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHard.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnHard.Location = new System.Drawing.Point(454, 240);
+            this.btnHard.Name = "btnHard";
+            this.btnHard.Size = new System.Drawing.Size(73, 32);
+            this.btnHard.TabIndex = 10;
+            this.btnHard.Text = "Svår";
+            this.btnHard.UseVisualStyleBackColor = false;
+            // 
+            // btnMedium
+            // 
+            this.btnMedium.BackColor = System.Drawing.Color.LightBlue;
+            this.btnMedium.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedium.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnMedium.Location = new System.Drawing.Point(375, 240);
+            this.btnMedium.Name = "btnMedium";
+            this.btnMedium.Size = new System.Drawing.Size(73, 32);
+            this.btnMedium.TabIndex = 10;
+            this.btnMedium.Text = "Medel";
+            this.btnMedium.UseVisualStyleBackColor = false;
+            // 
+            // btnEasy
+            // 
+            this.btnEasy.BackColor = System.Drawing.Color.LightBlue;
+            this.btnEasy.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEasy.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnEasy.Location = new System.Drawing.Point(296, 240);
+            this.btnEasy.Name = "btnEasy";
+            this.btnEasy.Size = new System.Drawing.Size(73, 32);
+            this.btnEasy.TabIndex = 10;
+            this.btnEasy.Text = "Lätt";
+            this.btnEasy.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -167,6 +233,11 @@
             this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowMain1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(895, 733);
+            this.Controls.Add(this.btnEasy);
+            this.Controls.Add(this.btnMedium);
+            this.Controls.Add(this.btnHard);
+            this.Controls.Add(this.btnStartGame);
+            this.Controls.Add(this.lblAddComputer);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelGame);
             this.Controls.Add(this.playerTime_lbl);
@@ -200,6 +271,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer PlayerTimeTick;
         private System.Windows.Forms.Label playerTime_lbl;
+        private System.Windows.Forms.Label lblAddComputer;
+        private System.Windows.Forms.Button btnStartGame;
+        private System.Windows.Forms.Button btnHard;
+        private System.Windows.Forms.Button btnMedium;
+        private System.Windows.Forms.Button btnEasy;
 
 
     }

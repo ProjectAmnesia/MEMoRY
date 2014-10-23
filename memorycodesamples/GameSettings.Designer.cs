@@ -103,6 +103,7 @@
             this.btnPlay.TabIndex = 1;
             this.btnPlay.Text = "Fortsätt";
             this.btnPlay.UseVisualStyleBackColor = false;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // tbNumberOfCards
             // 

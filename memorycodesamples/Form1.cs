@@ -211,6 +211,11 @@ namespace MemoryCodeSamples
             Application.Exit();
         }
 
+        private void btnStartGame_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //ett annat sätt att göra det som redan var gjort:
         //private void PlayerTimeOnClick_Tick(object sender, EventArgs e)
         //{   // tick intervall set to 1000 ms
