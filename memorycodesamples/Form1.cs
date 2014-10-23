@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace MemoryCodeSamples
 {
@@ -24,6 +23,7 @@ namespace MemoryCodeSamples
         bool gameStarted = false;
         Card lastFlipped;
         Card clickedCard;
+        Computer c;
         int flippedCards;
         //int usedCards = 0;
         int themeNum = 0;
@@ -47,7 +47,7 @@ namespace MemoryCodeSamples
                 if (p is Computer)
                     info += p.name + ", dator\n" + p.points + " poäng\n";
                 else
-                    info += p.name + ",\n" + p.points + " poäng\n";//mmm
+                    info += p.name + ",\n" + p.points + " poäng\n";//mmmm
             }
 
             lblPlayers.Text = info;
@@ -71,14 +71,7 @@ namespace MemoryCodeSamples
             board = new Board(numberOfCards, this.card_Click);
             board.Location = new System.Drawing.Point(0, 0);
             this.Controls.Add(board);
-
-            foreach (Player player in players)
-            {
-                if (player is ComputerTwo)
-                {
-                    ((ComputerTwo)player).CardsOnBoard(board.cardList);
-                }
-            }
+            //timerDrawTime.Interval = game.ChooseTime();
         }
 
         private void FlipAllCards()
@@ -110,13 +103,6 @@ namespace MemoryCodeSamples
             {
                 playersTurn = 0;
             }
-
-            if (players[playersTurn] is ComputerTwo)
-            {
-                timerComputerTick.Enabled = true;
-            }
-
-            UpdateGUI();
         }
 
         private void ResetGame()
@@ -161,6 +147,8 @@ namespace MemoryCodeSamples
             playersTurn--;
             clickedCard.Disable();
             lastFlipped.Disable();
+            c.RemoveCardFromComputerMemory(lastFlipped);
+            c.RemoveCardFromComputerMemory(clickedCard);
         }
         private void card_Click(object sender, EventArgs e)
         {
@@ -179,20 +167,19 @@ namespace MemoryCodeSamples
             }
             else if (flippedCards == 2)
             {
+                c.HandleComputerMemory(clickedCard);
+                c.HandleComputerMemory(lastFlipped);
                 timerDrawTime.Enabled = false;
                 timerFlipBack.Enabled = true;
                 if (clickedCard.Match(lastFlipped))
                 {
                     MatchedCards();
                 }
-
-                if (DidGameEnd())
+                NextPlayer();
+                var usedCards = board.cardList.FindAll(x => !x.Playable);
+                if (usedCards.Count == board.cardList.Count)
                 {
                     EndingGame();
-                }
-                else
-                {
-                    NextPlayer();
                 }
             }
             lastFlipped = clickedCard;
@@ -225,56 +212,10 @@ namespace MemoryCodeSamples
 
         private void btnAIeasy_Click(object sender, EventArgs e)
         {
-            ComputerTwo computer = new ComputerTwo(6);
-            players.Add(computer);
-            computer.name = playerNamesVec[players.Count - 1];
-            computer.DidFindMatchingCards += this.ComputerDidFindMatch;
-            computer.DidNotFindMatchingCards += this.ComputerDidNotFindMatch;
-
+            Computer comp = new Computer(3);
+            players.Add(comp);
+            comp.name = playerNamesVec[players.Count - 1];
             UpdateGUI();
-
-        }
-
-        private void ComputerDidFindMatch(Card cardOne, Card cardTwo, ComputerTwo computer)
-        {
-            cardOne.Flipped = true;
-            cardTwo.Flipped = true;
-
-            cardOne.Disable();
-            cardTwo.Disable();
-
-            computer.points++;
-
-            SoundCollection.PairSound();
-
-            if (DidGameEnd())
-            {
-                EndingGame();
-            }
-            else
-            {
-                Thread.Sleep(1000);
-                computer.Play();
-            }
-            UpdateGUI();
-        }
-
-        private void ComputerDidNotFindMatch(Card cardOne, Card cardTwo, ComputerTwo computer)
-        {
-
-
-            cardOne.Flipped = true;
-            cardTwo.Flipped = true;
-
-            cardOne.Refresh();
-            cardTwo.Refresh();
-
-            Thread.Sleep(1500);
-
-            FlipAllPlayableCards();
-            
-
-            NextPlayer();
         }
 
         private void btnAImedium_Click(object sender, EventArgs e)
@@ -315,23 +256,6 @@ namespace MemoryCodeSamples
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
             ResetGame();
-        }
-
-        private void timerComputerTick_Tick(object sender, EventArgs e)
-        {
-            if (players[playersTurn] is ComputerTwo && !DidGameEnd())
-            {
-                ((ComputerTwo)players[playersTurn]).Play();
-            }
-
-            timerComputerTick.Enabled = false;
-        }
-
-        private bool DidGameEnd()
-        {
-            var usedCards = board.cardList.FindAll(x => !x.Playable);
-
-            return usedCards.Count == board.cardList.Count;
         }
 
     }
