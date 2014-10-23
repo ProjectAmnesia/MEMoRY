@@ -41,7 +41,7 @@ namespace MemoryCodeSamples
         {
             get
             {
-                return players[playersTurn] is ComputerTwo;
+                return players[playersTurn] is Computer;
             }
         }
 
@@ -50,8 +50,8 @@ namespace MemoryCodeSamples
             string info = "";
             foreach (Player p in players)
             {
-                if (p is ComputerTwo)
-                    info += p.name + ", dator\n" + p.points + " poäng\n";
+                if (p is Computer)
+                    info += p.name + ", dator " + p.diff + "\n" + p.points + " poäng\n";
                 else
                     info += p.name + ",\n" + p.points + " poäng\n";
             }
@@ -79,9 +79,9 @@ namespace MemoryCodeSamples
 
             foreach (Player player in players)
             {
-                if (player is ComputerTwo)
+                if (player is Computer)
                 {
-                    ((ComputerTwo)player).CardsOnBoard(board.cardList);
+                    ((Computer)player).CardsOnBoard(board.cardList);
                 }
             }
         }
@@ -115,7 +115,7 @@ namespace MemoryCodeSamples
                 playersTurn = 0;
             }
 
-            if (players[playersTurn] is ComputerTwo)
+            if (players[playersTurn] is Computer)
             {
                 timerComputerTick.Enabled = true;
             }
@@ -130,14 +130,14 @@ namespace MemoryCodeSamples
             foreach (var player in players)
             {
                 player.points = 0;
-                if (player is ComputerTwo)
+                if (player is Computer)
                 {
-                    ComputerTwo computer = (ComputerTwo)player;
+                    Computer computer = (Computer)player;
                     computer.CardsOnBoard(board.cardList);
                     computer.ResetMemory();
                 }
             }
-            if (players[playersTurn] is ComputerTwo)
+            if (players[playersTurn] is Computer)
             {
                 timerComputerTick.Enabled = true;                
             }
@@ -182,7 +182,7 @@ namespace MemoryCodeSamples
 
         // AI events:
 
-        private void ComputerDidFindMatch(Card cardOne, Card cardTwo, ComputerTwo computer)
+        private void ComputerDidFindMatch(Card cardOne, Card cardTwo, Computer computer)
         {
             cardOne.Flipped = true;
             cardTwo.Flipped = true;
@@ -199,7 +199,7 @@ namespace MemoryCodeSamples
             UpdateGUI();
         }
 
-        private void ComputerDidNotFindMatch(Card cardOne, Card cardTwo, ComputerTwo computer)
+        private void ComputerDidNotFindMatch(Card cardOne, Card cardTwo, Computer computer)
         {
             cardOne.Flipped = true;
             cardTwo.Flipped = true;
@@ -215,8 +215,14 @@ namespace MemoryCodeSamples
 
         private void AddComputer(Level level)
         {
-            ComputerTwo computer = new ComputerTwo(level);
+            Computer computer = new Computer(level);
             players.Add(computer);
+            if (level == Level.Easy)
+                computer.diff = "lätt";
+            else if (level == Level.Medium)
+                computer.diff = "medel";
+            else
+                computer.diff = "svår";
             computer.name = playerNamesVec[players.Count - 1];
             computer.DidFindMatchingCards += this.ComputerDidFindMatch;
             computer.DidNotFindMatchingCards += this.ComputerDidNotFindMatch;
@@ -308,7 +314,7 @@ namespace MemoryCodeSamples
             board.CreateNewGame(numberOfCards, themeNum);
             UpdateGUI();
 
-            if (players[playersTurn] is ComputerTwo)
+            if (players[playersTurn] is Computer)
             {
                 timerComputerTick.Enabled = true;
             }
@@ -339,11 +345,11 @@ namespace MemoryCodeSamples
         {
             foreach (Player player in players)
             {
-                if (player is ComputerTwo)
+                if (player is Computer)
                 {
                     foreach (Card c in cards)
                     {
-                        ((ComputerTwo)player).AddToComputerMemory(c);
+                        ((Computer)player).AddToComputerMemory(c);
                     }
                 }
             }
@@ -375,9 +381,9 @@ namespace MemoryCodeSamples
             {
                 EndGame();
             }
-            else if (players[playersTurn] is ComputerTwo && !DidGameEnd())
+            else if (players[playersTurn] is Computer && !DidGameEnd())
             {
-                ((ComputerTwo)players[playersTurn]).Play();
+                ((Computer)players[playersTurn]).Play();
             }
         }
 

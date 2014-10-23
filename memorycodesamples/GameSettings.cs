@@ -15,7 +15,7 @@ namespace MemoryCodeSamples
         Pictures pic = new Pictures();  
         public GameSettings()
         {            
-            InitializeComponent();                        
+            InitializeComponent();      
             btnPlay.Visible = false;
             picBoxTheme.Visible = true;
             panel36free.Visible = false;
