@@ -46,8 +46,6 @@
             this.lblAddAI = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnNewGame = new System.Windows.Forms.Button();
-            this.timerBetweenCards = new System.Windows.Forms.Timer(this.components);
-            this.timerWhatever = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -255,16 +253,6 @@
             this.btnNewGame.UseVisualStyleBackColor = false;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
-            // timerBetweenCards
-            // 
-            this.timerBetweenCards.Interval = 500;
-            this.timerBetweenCards.Tick += new System.EventHandler(this.timerBetweenCards_Tick);
-            // 
-            // timerWhatever
-            // 
-            this.timerWhatever.Interval = 500;
-            this.timerWhatever.Tick += new System.EventHandler(this.timerWhatever_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -317,8 +305,6 @@
         private System.Windows.Forms.Label lblAddAI;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnNewGame;
-        private System.Windows.Forms.Timer timerBetweenCards;
-        private System.Windows.Forms.Timer timerWhatever;
 
 
     }

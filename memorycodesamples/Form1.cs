@@ -112,8 +112,7 @@ namespace MemoryCodeSamples
 
             if (players[playersTurn] is ComputerTwo)
             {
-                timerComputerTick.Enabled = true;
-                
+                timerComputerTick.Enabled = true;                
             }
 
             UpdateGUI();
@@ -169,6 +168,14 @@ namespace MemoryCodeSamples
             playersTurn--;
             clickedCard.Disable();
             lastFlipped.Disable();
+        }
+
+        private bool IsFirstPlayerAI()
+        {
+            if (players[playersTurn] is ComputerTwo)
+                return true;
+            else
+                return false;
         }
 
         private void card_Click(object sender, EventArgs e)
@@ -280,8 +287,6 @@ namespace MemoryCodeSamples
         {
 
             cardOne.Flipped = true;
-            timerBetweenCards.Enabled = true;
-            timerBetweenCards.Start();
             cardTwo.Flipped = true;
 
             cardOne.Refresh();
@@ -290,7 +295,6 @@ namespace MemoryCodeSamples
             Thread.Sleep(1500);
 
             FlipAllPlayableCards();
-
 
             NextPlayer();
         }
@@ -303,7 +307,6 @@ namespace MemoryCodeSamples
             computerMedium.name = playerNamesVec[players.Count - 1];
             computerMedium.DidFindMatchingCards += this.ComputerDidFindMatch;
             computerMedium.DidNotFindMatchingCards += this.ComputerDidNotFindMatch;
-
             UpdateGUI();
         }
 
@@ -315,7 +318,6 @@ namespace MemoryCodeSamples
             computerHard.name = playerNamesVec[players.Count - 1];
             computerHard.DidFindMatchingCards += this.ComputerDidFindMatch;
             computerHard.DidNotFindMatchingCards += this.ComputerDidNotFindMatch;
-
             UpdateGUI();
         }
 
@@ -374,23 +376,7 @@ namespace MemoryCodeSamples
             return usedCards.Count == board.cardList.Count;
         }
 
-        private void timerWhatever_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timerBetweenCards_Tick(object sender, EventArgs e)
-        {
-            timerBetweenCards.Stop();
-            timerBetweenCards.Enabled = false;
-        }
-        private bool IsFirstPlayerAI()
-        {
-            if (players[playersTurn] is ComputerTwo)
-                return true;
-            else
-                return false;
-        }
+      
     }
 }
 

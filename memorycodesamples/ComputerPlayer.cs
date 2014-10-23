@@ -163,9 +163,9 @@ namespace MemoryCodeSamples
                     {
                         foreach (Card c in memory)
                         {
-                            if (!randomCard.Equals(c))//varför inte egentligen?
+                            if (!randomCard.Equals(c))
                             {
-                                return randomCard;//vad blir det annars?
+                                return randomCard;
                             }
                         }
                     }
