@@ -14,15 +14,12 @@ namespace MemoryCodeSamples
     {
         Pictures pic = new Pictures();  
         public GameSettings()
-        {
-            
+        {            
             InitializeComponent();                        
             btnPlay.Visible = false;
             picBoxTheme.Visible = true;
-            rb16cards.Visible = false;
-            rb24cards.Visible = false;
-            rb36cards.Visible = false;
-            rbUsersChoice.Visible = false;
+            panel36free.Visible = false;
+            panel1624.Visible = false;
         }
 
         public int EnteredNumberOfCards()
@@ -69,21 +66,21 @@ namespace MemoryCodeSamples
                 return numberOfCards;
             }
         }
+
         public int ChooseTheme()
         {
             if (rbtnFruit.Checked)
             {
                 return 1;
-                
             }
             else if (rbtnAnimals.Checked)
             {
                 return 2;
-                
             }
-            else
+            else 
                 return 3;
         }
+
         private void rbUsersChoice_CheckedChanged(object sender, EventArgs e)
         {
             picBoxCardAmountFree.Visible = true;
@@ -96,34 +93,6 @@ namespace MemoryCodeSamples
         }
         
 
-        private void rbtnFruit_CheckedChanged(object sender, EventArgs e)
-        {
-            picBoxTheme.Visible = false;
-            picBoxCardAmount.Visible = true;
-            btnPlay.Visible = true;
-            rbtnFruit.Visible = false;
-            rbtnAnimals.Visible = false;
-            rbtnCartoon.Visible = false;
-            rb16cards.Visible = true;
-            rb24cards.Visible = true;
-            rb36cards.Visible = true;
-            rbUsersChoice.Visible = true;
-        }
-
-        private void rbtnAnimals_CheckedChanged(object sender, EventArgs e)
-        {
-            picBoxTheme.Visible = false;
-            picBoxCardAmount.Visible = true;
-            btnPlay.Visible = true;
-            rbtnFruit.Visible = false;
-            rbtnAnimals.Visible = false;
-            rbtnCartoon.Visible = false;
-            rb16cards.Visible = true;
-            rb24cards.Visible = true;
-            rb36cards.Visible = true;
-            rbUsersChoice.Visible = true;
-        }
-
         private bool IsNumber(string tbInput)
         {
             try
@@ -132,43 +101,58 @@ namespace MemoryCodeSamples
             }
             catch
             {
-
                 return false;
             }
             return true;
         }
 
-        private void rbtnCartoon_CheckedChanged(object sender, EventArgs e)
-        {
-            picBoxTheme.Visible = false;
-            picBoxCardAmount.Visible = true;
-            btnPlay.Visible = true;
-            rbtnFruit.Visible = false;
-            rbtnAnimals.Visible = false;
-            rbtnCartoon.Visible = false;
-            rb16cards.Visible = true;
-            rb24cards.Visible = true;
-            rb36cards.Visible = true;
-            rbUsersChoice.Visible = true;
-        }
         private void rb16cards_CheckedChanged(object sender, EventArgs e)
         {
             picBoxCardAmountFree.Visible = false;
             tbNumberOfCards.Visible = false;
         }
+
         private void rb24cards_CheckedChanged(object sender, EventArgs e)
         {
             picBoxCardAmountFree.Visible = false;
             tbNumberOfCards.Visible = false;
         }
+
         private void rb36cards_CheckedChanged(object sender, EventArgs e)
         {
             picBoxCardAmountFree.Visible = false;
             tbNumberOfCards.Visible = false;
         }
 
-       
+        private void rbtnAnimals_Click(object sender, EventArgs e)
+        {
+            picBoxTheme.Visible = false;
+            picBoxCardAmount.Visible = true;
+            btnPlay.Visible = true;
+            panel1624.Visible = true;
+            panel36free.Visible = true;
+            panelTheme.Visible = false;            
+        }
 
-        
+        private void rbtnCartoon_Click(object sender, EventArgs e)
+        {
+            picBoxTheme.Visible = false;
+            picBoxCardAmount.Visible = true;
+            btnPlay.Visible = true;
+            panel1624.Visible = true;
+            panel36free.Visible = true;
+            panelTheme.Visible = false;
+        }
+
+        private void rbtnFruit_Click(object sender, EventArgs e)
+        {
+            picBoxTheme.Visible = false;
+            picBoxCardAmount.Visible = true;
+            btnPlay.Visible = true;
+            panel1624.Visible = true;
+            panel36free.Visible = true;
+            panelTheme.Visible = false;
+        }
+
     }
 }

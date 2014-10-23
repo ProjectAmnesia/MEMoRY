@@ -41,15 +41,21 @@
             this.picBoxTheme = new System.Windows.Forms.PictureBox();
             this.picBoxCardAmount = new System.Windows.Forms.PictureBox();
             this.picBoxCardAmountFree = new System.Windows.Forms.PictureBox();
+            this.panelTheme = new System.Windows.Forms.Panel();
+            this.panel1624 = new System.Windows.Forms.Panel();
+            this.panel36free = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTheme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCardAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCardAmountFree)).BeginInit();
+            this.panelTheme.SuspendLayout();
+            this.panel1624.SuspendLayout();
+            this.panel36free.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbUsersChoice
             // 
             this.rbUsersChoice.AutoSize = true;
-            this.rbUsersChoice.Location = new System.Drawing.Point(269, 157);
+            this.rbUsersChoice.Location = new System.Drawing.Point(6, 26);
             this.rbUsersChoice.Margin = new System.Windows.Forms.Padding(4);
             this.rbUsersChoice.Name = "rbUsersChoice";
             this.rbUsersChoice.Size = new System.Drawing.Size(14, 13);
@@ -60,7 +66,7 @@
             // rb36cards
             // 
             this.rb36cards.AutoSize = true;
-            this.rb36cards.Location = new System.Drawing.Point(269, 136);
+            this.rb36cards.Location = new System.Drawing.Point(6, 4);
             this.rb36cards.Margin = new System.Windows.Forms.Padding(4);
             this.rb36cards.Name = "rb36cards";
             this.rb36cards.Size = new System.Drawing.Size(14, 13);
@@ -71,7 +77,7 @@
             // rb24cards
             // 
             this.rb24cards.AutoSize = true;
-            this.rb24cards.Location = new System.Drawing.Point(149, 157);
+            this.rb24cards.Location = new System.Drawing.Point(3, 27);
             this.rb24cards.Margin = new System.Windows.Forms.Padding(4);
             this.rb24cards.Name = "rb24cards";
             this.rb24cards.Size = new System.Drawing.Size(14, 13);
@@ -82,13 +88,11 @@
             // rb16cards
             // 
             this.rb16cards.AutoSize = true;
-            this.rb16cards.Checked = true;
-            this.rb16cards.Location = new System.Drawing.Point(149, 135);
+            this.rb16cards.Location = new System.Drawing.Point(3, 5);
             this.rb16cards.Margin = new System.Windows.Forms.Padding(4);
             this.rb16cards.Name = "rb16cards";
             this.rb16cards.Size = new System.Drawing.Size(14, 13);
             this.rb16cards.TabIndex = 0;
-            this.rb16cards.TabStop = true;
             this.rb16cards.UseVisualStyleBackColor = true;
             this.rb16cards.CheckedChanged += new System.EventHandler(this.rb16cards_CheckedChanged);
             // 
@@ -137,32 +141,32 @@
             // rbtnCartoon
             // 
             this.rbtnCartoon.AutoSize = true;
-            this.rbtnCartoon.Location = new System.Drawing.Point(182, 199);
+            this.rbtnCartoon.Location = new System.Drawing.Point(3, 56);
             this.rbtnCartoon.Name = "rbtnCartoon";
             this.rbtnCartoon.Size = new System.Drawing.Size(14, 13);
             this.rbtnCartoon.TabIndex = 8;
             this.rbtnCartoon.UseVisualStyleBackColor = true;
-            this.rbtnCartoon.CheckedChanged += new System.EventHandler(this.rbtnCartoon_CheckedChanged);
+            this.rbtnCartoon.Click += new System.EventHandler(this.rbtnCartoon_Click);
             // 
             // rbtnAnimals
             // 
             this.rbtnAnimals.AutoSize = true;
-            this.rbtnAnimals.Location = new System.Drawing.Point(182, 177);
+            this.rbtnAnimals.Location = new System.Drawing.Point(3, 34);
             this.rbtnAnimals.Name = "rbtnAnimals";
             this.rbtnAnimals.Size = new System.Drawing.Size(14, 13);
             this.rbtnAnimals.TabIndex = 7;
             this.rbtnAnimals.UseVisualStyleBackColor = true;
-            this.rbtnAnimals.CheckedChanged += new System.EventHandler(this.rbtnAnimals_CheckedChanged);
+            this.rbtnAnimals.Click += new System.EventHandler(this.rbtnAnimals_Click);
             // 
             // rbtnFruit
             // 
             this.rbtnFruit.AutoSize = true;
-            this.rbtnFruit.Location = new System.Drawing.Point(182, 155);
+            this.rbtnFruit.Location = new System.Drawing.Point(3, 12);
             this.rbtnFruit.Name = "rbtnFruit";
             this.rbtnFruit.Size = new System.Drawing.Size(14, 13);
             this.rbtnFruit.TabIndex = 7;
             this.rbtnFruit.UseVisualStyleBackColor = true;
-            this.rbtnFruit.CheckedChanged += new System.EventHandler(this.rbtnFruit_CheckedChanged);
+            this.rbtnFruit.Click += new System.EventHandler(this.rbtnFruit_Click);
             // 
             // picBoxTheme
             // 
@@ -200,22 +204,49 @@
             this.picBoxCardAmountFree.TabStop = false;
             this.picBoxCardAmountFree.Visible = false;
             // 
+            // panelTheme
+            // 
+            this.panelTheme.BackColor = System.Drawing.Color.White;
+            this.panelTheme.Controls.Add(this.rbtnAnimals);
+            this.panelTheme.Controls.Add(this.rbtnFruit);
+            this.panelTheme.Controls.Add(this.rbtnCartoon);
+            this.panelTheme.Location = new System.Drawing.Point(181, 143);
+            this.panelTheme.Name = "panelTheme";
+            this.panelTheme.Size = new System.Drawing.Size(20, 81);
+            this.panelTheme.TabIndex = 11;
+            // 
+            // panel1624
+            // 
+            this.panel1624.BackColor = System.Drawing.Color.White;
+            this.panel1624.Controls.Add(this.rb16cards);
+            this.panel1624.Controls.Add(this.rb24cards);
+            this.panel1624.Location = new System.Drawing.Point(145, 132);
+            this.panel1624.Name = "panel1624";
+            this.panel1624.Size = new System.Drawing.Size(20, 45);
+            this.panel1624.TabIndex = 12;
+            // 
+            // panel36free
+            // 
+            this.panel36free.BackColor = System.Drawing.Color.White;
+            this.panel36free.Controls.Add(this.rbUsersChoice);
+            this.panel36free.Controls.Add(this.rb36cards);
+            this.panel36free.Location = new System.Drawing.Point(258, 132);
+            this.panel36free.Name = "panel36free";
+            this.panel36free.Size = new System.Drawing.Size(26, 45);
+            this.panel36free.TabIndex = 13;
+            // 
             // GameSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryCodeSamples.Properties.Resources.rainbowSplashScreenBG1;
             this.ClientSize = new System.Drawing.Size(484, 393);
+            this.Controls.Add(this.panel36free);
+            this.Controls.Add(this.panel1624);
+            this.Controls.Add(this.panelTheme);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.tbNumberOfCards);
-            this.Controls.Add(this.rbUsersChoice);
-            this.Controls.Add(this.rb24cards);
-            this.Controls.Add(this.rb36cards);
-            this.Controls.Add(this.rb16cards);
-            this.Controls.Add(this.rbtnCartoon);
-            this.Controls.Add(this.rbtnAnimals);
-            this.Controls.Add(this.rbtnFruit);
             this.Controls.Add(this.picBoxCardAmountFree);
             this.Controls.Add(this.picBoxTheme);
             this.Controls.Add(this.picBoxCardAmount);
@@ -230,6 +261,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTheme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCardAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCardAmountFree)).EndInit();
+            this.panelTheme.ResumeLayout(false);
+            this.panelTheme.PerformLayout();
+            this.panel1624.ResumeLayout(false);
+            this.panel1624.PerformLayout();
+            this.panel36free.ResumeLayout(false);
+            this.panel36free.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +287,8 @@
         private System.Windows.Forms.PictureBox picBoxTheme;
         private System.Windows.Forms.PictureBox picBoxCardAmount;
         private System.Windows.Forms.PictureBox picBoxCardAmountFree;
+        private System.Windows.Forms.Panel panelTheme;
+        private System.Windows.Forms.Panel panel1624;
+        private System.Windows.Forms.Panel panel36free;
     }
 }
