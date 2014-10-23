@@ -16,17 +16,13 @@ namespace MemoryCodeSamples
         Sounds SoundCollection = new Sounds();
         GameSettings game = new GameSettings();
         End endForm = new End();
-        int numberOfCards = 16;
         Board board;
-        int playersTurn;
+        int playersTurn, flippedCards, themeNum, numberOfCards;
         bool gameStarted = false;
-        Card lastFlipped;
-        Card clickedCard;
-        int flippedCards;
-        int themeNum = 0;
+        Card lastFlipped, clickedCard;
         List<Player> players = new List<Player>();
         List<string> playerNames = new List<string>() { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
-        public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
+        
 
 
         public Form1()
