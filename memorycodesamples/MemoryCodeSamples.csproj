@@ -73,7 +73,6 @@
     <Compile Include="Board.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Computer.cs" />
     <Compile Include="End.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,7 +106,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Sounds.cs" />
-    <Compile Include="Timer.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -865,6 +863,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rainbowSplashScreenBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\theme1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardAmount1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardAmountFree1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\endScreen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musse.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

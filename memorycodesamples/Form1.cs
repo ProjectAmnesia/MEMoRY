@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace MemoryCodeSamples
 {
@@ -16,37 +17,39 @@ namespace MemoryCodeSamples
         // SOUND Objects
         Sounds SoundCollection = new Sounds();
         GameSettings game = new GameSettings();
-        //int seconds = 30;
+        End frm = new End();
         int numberOfCards = 16;
         Board board;
         int playersTurn;
         bool gameStarted = false;
         Card lastFlipped;
+        Card clickedCard;
         int flippedCards;
-        int usedCards = 0;
-        int computersTurn = 0;
-        int lastComputer;
+        //int usedCards = 0;
         int themeNum = 0;
         List<Player> players = new List<Player>();
         public string[] playerNamesVec = new string[8] { "T-rex", "Häst", "Enhörning", "Snigel", "Haj", "Igelkott", "Delfin", "Giraff" };
-        int nameCount = 0; // Victor: remove
+
 
         public Form1()
         {
             InitializeComponent();
-            NewBoard();
             StartGame();
             SoundCollection.IntroSound();   // add to splash screen
         }
 
         private void UpdateGUI()
         {
-            btnAddPlayer.Enabled = (usedCards != 0) ? false : true;
+            //btnAddPlayer.Enabled = (usedCards != 0) ? false : true;
             string info = "";
             foreach (Player p in players)
             {
-                info += p.name + ",\n" + p.points + " poäng\n";
+                if (p is Computer)
+                    info += p.name + ", dator\n" + p.points + " poäng\n";
+                else
+                    info += p.name + ",\n" + p.points + " poäng\n";//mmm
             }
+
             lblPlayers.Text = info;
             if (gameStarted && players.Count > 1)
                 lblTurn.Text = "Nu är det din tur:\n" + players[playersTurn].name;
@@ -54,15 +57,12 @@ namespace MemoryCodeSamples
 
         private void StartGame()
         {
-            //GameSettings game = new GameSettings();
             DialogResult dialog = game.ShowDialog();
             if (dialog == DialogResult.OK)
             {
                 numberOfCards = game.EnteredNumberOfCards();
                 themeNum = game.ChooseTheme();
-                board.CreateNewGame(numberOfCards, themeNum);
-            gameStarted = true;
-        }
+            }
             else { }
         }
 
@@ -71,13 +71,19 @@ namespace MemoryCodeSamples
             board = new Board(numberOfCards, this.card_Click);
             board.Location = new System.Drawing.Point(0, 0);
             this.Controls.Add(board);
-            ////ResetTimer();
-            //timerDrawTime.Interval = game.ChooseTime();
+
+            foreach (Player player in players)
+            {
+                if (player is ComputerTwo)
+                {
+                    ((ComputerTwo)player).CardsOnBoard(board.cardList);
+                }
+            }
         }
 
         private void FlipAllCards()
         {
-            usedCards = 0;
+            //usedCards = 0;
             foreach (var card in board.cardList)
             {
                 card.Flipped = false;
@@ -95,8 +101,8 @@ namespace MemoryCodeSamples
                 }
             }
         }
- 
-        private void IncrementPlayer()
+
+        private void NextPlayer()
         {
             playersTurn++;
             flippedCards = 0;
@@ -104,11 +110,16 @@ namespace MemoryCodeSamples
             {
                 playersTurn = 0;
             }
+
+            if (players[playersTurn] is ComputerTwo)
+            {
+                timerComputerTick.Enabled = true;
+            }
+
+            UpdateGUI();
         }
 
-
-
-        private void btnPlayAgain_Click(object sender, EventArgs e)
+        private void ResetGame()
         {
             FlipAllCards();
             board.CreateNewGame(numberOfCards, themeNum);
@@ -116,100 +127,75 @@ namespace MemoryCodeSamples
             {
                 player.points = 0;
             }
-            playersTurn = 0;
             UpdateGUI();
         }
 
+        private void FindWinner()
+        {
+            Player maxItem = players.OrderByDescending(obj => obj.points).First();
+            List<Player> lista = players.FindAll(obj => obj.points == maxItem.points);
+
+            if (lista.Count > 1)
+                frm.Winner = "Det blev oavgjort";
+            else
+                frm.Winner = maxItem.name;
+            frm.ShowWinner();
+        }
+
+        private void EndingGame()
+        {
+            FindWinner();
+            this.Hide();
+            SoundCollection.WinnerSound();
+            DialogResult dialog = frm.ShowDialog();
+            if (dialog == DialogResult.OK)
+            {
+                ResetGame();
+                this.Show();
+            }
+        }
+        private void MatchedCards()
+        {
+            SoundCollection.PairSound();
+            players[playersTurn].points++;
+            playersTurn--;
+            clickedCard.Disable();
+            lastFlipped.Disable();
+        }
         private void card_Click(object sender, EventArgs e)
         {
-            if (players.Count < 1)
-                return;
-            if (players[playersTurn].IsComputer())
-            {
-                if (computersTurn == 0)
-                {
-                    return;
-                }
-                else
-                {
-                    lastComputer = playersTurn; //victor: ny
-                    computersTurn = 0;
-                }
-            }
             if (flippedCards == 0)
             {
                 FlipAllPlayableCards();
             }
             timerFlipBack.Enabled = false;
-            //timerDrawTime.Enabled = false;
-            //PlayerTimeTick.Enabled = false;
-            Card clickedCard = (Card)sender;
+            timerDrawTime.Enabled = false;
+            clickedCard = (Card)sender;
             clickedCard.Flipped = !clickedCard.Flipped;
             flippedCards++;
-            usedCards++;
-            players[lastComputer].HandleComputerMemory(clickedCard); //victor: ny
             if (flippedCards == 1)
             {
-            //timerDrawTime.Enabled = true;
-                //PlayerTimeTick.Enabled = true;
+                timerDrawTime.Enabled = true;
             }
             else if (flippedCards == 2)
             {
-            //    timerDrawTime.Enabled = false;
-                //PlayerTimeTick.Enabled = false;
-                //ResetTimer();
+                timerDrawTime.Enabled = false;
                 timerFlipBack.Enabled = true;
                 if (clickedCard.Match(lastFlipped))
                 {
-                    SoundCollection.PairSound();
-                    players[playersTurn].points++;
-                    playersTurn--;
-                    clickedCard.Disable();
-                    lastFlipped.Disable();
+                    MatchedCards();
                 }
-                IncrementPlayer();
-                var notsmart = board.cardList.FindAll(x => !x.Playable);
-                if (notsmart.Count == board.cardList.Count)
+
+                if (DidGameEnd())
                 {
-                    Player maxItem = players.OrderByDescending(obj => obj.points).First();
-                    List<Player> lista = players.FindAll(obj => obj.points == maxItem.points);
-
-                    End frm = new End();
-                    if(lista.Count > 1)
-                    {
-                        frm.Winner = "Det blev oavgjort";
-                    }
-                    else 
-                    { frm.Winner = maxItem.name;}
-                    
-                    frm.ShowWinner();
-                    frm.Show();
-
-                    this.Hide();
-
-                    SoundCollection.WinnerSound();
-                    //MessageBox.Show("Grattis " + maxItem.name + "Du Vann!");
+                    EndingGame();
+                }
+                else
+                {
+                    NextPlayer();
                 }
             }
             lastFlipped = clickedCard;
-            UpdateGUI();
-        }
-
-        private void btnAddPlayer_Click(object sender, EventArgs e)
-        {
-            if (cbHuman.Checked)
-            {
-                Human human = new Human(playerNamesVec[nameCount]);
-                nameCount++;
-            players.Add(human);
-            }
-            else
-            {
-                Computer computer = new Computer(playerNamesVec[nameCount]);
-                nameCount++;
-                players.Add(computer);
-            }
-            groupBox1.Enabled = true;
             UpdateGUI();
         }
 
@@ -217,71 +203,137 @@ namespace MemoryCodeSamples
         {
             FlipAllPlayableCards();
             timerFlipBack.Enabled = false;
-            //begin computers turn
-            if (players[playersTurn].IsComputer())
-            {
-                timerHaltComputer.Enabled = true;
-            }
-            UpdateGUI();            
+            UpdateGUI();
         }
 
-        //private void timerDrawTime_Tick(object sender, EventArgs e)
-        //{            
-        //    FlipAllPlayableCards();
-        //    lastFlipped = null;
-        //    IncrementPlayer();
-        //    timerDrawTime.Enabled = false;
-        //    UpdateGUI();
-        //}
+        private void timerDrawTime_Tick(object sender, EventArgs e)
+        {
+            FlipAllPlayableCards();
+            lastFlipped = null;
+            NextPlayer();
+            timerDrawTime.Enabled = false;
+            UpdateGUI();
+        }
 
-        private void btnCancelGame_Click(object sender, EventArgs e)
+        private void btnAddPlayer_Click(object sender, EventArgs e)
+        {
+            Human human = new Human();
+            players.Add(human);
+            human.name = playerNamesVec[players.Count - 1];
+            UpdateGUI();
+        }
+
+        private void btnAIeasy_Click(object sender, EventArgs e)
+        {
+            ComputerTwo computer = new ComputerTwo(6);
+            players.Add(computer);
+            computer.name = playerNamesVec[players.Count - 1];
+            computer.DidFindMatchingCards += this.ComputerDidFindMatch;
+            computer.DidNotFindMatchingCards += this.ComputerDidNotFindMatch;
+
+            UpdateGUI();
+
+        }
+
+        private void ComputerDidFindMatch(Card cardOne, Card cardTwo, ComputerTwo computer)
+        {
+            cardOne.Flipped = true;
+            cardTwo.Flipped = true;
+
+            cardOne.Disable();
+            cardTwo.Disable();
+
+            computer.points++;
+
+            SoundCollection.PairSound();
+
+            if (DidGameEnd())
+            {
+                EndingGame();
+            }
+            else
+            {
+                Thread.Sleep(1000);
+                computer.Play();
+            }
+            UpdateGUI();
+        }
+
+        private void ComputerDidNotFindMatch(Card cardOne, Card cardTwo, ComputerTwo computer)
+        {
+
+
+            cardOne.Flipped = true;
+            cardTwo.Flipped = true;
+
+            cardOne.Refresh();
+            cardTwo.Refresh();
+
+            Thread.Sleep(1500);
+
+            FlipAllPlayableCards();
+            
+
+            NextPlayer();
+        }
+
+        private void btnAImedium_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAIhard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            gameStarted = true;
+            btnAddPlayer.Visible = false;
+            btnAIeasy.Visible = false;
+            btnAIhard.Visible = false;
+            btnAImedium.Visible = false;
+            btnPlay.Visible = false;
+            lblAddAI.Visible = false;
+            NewBoard();
+            UpdateGUI();
+            board.CreateNewGame(numberOfCards, themeNum);
+
+        }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void btnExitGame_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void timerHaltComputer_Tick(object sender, EventArgs e)
+        private void btnPlayAgain_Click(object sender, EventArgs e)
         {
-            var unplayable = board.cardList.FindAll(x => !x.Playable);
-            if (unplayable.Count() != board.cardList.Count())
-            {
-                object o = players[playersTurn].ClickARandomCard(numberOfCards, board.cardList);
-                computersTurn = 1;
-                card_Click(o, EventArgs.Empty);
-            }
-            unplayable = board.cardList.FindAll(x => !x.Playable);
-            if (unplayable.Count() != board.cardList.Count())
-            {
-                object o = players[playersTurn].ClickARandomCard(numberOfCards, board.cardList);
-                computersTurn = 1;
-                card_Click(o, EventArgs.Empty);
-            }
-            timerHaltComputer.Enabled = false;
+            ResetGame();
         }
 
-        //ett annat sätt att göra det som redan var gjort:
-        //private void PlayerTimeOnClick_Tick(object sender, EventArgs e)
-        //{   // tick intervall set to 1000 ms
-        //    --seconds;
-        //    playerTime_lbl.Text = seconds.ToString();
+        private void timerComputerTick_Tick(object sender, EventArgs e)
+        {
+            if (players[playersTurn] is ComputerTwo && !DidGameEnd())
+            {
+                ((ComputerTwo)players[playersTurn]).Play();
+            }
 
-        //    if (seconds == 5) // sound is 5 seconds long
-        //        SoundCollection.ClockSound(); // Clock ticking sound
-        //    if (seconds == 0) // when time hits 0 do below
-        //    {
-        //        PlayerTimeTick.Enabled = false; // turn of timer tick so while code is run to remove issues
-        //        //MessageBox.Show("Tiden gick ut! Turen går över."); //man tappar flowet med popupen som dyker upp. 
-        //        FlipAllPlayableCards(); // flip cards back
-        //        IncrementPlayer();     // force change of player
-        //        UpdateGUI();           // update score & player so right players turn is shown
-        //        //ResetTimer();          // Restore values for workable loop
-       
-        //    }
-        //}
-        //        public void ResetTimer()
-        //        {
-        //            seconds = game.ChooseTime(); // hard coded can make int variable to make it dynamic
-        //            playerTime_lbl.Text = "";
-        //        }
+            timerComputerTick.Enabled = false;
+        }
+
+        private bool DidGameEnd()
+        {
+            var usedCards = board.cardList.FindAll(x => !x.Playable);
+
+            return usedCards.Count == board.cardList.Count;
+        }
+
     }
 }
 
